@@ -121,15 +121,6 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 right-6 lg:right-8 flex flex-col items-center gap-2 text-white/50">
-          <span className="text-[10px] tracking-[0.2em] uppercase rotate-90 mb-6 whitespace-nowrap">
-            Scroll Down
-          </span>
-          <div className="w-px h-12 bg-white/30 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full bg-white/70 h-1/2 animate-bounce" />
-          </div>
-        </div>
       </div>
     </section>
   );
