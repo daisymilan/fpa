@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #ffffff;
-  --color-foreground: #0a0a0a;
+  --color-background: #0a0a0a;
+  --color-foreground: #ffffff;
   --color-primary: #c41230;
   --color-primary-dark: #8b0000;
-  --color-accent: #c41230;
+  --color-surface: #111111;
+  --color-surface-2: #161616;
+  --color-border: #222222;
   --color-muted: #6b7280;
-  --color-surface: #f9f8f6;
-  --color-border: #e5e0d8;
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
@@ -27,57 +27,30 @@ html {
 }
 
 body {
-  background: #ffffff;
-  color: #0a0a0a;
+  background: #0a0a0a;
+  color: #ffffff;
   font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   line-height: 1.6;
 }
 
-/* Typography helpers */
 .font-serif {
   font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
 }
 
-/* Smooth image rendering */
 img {
   display: block;
   max-width: 100%;
 }
 
-/* Selection color */
 ::selection {
   background-color: #c41230;
   color: #ffffff;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #c41230;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #c41230; border-radius: 2px; }
 
-/* Utility: red underline accent */
-.red-underline {
-  position: relative;
-  display: inline-block;
-}
-.red-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 48px;
-  height: 2px;
-  background-color: #c41230;
-}
-
-/* Section padding */
 .section-padding {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -90,28 +63,27 @@ img {
   }
 }
 
-/* Fade-in animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-up {
-  animation: fadeUp 0.7s ease forwards;
-}
-
-/* Hero overlay gradient */
+/* Hero gradient */
 .hero-gradient {
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.4) 60%,
-    rgba(0, 0, 0, 0.1) 100%
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.5) 60%,
+    rgba(0,0,0,0.15) 100%
   );
 }
+
+/* Uppercase display heading style */
+.display-heading {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.6s ease forwards; }

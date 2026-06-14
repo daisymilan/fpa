@@ -9,7 +9,7 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
@@ -21,20 +21,13 @@ export default function AboutSection() {
               </span>
             </div>
 
-            <h2
-              className="text-stone-900 mb-6 leading-tight"
-              style={{
-                fontFamily: "var(--font-cormorant), Georgia, serif",
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 600,
-              }}
-            >
+            <h2 className="display-heading text-white mb-8" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
               Architecture Rooted in
               <br />
               <span className="text-[#c41230]">Purpose and Craft</span>
             </h2>
 
-            <p className="text-stone-600 leading-relaxed mb-5">
+            <p className="text-stone-400 leading-relaxed mb-5">
               FPA Design Consultancy is a licensed architectural practice based
               in Baguio City, founded and led by Arch. Friendzel B. Pengi, UAP.
               We provide comprehensive architectural and design services to
@@ -42,7 +35,7 @@ export default function AboutSection() {
               Pangasinan, Ifugao, and the wider Northern Luzon region.
             </p>
 
-            <p className="text-stone-600 leading-relaxed mb-8">
+            <p className="text-stone-400 leading-relaxed mb-10">
               Our approach is rooted in the belief that every project — from a
               family home to a commercial building — deserves rigorous design
               thinking, climate-responsive planning, and meticulous execution.
@@ -52,33 +45,21 @@ export default function AboutSection() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-3 text-stone-900 text-sm font-semibold tracking-widest uppercase group"
+              className="inline-flex items-center gap-3 text-white text-xs font-semibold tracking-[0.2em] uppercase group"
             >
               Meet the Architect
-              <span className="block w-8 h-px bg-stone-900 group-hover:w-14 transition-all duration-300" />
+              <span className="block w-8 h-px bg-white group-hover:w-14 transition-all duration-300" />
             </Link>
           </div>
 
           {/* Right: Stats grid */}
-          <div className="grid grid-cols-2 gap-px bg-stone-200">
+          <div className="grid grid-cols-2 gap-px bg-white/10">
             {stats.map((stat) => (
-              <div
-                key={stat.value}
-                className="bg-white p-8 flex flex-col justify-between min-h-[160px]"
-              >
-                <span
-                  className="text-[#c41230] leading-none mb-4"
-                  style={{
-                    fontFamily: "var(--font-cormorant), Georgia, serif",
-                    fontSize: "2.5rem",
-                    fontWeight: 700,
-                  }}
-                >
+              <div key={stat.value} className="bg-[#0a0a0a] p-8 flex flex-col justify-between min-h-[160px] hover:bg-[#111111] transition-colors group">
+                <span className="text-[#c41230] leading-none mb-4 display-heading" style={{ fontSize: "2.5rem" }}>
                   {stat.value}
                 </span>
-                <span className="text-stone-500 text-sm leading-snug">
-                  {stat.label}
-                </span>
+                <span className="text-stone-500 text-sm leading-snug">{stat.label}</span>
               </div>
             ))}
           </div>

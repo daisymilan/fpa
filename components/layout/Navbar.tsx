@@ -17,36 +17,25 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  const isTransparent = isHome && !scrolled && !menuOpen;
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isTransparent
-          ? "bg-transparent"
-          : "bg-white/95 backdrop-blur-sm shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-white/5" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <FPALogo
-              variant={isTransparent ? "white" : "dark"}
-              className="h-10 w-auto"
-            />
+            <FPALogo variant="white" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -55,16 +44,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium tracking-widest uppercase transition-colors duration-200 ${
-                  isTransparent
-                    ? "text-white/90 hover:text-white"
-                    : "text-stone-700 hover:text-[#c41230]"
-                } ${
+                className={`text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-200 ${
                   pathname === link.href
-                    ? isTransparent
-                      ? "text-white border-b border-white/60 pb-0.5"
-                      : "text-[#c41230]"
-                    : ""
+                    ? "text-[#c41230]"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -72,7 +55,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
-              className="ml-2 px-5 py-2.5 bg-[#c41230] text-white text-sm font-medium tracking-wider uppercase hover:bg-[#8b0000] transition-colors duration-200"
+              className="ml-2 px-5 py-2.5 border border-[#c41230] text-[#c41230] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#c41230] hover:text-white transition-all duration-200"
             >
               Get a Quote
             </Link>
@@ -82,46 +65,26 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
-            className={`md:hidden p-2 ${
-              isTransparent ? "text-white" : "text-stone-800"
-            }`}
+            className="md:hidden p-2 text-white"
           >
             <div className="w-6 flex flex-col gap-1.5">
-              <span
-                className={`block h-0.5 w-full transition-all duration-300 ${
-                  isTransparent ? "bg-white" : "bg-stone-800"
-                } ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-              />
-              <span
-                className={`block h-0.5 w-full transition-all duration-300 ${
-                  isTransparent ? "bg-white" : "bg-stone-800"
-                } ${menuOpen ? "opacity-0" : ""}`}
-              />
-              <span
-                className={`block h-0.5 w-full transition-all duration-300 ${
-                  isTransparent ? "bg-white" : "bg-stone-800"
-                } ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              />
+              <span className={`block h-px w-full bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block h-px w-full bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block h-px w-full bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </div>
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div
-        className={`md:hidden bg-white border-t border-stone-100 overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
+      <div className={`md:hidden bg-[#0a0a0a] border-t border-white/10 overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
         <nav className="px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`py-3 text-sm font-medium tracking-widest uppercase border-b border-stone-100 transition-colors ${
-                pathname === link.href
-                  ? "text-[#c41230]"
-                  : "text-stone-700 hover:text-[#c41230]"
+              className={`py-3 text-xs font-medium tracking-[0.2em] uppercase border-b border-white/10 transition-colors ${
+                pathname === link.href ? "text-[#c41230]" : "text-white/70 hover:text-white"
               }`}
             >
               {link.label}
@@ -129,7 +92,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-4 py-3 bg-[#c41230] text-white text-sm font-medium tracking-wider uppercase text-center hover:bg-[#8b0000] transition-colors"
+            className="mt-4 py-3 border border-[#c41230] text-[#c41230] text-xs font-semibold tracking-[0.2em] uppercase text-center hover:bg-[#c41230] hover:text-white transition-all"
           >
             Get a Quote
           </Link>

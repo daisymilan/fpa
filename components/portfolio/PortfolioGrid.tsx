@@ -27,10 +27,10 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-5 py-2 text-sm font-medium tracking-widest uppercase transition-colors duration-200 ${
+            className={`px-5 py-2 text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200 ${
               active === cat
-                ? "bg-[#c41230] text-white"
-                : "bg-white border border-stone-200 text-stone-600 hover:border-[#c41230] hover:text-[#c41230]"
+                ? "bg-[#c41230] text-white border border-[#c41230]"
+                : "bg-transparent border border-white/20 text-stone-500 hover:border-white hover:text-white"
             }`}
           >
             {cat}
@@ -39,12 +39,12 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
         {filtered.map((project) => (
           <Link
             key={project.slug}
             href={`/portfolio/${project.slug}`}
-            className="group block bg-stone-100 overflow-hidden"
+            className="group block bg-[#0a0a0a] overflow-hidden relative"
           >
             <div className="relative h-72 overflow-hidden">
               <Image
@@ -54,31 +54,19 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <Link
-                  href={`/portfolio/${project.slug}`}
-                  className="inline-flex items-center gap-2 text-white text-sm font-medium"
-                >
-                  View Project
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <span className="text-[#c41230] text-xs font-semibold tracking-[0.25em] uppercase block mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View Project →
+                </span>
               </div>
             </div>
-            <div className="p-5 bg-white">
+            <div className="p-5 bg-[#0d0d0d] group-hover:bg-[#111111] transition-colors duration-300">
+              <div className="absolute top-0 left-0 w-0 h-px bg-[#c41230] group-hover:w-full transition-all duration-500" />
               <span className="text-[#c41230] text-xs font-semibold tracking-widest uppercase block mb-1">
                 {project.type} · {project.location}
               </span>
-              <h3
-                className="text-stone-900 group-hover:text-[#c41230] transition-colors duration-200"
-                style={{
-                  fontFamily: "var(--font-cormorant), Georgia, serif",
-                  fontSize: "1.25rem",
-                  fontWeight: 600,
-                }}
-              >
+              <h3 className="display-heading text-white group-hover:text-[#c41230] transition-colors duration-200" style={{ fontSize: "1.2rem" }}>
                 {project.name}
               </h3>
             </div>
@@ -87,7 +75,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-20 text-stone-400">
+        <div className="text-center py-20 text-stone-600">
           No projects in this category yet.
         </div>
       )}
