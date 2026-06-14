@@ -27,7 +27,7 @@ const reasons = [
 
 export default function WhyArchitect() {
   return (
-    <section className="section-padding bg-[#0a0a0a]">
+    <section className="section-padding bg-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end mb-16">
@@ -36,33 +36,37 @@ export default function WhyArchitect() {
               <div className="w-8 h-px bg-[#c41230]" />
               <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">The Value of Professional Design</span>
             </div>
-            <h2 className="display-heading text-white" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+            <h2 className="display-heading text-fg" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
               Why Hire a Licensed
               <br />
               Architect?
             </h2>
           </div>
-          <p className="text-stone-400 leading-relaxed">
+          <p className="text-fg-muted leading-relaxed text-sm">
             Building without professional design guidance is one of the most common and costly mistakes a property owner can make. Here is why working with a licensed architect protects your investment.
           </p>
         </div>
 
-        {/* Capabilities list — matching screenshot style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y divide-white/10 md:divide-y-0">
+        {/* Capabilities list */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0" style={{ "--tw-divide-opacity": 1 } as React.CSSProperties}>
           {reasons.map((reason, i) => (
             <div
               key={reason.title}
-              className={`py-8 px-0 flex flex-col gap-3 group border-white/10 ${
-                i % 2 === 0 ? "md:pr-12 md:border-r" : "md:pl-12"
-              } ${i < reasons.length - 2 ? "md:border-b" : ""}`}
+              className={`py-8 px-0 flex flex-col gap-3 group ${
+                i % 2 === 0 ? "md:pr-12" : "md:pl-12"
+              }`}
+              style={{
+                borderRight: i % 2 === 0 ? `1px solid var(--border)` : undefined,
+                borderBottom: i < reasons.length - 2 ? `1px solid var(--border)` : undefined,
+              }}
             >
               <div className="flex items-center justify-between">
-                <h3 className="display-heading text-white group-hover:text-[#c41230] transition-colors duration-200 text-sm" style={{ letterSpacing: "0.12em" }}>
+                <h3 className="display-heading text-fg group-hover:text-[#c41230] transition-colors duration-200 text-sm" style={{ letterSpacing: "0.12em" }}>
                   {reason.title}
                 </h3>
                 <div className="w-16 h-px bg-[#c41230]/60 flex-shrink-0 ml-4" />
               </div>
-              <p className="text-stone-500 text-sm leading-relaxed">{reason.description}</p>
+              <p className="text-fg-dim text-sm leading-relaxed">{reason.description}</p>
             </div>
           ))}
         </div>

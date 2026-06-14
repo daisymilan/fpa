@@ -1,17 +1,69 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #ffffff;
+  /* Semantic color tokens — reference CSS custom properties defined per-theme below */
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-dim: var(--fg-dim);
+  --color-fg-faint: var(--fg-faint);
   --color-primary: #c41230;
   --color-primary-dark: #8b0000;
-  --color-surface: #111111;
-  --color-surface-2: #161616;
-  --color-border: #222222;
-  --color-muted: #6b7280;
-
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
+}
+
+/* ─── Dark theme (default) ─── */
+:root {
+  --bg: #0a0a0a;
+  --bg-alt: #0d0d0d;
+  --surface: #111111;
+  --surface-2: #161616;
+  --fg: #ffffff;
+  --fg-muted: #a8a29e;
+  --fg-dim: #78716c;
+  --fg-faint: #57534e;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --overlay: rgba(255, 255, 255, 0.07);
+  --gap-color: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(10, 10, 10, 0.95);
+  --logo-fg: #ffffff;
+  --nav-link: rgba(255, 255, 255, 0.7);
+  --nav-link-hover: #ffffff;
+  --fg-ghost: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Light theme ─── */
+[data-theme="light"] {
+  --bg: #f7f5f2;
+  --bg-alt: #ede9e3;
+  --surface: #ffffff;
+  --surface-2: #e2ddd6;
+  --fg: #111111;
+  --fg-muted: #57534e;
+  --fg-dim: #78716c;
+  --fg-faint: #a8a29e;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.18);
+  --overlay: rgba(0, 0, 0, 0.04);
+  --gap-color: rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(247, 245, 242, 0.97);
+  --logo-fg: #111111;
+  --nav-link: rgba(80, 74, 70, 0.9);
+  --nav-link-hover: #111111;
+  --fg-ghost: rgba(0, 0, 0, 0.07);
+}
+
+/* Light mode: navbar always has a background (prevents dark text on dark hero image) */
+[data-theme="light"] header {
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
 
 html {
@@ -21,10 +73,11 @@ html {
 }
 
 body {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-serif {
@@ -37,7 +90,7 @@ body {
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #c41230; border-radius: 2px; }
 
 .section-padding {
@@ -52,17 +105,15 @@ body {
   }
 }
 
-/* Hero gradient */
 .hero-gradient {
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.85) 0%,
-    rgba(0,0,0,0.5) 60%,
-    rgba(0,0,0,0.15) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.15) 100%
   );
 }
 
-/* Uppercase display heading style */
 .display-heading {
   font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
   text-transform: uppercase;

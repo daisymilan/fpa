@@ -3,36 +3,15 @@
 import { useState } from "react";
 
 const projectTypes = [
-  "Residential Design",
-  "Commercial Design",
-  "Interior Design",
-  "Renovation",
-  "Space Planning",
-  "Building Permit",
-  "3D Visualization",
-  "Other",
+  "Residential Design","Commercial Design","Interior Design","Renovation",
+  "Space Planning","Building Permit","3D Visualization","Other",
 ];
 
-const inputClass = "w-full border border-white/10 bg-[#111111] px-4 py-3 text-white text-sm placeholder:text-stone-600 focus:outline-none focus:border-[#c41230] transition-colors";
-
 export default function ContactForm() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    projectType: "",
-    location: "",
-    message: "",
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
-  );
+  const [form, setForm] = useState({ name: "", email: "", phone: "", projectType: "", location: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -48,20 +27,28 @@ export default function ContactForm() {
     else setStatus("error");
   };
 
+  const inputStyle = {
+    background: "var(--surface)",
+    border: "1px solid var(--border)",
+    color: "var(--fg)",
+  };
+
+  const labelClass = "block text-xs text-fg-faint tracking-widest uppercase mb-2";
+  const inputClass = "w-full px-4 py-3 text-sm focus:outline-none transition-colors";
+
   if (status === "sent") {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-[#c41230]/10 border border-[#c41230]/20 flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6" style={{ background: "rgba(196,18,48,0.1)", border: "1px solid rgba(196,18,48,0.2)" }}>
           <svg className="w-8 h-8 text-[#c41230]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="display-heading text-white mb-3" style={{ fontSize: "1.75rem" }}>
+        <h3 className="display-heading text-fg mb-3" style={{ fontSize: "1.75rem" }}>
           Thank You, {form.name}!
         </h3>
-        <p className="text-stone-500 text-sm">
-          We have received your message and will get back to you within 1–2
-          business days.
+        <p className="text-fg-dim text-sm">
+          We have received your message and will get back to you within 1–2 business days.
         </p>
       </div>
     );
@@ -71,81 +58,66 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-xs text-stone-600 tracking-widest uppercase mb-2">
-            Full Name *
-          </label>
-          <input
-            id="name" name="name" type="text" required
-            value={form.name} onChange={handleChange}
-            className={inputClass} placeholder="Juan dela Cruz"
+          <label htmlFor="name" className={labelClass}>Full Name *</label>
+          <input id="name" name="name" type="text" required value={form.name} onChange={handleChange}
+            className={inputClass} style={inputStyle} placeholder="Juan dela Cruz"
+            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-xs text-stone-600 tracking-widest uppercase mb-2">
-            Email Address *
-          </label>
-          <input
-            id="email" name="email" type="email" required
-            value={form.email} onChange={handleChange}
-            className={inputClass} placeholder="juan@email.com"
+          <label htmlFor="email" className={labelClass}>Email Address *</label>
+          <input id="email" name="email" type="email" required value={form.email} onChange={handleChange}
+            className={inputClass} style={inputStyle} placeholder="juan@email.com"
+            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className="block text-xs text-stone-600 tracking-widest uppercase mb-2">
-            Phone Number
-          </label>
-          <input
-            id="phone" name="phone" type="tel"
-            value={form.phone} onChange={handleChange}
-            className={inputClass} placeholder="09XX XXX XXXX"
+          <label htmlFor="phone" className={labelClass}>Phone Number</label>
+          <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
+            className={inputClass} style={inputStyle} placeholder="09XX XXX XXXX"
+            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
         </div>
         <div>
-          <label htmlFor="projectType" className="block text-xs text-stone-600 tracking-widest uppercase mb-2">
-            Project Type *
-          </label>
-          <select
-            id="projectType" name="projectType" required
-            value={form.projectType} onChange={handleChange}
-            className={`${inputClass} appearance-none`}
+          <label htmlFor="projectType" className={labelClass}>Project Type *</label>
+          <select id="projectType" name="projectType" required value={form.projectType} onChange={handleChange}
+            className={`${inputClass} appearance-none`} style={inputStyle}
+            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           >
-            <option value="" className="bg-[#111111]">Select a service...</option>
-            {projectTypes.map((type) => (
-              <option key={type} value={type} className="bg-[#111111]">{type}</option>
-            ))}
+            <option value="">Select a service...</option>
+            {projectTypes.map((type) => <option key={type} value={type}>{type}</option>)}
           </select>
         </div>
       </div>
 
       <div>
-        <label htmlFor="location" className="block text-xs text-stone-600 tracking-widest uppercase mb-2">
-          Project Location
-        </label>
-        <input
-          id="location" name="location" type="text"
-          value={form.location} onChange={handleChange}
-          className={inputClass} placeholder="City / Municipality / Province"
+        <label htmlFor="location" className={labelClass}>Project Location</label>
+        <input id="location" name="location" type="text" value={form.location} onChange={handleChange}
+          className={inputClass} style={inputStyle} placeholder="City / Municipality / Province"
+          onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+          onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-xs text-stone-600 tracking-widest uppercase mb-2">
-          Project Description *
-        </label>
-        <textarea
-          id="message" name="message" required rows={5}
-          value={form.message} onChange={handleChange}
-          className={`${inputClass} resize-none`}
+        <label htmlFor="message" className={labelClass}>Project Description *</label>
+        <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange}
+          className={`${inputClass} resize-none`} style={inputStyle}
           placeholder="Tell us about your project — type, size, budget range, timeline, and any specific requirements..."
+          onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+          onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
       </div>
 
       <button
-        type="submit"
-        disabled={status === "sending"}
+        type="submit" disabled={status === "sending"}
         className="w-full py-4 bg-[#c41230] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#8b0000] transition-colors duration-200 disabled:opacity-60"
       >
         {status === "sending" ? "Sending..." : "Send Message"}
@@ -156,7 +128,7 @@ export default function ContactForm() {
           Something went wrong. Please try again or email us directly at fpadesignconsultancy@gmail.com.
         </p>
       )}
-      <p className="text-stone-600 text-xs text-center">
+      <p className="text-fg-faint text-xs text-center">
         We respond to all inquiries within 1–2 business days.
       </p>
     </form>

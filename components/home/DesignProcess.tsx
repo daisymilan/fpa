@@ -9,7 +9,7 @@ const steps = [
 
 export default function DesignProcess() {
   return (
-    <section className="section-padding bg-[#0d0d0d]">
+    <section className="section-padding bg-bg-alt">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -17,25 +17,25 @@ export default function DesignProcess() {
             <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">How We Work</span>
             <div className="w-8 h-px bg-[#c41230]" />
           </div>
-          <h2 className="display-heading text-white" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
+          <h2 className="display-heading text-fg" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
             Our Design Process
           </h2>
-          <p className="text-stone-500 mt-4 max-w-2xl mx-auto text-sm">
+          <p className="text-fg-dim mt-4 max-w-2xl mx-auto text-sm">
             A structured, client-centered process that ensures clarity, transparency, and exceptional outcomes at every stage.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px]" style={{ background: "var(--gap-color)" }}>
           {steps.map((step) => (
-            <div key={step.number} className="bg-[#0d0d0d] p-8 hover:bg-[#111111] transition-colors duration-300 group relative">
+            <div key={step.number} className="bg-bg-alt p-8 hover:bg-surface transition-colors duration-300 group relative">
               <div className="absolute top-0 left-0 w-0 h-px bg-[#c41230] group-hover:w-full transition-all duration-500" />
-              <span className="display-heading text-white/10 leading-none block mb-4" style={{ fontSize: "3.5rem" }}>
+              <span className="display-heading leading-none block mb-4" style={{ fontSize: "3.5rem", color: "var(--fg-ghost)" }}>
                 {step.number}
               </span>
-              <h3 className="display-heading text-white mb-3 group-hover:text-[#c41230] transition-colors duration-200" style={{ fontSize: "1.1rem", letterSpacing: "0.08em" }}>
+              <h3 className="display-heading text-fg mb-3 group-hover:text-[#c41230] transition-colors duration-200" style={{ fontSize: "1.1rem", letterSpacing: "0.08em" }}>
                 {step.title}
               </h3>
-              <p className="text-stone-500 text-sm leading-relaxed">{step.description}</p>
+              <p className="text-fg-dim text-sm leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
