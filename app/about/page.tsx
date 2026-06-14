@@ -21,7 +21,12 @@ const certifications = [
   { title: "Project Management", body: "Professional Certification", description: "Trained in construction project management methodology, scheduling, and cost control." },
 ];
 
-const serviceArea = ["Baguio City","Benguet","La Union","Pangasinan","Mountain Province","Ifugao","Kalinga","Abra","Apayao","Northern Luzon"];
+const serviceArea = [
+  "Philippines", "United States", "Canada", "Australia",
+  "United Kingdom", "Japan", "South Korea", "Singapore",
+  "United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait",
+  "Hong Kong", "Taiwan", "Germany", "Worldwide",
+];
 
 export default function AboutPage() {
   return (
@@ -148,7 +153,7 @@ export default function AboutPage() {
               <div className="w-8 h-px bg-[#c41230]" />
             </div>
             <h2 className="display-heading text-fg" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>Areas We Serve</h2>
-            <p className="text-fg-dim mt-4 max-w-xl mx-auto text-sm">FPA Design Consultancy provides architectural services across Baguio City and the broader Northern Luzon region.</p>
+            <p className="text-fg-dim mt-4 max-w-xl mx-auto text-sm">FPA Design Consultancy serves clients across the Philippines and internationally, offering remote consultation and design services to Filipino families and businesses worldwide.</p>
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
             {serviceArea.map((area) => (

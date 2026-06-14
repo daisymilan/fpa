@@ -1,13 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 const stats = [
   { value: "UAP", label: "Member, United Architects of the Philippines" },
   { value: "SO2", label: "Certified Safety Officer" },
-  { value: "9+", label: "Provinces Served Across Northern Luzon" },
+  { value: "Global", label: "Worldwide Project Reach" },
   { value: "360°", label: "Full-Service Architecture & Design" },
 ];
 
 export default function AboutSection() {
+  const { lang } = useLanguage();
+  const tx = t[lang].about;
+
   return (
     <section className="section-padding bg-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -17,22 +24,18 @@ export default function AboutSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-[#c41230]" />
               <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">
-                About the Firm
+                {tx.tag}
               </span>
             </div>
 
             <h2 className="display-heading text-fg mb-8" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-              Architecture Rooted in
+              {tx.heading1}
               <br />
-              <span className="text-[#c41230]">Purpose and Craft</span>
+              <span className="text-[#c41230]">{tx.heading2}</span>
             </h2>
 
             <p className="text-fg-muted leading-relaxed mb-5 text-sm">
-              FPA Design Consultancy is a licensed architectural practice based
-              in Baguio City, founded and led by Arch. Friendzel B. Pengi, UAP.
-              We provide comprehensive architectural and design services to
-              residential and commercial clients across Benguet, La Union,
-              Pangasinan, Ifugao, and the wider Northern Luzon region.
+              {tx.p1}
             </p>
 
             <p className="text-fg-muted leading-relaxed mb-10 text-sm">
@@ -47,7 +50,7 @@ export default function AboutSection() {
               href="/about"
               className="inline-flex items-center gap-3 text-fg text-xs font-semibold tracking-[0.2em] uppercase group"
             >
-              Meet the Architect
+              {tx.cta}
               <span className="block w-8 h-px group-hover:w-14 transition-all duration-300" style={{ background: "var(--fg)" }} />
             </Link>
           </div>

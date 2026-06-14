@@ -23,7 +23,7 @@ export default function ContactPage() {
             <span className="text-[#c41230]">Your Project</span>
           </h1>
           <p className="text-fg-muted mt-6 max-w-xl text-sm leading-relaxed">
-            Reach out for a consultation — we welcome residential, commercial, and interior design inquiries across Northern Luzon.
+            Reach out for a consultation — we welcome residential, commercial, and interior design inquiries from clients in the Philippines and worldwide.
           </p>
         </div>
       </section>

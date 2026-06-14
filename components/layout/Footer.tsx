@@ -32,8 +32,8 @@ export default function Footer() {
               Designing Spaces. Building Futures.
             </p>
             <p className="text-fg-dim text-sm leading-relaxed">
-              Licensed architectural firm serving Baguio City, Benguet, and
-              Northern Luzon.
+              Licensed architectural firm based in Baguio City, serving clients
+              in the Philippines and worldwide.
             </p>
             <div className="flex gap-4 mt-6">
               <a
@@ -134,7 +134,7 @@ export default function Footer() {
           <p className="text-fg-faint text-xs text-center md:text-left">
             © {new Date().getFullYear()} FPA Design Consultancy. All rights reserved. | Lic. Arch. Friendzel B. Pengi, UAP
           </p>
-          <p className="text-fg-faint text-xs">Baguio City · Benguet · Northern Luzon</p>
+          <p className="text-fg-faint text-xs">Baguio City · Philippines · Worldwide</p>
         </div>
       </div>
     </footer>

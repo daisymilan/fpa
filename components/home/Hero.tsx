@@ -3,34 +3,26 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
-const slides = [
-  {
-    src: "/images/hero/hero-1.jpg",
-    alt: "FPA Design Consultancy — Modern Office Building",
-    label: "Commercial Architecture",
-  },
-  {
-    src: "/images/hero/hero-2.jpg",
-    alt: "FPA Design Consultancy — Luxury Residential Home at Dusk",
-    label: "Residential Design",
-  },
-  {
-    src: "/images/hero/hero-3.jpg",
-    alt: "FPA Design Consultancy — Contemporary Bungalow",
-    label: "Modern Living",
-  },
+const slideImages = [
+  { src: "/images/hero/hero-1.jpg", alt: "FPA Design Consultancy — Modern Office Building", idx: 0 },
+  { src: "/images/hero/hero-2.jpg", alt: "FPA Design Consultancy — Luxury Residential Home at Dusk", idx: 1 },
+  { src: "/images/hero/hero-3.jpg", alt: "FPA Design Consultancy — Contemporary Bungalow", idx: 2 },
 ];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const { lang } = useLanguage();
+  const tx = t[lang].hero;
 
   useEffect(() => {
     const timer = setInterval(() => {
       setAnimating(true);
       setTimeout(() => {
-        setCurrent((prev) => (prev + 1) % slides.length);
+        setCurrent((prev) => (prev + 1) % slideImages.length);
         setAnimating(false);
       }, 700);
     }, 5500);
@@ -49,15 +41,11 @@ export default function Hero() {
   return (
     <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
       {/* Slides */}
-      {slides.map((slide, i) => (
+      {slideImages.map((slide, i) => (
         <div
           key={slide.src}
           className={`absolute inset-0 transition-opacity duration-700 ${
-            i === current
-              ? animating
-                ? "opacity-0"
-                : "opacity-100"
-              : "opacity-0"
+            i === current ? (animating ? "opacity-0" : "opacity-100") : "opacity-0"
           }`}
         >
           <Image
@@ -81,7 +69,7 @@ export default function Hero() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-[#c41230]" />
             <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">
-              {slides[current].label}
+              {tx.labels[current]}
             </span>
           </div>
 
@@ -94,15 +82,13 @@ export default function Hero() {
               fontWeight: 600,
             }}
           >
-            Designing Spaces.
+            {tx.heading1}
             <br />
-            <span className="text-[#c41230]">Building Futures.</span>
+            <span className="text-[#c41230]">{tx.heading2}</span>
           </h1>
 
           <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
-            FPA Design Consultancy delivers premium architectural design,
-            interior design, and construction management services across Baguio
-            City and Northern Luzon.
+            {tx.sub}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -110,28 +96,26 @@ export default function Hero() {
               href="/portfolio"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#c41230] text-white text-sm font-semibold tracking-widest uppercase hover:bg-[#8b0000] transition-colors duration-200"
             >
-              View Our Work
+              {tx.cta1}
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 border border-white/60 text-white text-sm font-semibold tracking-widest uppercase hover:bg-white/10 transition-colors duration-200"
             >
-              Get a Consultation
+              {tx.cta2}
             </Link>
           </div>
         </div>
 
         {/* Slide indicators */}
         <div className="absolute bottom-10 left-6 lg:left-8 flex gap-2">
-          {slides.map((_, i) => (
+          {slideImages.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`transition-all duration-300 ${
-                i === current
-                  ? "w-8 h-1 bg-[#c41230]"
-                  : "w-4 h-1 bg-white/40 hover:bg-white/70"
+                i === current ? "w-8 h-1 bg-[#c41230]" : "w-4 h-1 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}

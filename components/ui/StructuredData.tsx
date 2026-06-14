@@ -8,7 +8,7 @@ export default function StructuredData() {
         name: "FPA Design Consultancy",
         alternateName: "FPA Design",
         description:
-          "Licensed architectural firm in Baguio City specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance across Northern Luzon.",
+          "Licensed architectural firm in Baguio City, Philippines specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance. Serving clients in the Philippines and worldwide.",
         url: "https://fpadesignconsultancy.com",
         logo: "https://fpadesignconsultancy.com/images/logo.png",
         image: "https://fpadesignconsultancy.com/images/og-image.jpg",
@@ -44,18 +44,7 @@ export default function StructuredData() {
           "https://www.instagram.com/fpadesignconsultancy",
         ],
         priceRange: "₱₱",
-        areaServed: [
-          "Baguio City",
-          "Benguet",
-          "La Union",
-          "Pangasinan",
-          "Mountain Province",
-          "Ifugao",
-          "Kalinga",
-          "Abra",
-          "Apayao",
-          "Northern Luzon",
-        ],
+        areaServed: ["Philippines", "Worldwide"],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Architectural Services",
