@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${project.name} — ${project.type} in ${project.location}`,
     description: project.description,
-    alternates: { canonical: `https://fpadesignconsultancy.com/portfolio/${slug}` },
+    alternates: { canonical: `https://www.fp-architect.com/portfolio/${slug}` },
     openGraph: {
       title: `${project.name} | FPA Design Consultancy`,
       description: project.description,

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: [],
     },
-    sitemap: "https://fpadesignconsultancy.com/sitemap.xml",
+    sitemap: "https://www.fp-architect.com/sitemap.xml",
   };
 }

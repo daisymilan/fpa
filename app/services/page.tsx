@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Architectural Services | FPA Design Consultancy Baguio",
-  description: "Full-service architectural firm offering design, construction management, interior design, and permit documentation across Baguio City and Northern Luzon.",
-  alternates: { canonical: "https://fpadesignconsultancy.com/services" },
+  description: "Full-service architectural firm offering design, construction management, interior design, and permit documentation for clients in the Philippines and worldwide.",
+  alternates: { canonical: "https://www.fp-architect.com/services" },
 };
 
 const services = [
@@ -35,7 +35,7 @@ export default function ServicesPage() {
             <span className="text-[#c41230]">Disciplines</span>
           </h1>
           <p className="text-fg-muted mt-6 max-w-xl text-sm leading-relaxed">
-            FPA Design Consultancy offers a comprehensive range of architectural and design services tailored to the needs of clients across Baguio City and Northern Luzon.
+            FPA Design Consultancy offers a comprehensive range of architectural and design services tailored to the needs of clients in the Philippines and worldwide.
           </p>
         </div>
       </section>

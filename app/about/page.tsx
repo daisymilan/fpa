@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About | Licensed Architect in Baguio City",
   description: "Learn about Arch. Friendzel B. Pengi, UAP — licensed architect and founder of FPA Design Consultancy in Baguio City.",
-  alternates: { canonical: "https://fpadesignconsultancy.com/about" },
+  alternates: { canonical: "https://www.fp-architect.com/about" },
 };
 
 const skills = [

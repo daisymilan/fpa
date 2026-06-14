@@ -3,8 +3,8 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact | Architect in Baguio City — Get a Consultation",
-  description: "Contact FPA Design Consultancy for architectural design, interior design, renovation, and building permit services in Baguio City and Northern Luzon. Call (074) 424 4644 or 0945 422 1874.",
-  alternates: { canonical: "https://fpadesignconsultancy.com/contact" },
+  description: "Contact FPA Design Consultancy for architectural design, interior design, renovation, and building permit services. Based in Baguio City, serving clients in the Philippines and worldwide. Call (074) 424 4644.",
+  alternates: { canonical: "https://www.fp-architect.com/contact" },
 };
 
 export default function ContactPage() {

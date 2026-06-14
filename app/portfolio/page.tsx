@@ -3,9 +3,9 @@ import { projects } from "@/lib/projects";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Architectural Projects in Northern Luzon",
-  description: "Browse the portfolio of FPA Design Consultancy — featuring residential homes, commercial buildings, and interior design projects across Baguio City, Benguet, Ifugao, La Union, and Northern Luzon.",
-  alternates: { canonical: "https://fpadesignconsultancy.com/portfolio" },
+  title: "Portfolio | FPA Design Consultancy — Architectural Projects",
+  description: "Browse the portfolio of FPA Design Consultancy — featuring residential homes, commercial buildings, and interior design projects in the Philippines and beyond.",
+  alternates: { canonical: "https://www.fp-architect.com/portfolio" },
 };
 
 export default function PortfolioPage() {
@@ -24,7 +24,7 @@ export default function PortfolioPage() {
             <span className="text-[#c41230]">Portfolio</span>
           </h1>
           <p className="text-fg-muted mt-6 max-w-xl text-sm leading-relaxed">
-            A curated selection of residential, commercial, and interior design projects across Northern Luzon.
+            A curated selection of residential, commercial, and interior design projects in the Philippines and beyond.
           </p>
         </div>
       </section>

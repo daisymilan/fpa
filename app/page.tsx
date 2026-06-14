@@ -10,9 +10,9 @@ import ContactCTA from "@/components/home/ContactCTA";
 export const metadata: Metadata = {
   title: "FPA Design Consultancy | Architect in Baguio City, Benguet",
   description:
-    "FPA Design Consultancy is a licensed architectural firm in Baguio City led by Arch. Friendzel B. Pengi, UAP. We design homes, commercial buildings, and interiors across Northern Luzon.",
+    "FPA Design Consultancy is a licensed architectural firm in Baguio City led by Arch. Friendzel B. Pengi, UAP. We design homes, commercial buildings, and interiors for clients in the Philippines and worldwide.",
   alternates: {
-    canonical: "https://fpadesignconsultancy.com",
+    canonical: "https://www.fp-architect.com",
   },
 };
 

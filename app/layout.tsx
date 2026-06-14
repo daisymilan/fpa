@@ -20,13 +20,13 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fpadesignconsultancy.com"),
+  metadataBase: new URL("https://www.fp-architect.com"),
   title: {
     default: "FPA Design Consultancy | Architect in Baguio City, Benguet",
     template: "%s | FPA Design Consultancy",
   },
   description:
-    "FPA Design Consultancy is a licensed architectural firm in Baguio City led by Arch. Friendzel B. Pengi, UAP. Specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance across Benguet, La Union, Pangasinan, and Northern Luzon.",
+    "FPA Design Consultancy is a licensed architectural firm in Baguio City led by Arch. Friendzel B. Pengi, UAP. Specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance — serving clients in the Philippines and worldwide.",
   keywords: [
     "architect Baguio",
     "architect Benguet",
@@ -47,11 +47,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: "https://fpadesignconsultancy.com",
+    url: "https://www.fp-architect.com",
     siteName: "FPA Design Consultancy",
     title: "FPA Design Consultancy | Architect in Baguio City, Benguet",
     description:
-      "Licensed architectural firm in Baguio City specializing in residential, commercial, and interior design across Northern Luzon.",
+      "Licensed architectural firm in Baguio City specializing in residential, commercial, and interior design — serving clients in the Philippines and worldwide.",
     images: [
       {
         url: "/images/og-image.jpg",

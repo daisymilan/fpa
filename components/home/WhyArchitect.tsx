@@ -17,7 +17,7 @@ const reasons = [
   },
   {
     title: "Climate-Responsive Design",
-    description: "Baguio's cool highland climate and Northern Luzon's typhoon exposure demand specific design strategies. We design buildings that respond intelligently to local conditions for comfort, durability, and energy efficiency.",
+    description: "Baguio's cool highland climate and the Philippines' typhoon and seismic exposure demand specific design strategies. We design buildings that respond intelligently to local conditions for comfort, durability, and energy efficiency.",
   },
   {
     title: "Project Coordination",

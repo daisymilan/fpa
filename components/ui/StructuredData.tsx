@@ -4,14 +4,14 @@ export default function StructuredData() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://fpadesignconsultancy.com/#business",
+        "@id": "https://www.fp-architect.com/#business",
         name: "FPA Design Consultancy",
         alternateName: "FPA Design",
         description:
           "Licensed architectural firm in Baguio City, Philippines specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance. Serving clients in the Philippines and worldwide.",
-        url: "https://fpadesignconsultancy.com",
-        logo: "https://fpadesignconsultancy.com/images/logo.png",
-        image: "https://fpadesignconsultancy.com/images/og-image.jpg",
+        url: "https://www.fp-architect.com",
+        logo: "https://www.fp-architect.com/images/logo.png",
+        image: "https://www.fp-architect.com/images/og-image.jpg",
         telephone: ["+63744244644", "+639454221874"],
         email: "fpadesignconsultancy@gmail.com",
         address: {
@@ -63,17 +63,17 @@ export default function StructuredData() {
       },
       {
         "@type": "Person",
-        "@id": "https://fpadesignconsultancy.com/#architect",
+        "@id": "https://www.fp-architect.com/#architect",
         name: "Friendzel B. Pengi",
         jobTitle: "Licensed Architect",
         honorificPrefix: "Arch.",
         honorificSuffix: "UAP",
-        worksFor: { "@id": "https://fpadesignconsultancy.com/#business" },
+        worksFor: { "@id": "https://www.fp-architect.com/#business" },
         alumniOf: {
           "@type": "CollegeOrUniversity",
           name: "Lyceum Northwestern University",
         },
-        image: "https://fpadesignconsultancy.com/images/about/architect.jpg",
+        image: "https://www.fp-architect.com/images/about/architect.jpg",
         knowsLanguage: ["English", "Filipino", "Ilocano"],
       },
     ],
