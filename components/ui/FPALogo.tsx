@@ -13,7 +13,7 @@ export default function FPALogo({
         style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
       >
         <span style={{ color: "var(--logo-fg)" }}>F</span>
-        <span className="text-[#c41230]">PA</span>
+        <span className="text-[#FF3B30]">PA</span>
       </span>
       <div className="flex flex-col leading-none">
         <span
@@ -22,7 +22,7 @@ export default function FPALogo({
         >
           Design
         </span>
-        <div className="w-full h-px bg-[#c41230] my-0.5" />
+        <div className="w-full h-px bg-[#FF3B30] my-0.5" />
         <span
           className="text-[10px] tracking-[0.18em] uppercase font-medium"
           style={{ color: "var(--logo-fg)" }}

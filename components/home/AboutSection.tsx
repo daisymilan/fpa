@@ -17,8 +17,8 @@ export default function AboutSection() {
           {/* Left: Text */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-px bg-[#c41230]" />
-              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">
+              <div className="w-8 h-px bg-[#FF3B30]" />
+              <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">
                 {tx.tag}
               </span>
             </div>
@@ -26,7 +26,7 @@ export default function AboutSection() {
             <h2 className="display-heading text-fg mb-8" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
               {tx.heading1}
               <br />
-              <span className="text-[#c41230]">{tx.heading2}</span>
+              <span className="text-[#FF3B30]">{tx.heading2}</span>
             </h2>
 
             <p className="text-fg-muted leading-relaxed mb-5 text-sm">
@@ -50,7 +50,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-2 gap-[1px]" style={{ background: "var(--gap-color)" }}>
             {statValues.map((value, i) => (
               <div key={value} className="bg-bg p-8 flex flex-col justify-between min-h-[160px] hover:bg-surface transition-colors group">
-                <span className="text-[#c41230] leading-none mb-4 display-heading" style={{ fontSize: "2.5rem" }}>
+                <span className="text-[#FF3B30] leading-none mb-4 display-heading" style={{ fontSize: "2.5rem" }}>
                   {value}
                 </span>
                 <span className="text-fg-dim text-sm leading-snug">{tx.statLabels[i]}</span>

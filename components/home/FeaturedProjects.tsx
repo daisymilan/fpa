@@ -18,13 +18,13 @@ export default function FeaturedProjects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#c41230]" />
-              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
+              <div className="w-8 h-px bg-[#FF3B30]" />
+              <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
             </div>
             <h2 className="display-heading text-fg" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
               {tx.heading1}
               <br />
-              <span className="text-[#c41230]">{tx.heading2}</span>
+              <span className="text-[#FF3B30]">{tx.heading2}</span>
             </h2>
           </div>
           <Link href="/portfolio" className="inline-flex items-center gap-3 text-fg text-xs font-semibold tracking-[0.2em] uppercase group flex-shrink-0">
@@ -47,7 +47,7 @@ export default function FeaturedProjects() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <span className="text-[#c41230] text-xs font-semibold tracking-[0.25em] uppercase block mb-2">
+                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.25em] uppercase block mb-2">
                   {projects[0].type} · {projects[0].location}
                 </span>
                 <h3 className="display-heading text-white mb-4" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}>
@@ -74,7 +74,7 @@ export default function FeaturedProjects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-[#c41230] text-xs font-semibold tracking-[0.25em] uppercase block mb-1">
+                  <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.25em] uppercase block mb-1">
                     {project.type} · {project.location}
                   </span>
                   <h3 className="display-heading text-white mb-3" style={{ fontSize: "1.25rem" }}>

@@ -13,14 +13,14 @@ export default function ContactCTA() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-px bg-[#c41230]" />
-            <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
+            <div className="w-8 h-px bg-[#FF3B30]" />
+            <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
           </div>
 
           <h2 className="display-heading text-fg mb-8" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}>
             {tx.heading1}
             <br />
-            <span className="text-[#c41230]">{tx.heading2}</span>
+            <span className="text-[#FF3B30]">{tx.heading2}</span>
           </h2>
 
           <p className="text-fg-muted text-lg leading-relaxed mb-10 max-w-xl">
@@ -30,7 +30,7 @@ export default function ContactCTA() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-10 py-4 bg-[#c41230] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#8b0000] transition-colors duration-200"
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#FF3B30] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#E0352B] transition-colors duration-200"
             >
               {tx.cta1}
             </Link>

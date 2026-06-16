@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Props) {
           <div className="flex items-center gap-3 mb-4">
             <Link href="/portfolio" className="text-white/60 text-xs tracking-widest uppercase hover:text-white transition-colors">Portfolio</Link>
             <span className="text-white/40">/</span>
-            <span className="text-[#c41230] text-xs tracking-widest uppercase">{project.type}</span>
+            <span className="text-[#FF3B30] text-xs tracking-widest uppercase">{project.type}</span>
           </div>
           <h1 className="display-heading text-white max-w-2xl" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>{project.name}</h1>
           <p className="text-white/60 mt-2 text-xs tracking-[0.2em] uppercase">{project.location}</p>
@@ -59,8 +59,8 @@ export default async function ProjectPage({ params }: Props) {
             {/* Left */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-px bg-[#c41230]" />
-                <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">Project Overview</span>
+                <div className="w-8 h-px bg-[#FF3B30]" />
+                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Project Overview</span>
               </div>
               <p className="text-fg-muted leading-relaxed mb-8 text-base">{project.description}</p>
               <h2 className="display-heading text-fg mb-4" style={{ fontSize: "1.5rem" }}>Design Concept</h2>
@@ -90,7 +90,7 @@ export default async function ProjectPage({ params }: Props) {
                 <ul className="space-y-3">
                   {project.keyFeatures.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#c41230] flex-shrink-0 mt-1.5" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF3B30] flex-shrink-0 mt-1.5" />
                       <span className="text-fg-dim text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}
@@ -105,8 +105,8 @@ export default async function ProjectPage({ params }: Props) {
       <section className="pb-20 bg-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-8 h-px bg-[#c41230]" />
-            <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">Project Gallery</span>
+            <div className="w-8 h-px bg-[#FF3B30]" />
+            <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Project Gallery</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
             {project.images.map((img, i) => (
@@ -124,8 +124,8 @@ export default async function ProjectPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex items-center justify-between mb-10">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-px bg-[#c41230]" />
-                <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">More Projects</span>
+                <div className="w-8 h-px bg-[#FF3B30]" />
+                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">More Projects</span>
               </div>
               <Link href="/portfolio" className="text-fg-dim text-xs tracking-widest uppercase hover:text-fg transition-colors">View All →</Link>
             </div>
@@ -137,9 +137,9 @@ export default async function ProjectPage({ params }: Props) {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-4 bg-surface group-hover:bg-surface-2 transition-colors duration-200 relative">
-                    <div className="absolute top-0 left-0 w-0 h-px bg-[#c41230] group-hover:w-full transition-all duration-500" />
-                    <span className="text-[#c41230] text-xs font-semibold tracking-widest uppercase block mb-1">{p.type} · {p.location}</span>
-                    <h3 className="display-heading text-fg group-hover:text-[#c41230] transition-colors" style={{ fontSize: "1rem" }}>{p.name}</h3>
+                    <div className="absolute top-0 left-0 w-0 h-px bg-[#FF3B30] group-hover:w-full transition-all duration-500" />
+                    <span className="text-[#FF3B30] text-xs font-semibold tracking-widest uppercase block mb-1">{p.type} · {p.location}</span>
+                    <h3 className="display-heading text-fg group-hover:text-[#FF3B30] transition-colors" style={{ fontSize: "1rem" }}>{p.name}</h3>
                   </div>
                 </Link>
               ))}
@@ -149,11 +149,11 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* CTA */}
-      <section className="py-20 bg-[#c41230]">
+      <section className="py-20 bg-[#FF3B30]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="display-heading text-white mb-4" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>Inspired? Let&apos;s Build Something Together.</h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto text-sm">Contact us to discuss your project and discover how FPA Design Consultancy can bring your vision to life.</p>
-          <Link href="/contact" className="inline-flex items-center justify-center px-10 py-4 bg-white text-[#c41230] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-stone-100 transition-colors">Start a Project</Link>
+          <Link href="/contact" className="inline-flex items-center justify-center px-10 py-4 bg-white text-[#FF3B30] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-stone-100 transition-colors">Start a Project</Link>
         </div>
       </section>
     </>

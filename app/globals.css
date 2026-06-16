@@ -10,8 +10,8 @@
   --color-fg-muted: var(--fg-muted);
   --color-fg-dim: var(--fg-dim);
   --color-fg-faint: var(--fg-faint);
-  --color-primary: #c41230;
-  --color-primary-dark: #8b0000;
+  --color-primary: #FF3B30;
+  --color-primary-dark: #E0352B;
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cormorant);
 }
@@ -85,13 +85,13 @@ body {
 }
 
 ::selection {
-  background-color: #c41230;
+  background-color: #FF3B30;
   color: #ffffff;
 }
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #c41230; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #FF3B30; border-radius: 2px; }
 
 .section-padding {
   padding-top: 5rem;

@@ -52,7 +52,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-200 ${
-                  pathname === link.href ? "text-[#c41230]" : ""
+                  pathname === link.href ? "text-[#FF3B30]" : ""
                 }`}
                 style={pathname !== link.href ? { color: "var(--nav-link)" } : undefined}
                 onMouseEnter={(e) => pathname !== link.href && ((e.target as HTMLElement).style.color = "var(--nav-link-hover)")}
@@ -65,7 +65,7 @@ export default function Navbar() {
             <LanguageSelector />
             <Link
               href="/contact"
-              className="ml-2 px-5 py-2.5 border border-[#c41230] text-[#c41230] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#c41230] hover:text-white transition-all duration-200"
+              className="ml-2 px-5 py-2.5 border border-[#FF3B30] text-[#FF3B30] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#FF3B30] hover:text-white transition-all duration-200"
             >
               {tx.nav.quote}
             </Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`py-3 text-xs font-medium tracking-[0.2em] uppercase border-b transition-colors ${
-                pathname === link.href ? "text-[#c41230]" : ""
+                pathname === link.href ? "text-[#FF3B30]" : ""
               }`}
               style={{
                 borderBottomColor: "var(--border)",
@@ -113,7 +113,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-4 py-3 border border-[#c41230] text-[#c41230] text-xs font-semibold tracking-[0.2em] uppercase text-center hover:bg-[#c41230] hover:text-white transition-all"
+            className="mt-4 py-3 border border-[#FF3B30] text-[#FF3B30] text-xs font-semibold tracking-[0.2em] uppercase text-center hover:bg-[#FF3B30] hover:text-white transition-all"
           >
             {tx.nav.quote}
           </Link>

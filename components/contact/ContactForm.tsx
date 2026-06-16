@@ -38,8 +38,8 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6" style={{ background: "rgba(196,18,48,0.1)", border: "1px solid rgba(196,18,48,0.2)" }}>
-          <svg className="w-8 h-8 text-[#c41230]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6" style={{ background: "rgba(255,59,48,0.1)", border: "1px solid rgba(255,59,48,0.2)" }}>
+          <svg className="w-8 h-8 text-[#FF3B30]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -60,7 +60,7 @@ export default function ContactForm() {
           <label htmlFor="name" className={labelClass}>{tx.nameLabel}</label>
           <input id="name" name="name" type="text" required value={form.name} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="Juan dela Cruz"
-            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
         </div>
@@ -68,7 +68,7 @@ export default function ContactForm() {
           <label htmlFor="email" className={labelClass}>{tx.emailLabel}</label>
           <input id="email" name="email" type="email" required value={form.email} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="juan@email.com"
-            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
         </div>
@@ -79,7 +79,7 @@ export default function ContactForm() {
           <label htmlFor="phone" className={labelClass}>{tx.phoneLabel}</label>
           <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="09XX XXX XXXX"
-            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           />
         </div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
           <label htmlFor="projectType" className={labelClass}>{tx.typeLabel}</label>
           <select id="projectType" name="projectType" required value={form.projectType} onChange={handleChange}
             className={`${inputClass} appearance-none`} style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+            onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           >
             <option value="">{tx.typePlaceholder}</option>
@@ -100,7 +100,7 @@ export default function ContactForm() {
         <label htmlFor="location" className={labelClass}>{tx.locationLabel}</label>
         <input id="location" name="location" type="text" value={form.location} onChange={handleChange}
           className={inputClass} style={inputStyle} placeholder="City / Municipality / Province"
-          onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+          onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
           onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
       </div>
@@ -110,20 +110,20 @@ export default function ContactForm() {
         <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange}
           className={`${inputClass} resize-none`} style={inputStyle}
           placeholder={tx.messagePlaceholder}
-          onFocus={(e) => (e.target.style.borderColor = "#c41230")}
+          onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
           onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
       </div>
 
       <button
         type="submit" disabled={status === "sending"}
-        className="w-full py-4 bg-[#c41230] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#8b0000] transition-colors duration-200 disabled:opacity-60"
+        className="w-full py-4 bg-[#FF3B30] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#E0352B] transition-colors duration-200 disabled:opacity-60"
       >
         {status === "sending" ? tx.sending : tx.submit}
       </button>
 
       {status === "error" && (
-        <p className="text-[#c41230] text-sm text-center">
+        <p className="text-[#FF3B30] text-sm text-center">
           {tx.errorMsg}
         </p>
       )}

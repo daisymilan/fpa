@@ -67,8 +67,8 @@ export default function Hero() {
         <div className="max-w-2xl">
           {/* Category label */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-px bg-[#c41230]" />
-            <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">
+            <div className="w-8 h-px bg-[#FF3B30]" />
+            <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">
               {tx.labels[current]}
             </span>
           </div>
@@ -84,7 +84,7 @@ export default function Hero() {
           >
             {tx.heading1}
             <br />
-            <span className="text-[#c41230]">{tx.heading2}</span>
+            <span className="text-[#FF3B30]">{tx.heading2}</span>
           </h1>
 
           <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
@@ -94,7 +94,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#c41230] text-white text-sm font-semibold tracking-widest uppercase hover:bg-[#8b0000] transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#FF3B30] text-white text-sm font-semibold tracking-widest uppercase hover:bg-[#E0352B] transition-colors duration-200"
             >
               {tx.cta1}
             </Link>
@@ -115,7 +115,7 @@ export default function Hero() {
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`transition-all duration-300 ${
-                i === current ? "w-8 h-1 bg-[#c41230]" : "w-4 h-1 bg-white/40 hover:bg-white/70"
+                i === current ? "w-8 h-1 bg-[#FF3B30]" : "w-4 h-1 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}

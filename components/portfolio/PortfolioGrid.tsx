@@ -34,7 +34,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
             onClick={() => setActiveIndex(i)}
             className={`px-5 py-2 text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200 ${
               activeIndex === i
-                ? "bg-[#c41230] text-white border border-[#c41230]"
+                ? "bg-[#FF3B30] text-white border border-[#FF3B30]"
                 : "text-fg-dim hover:text-fg"
             }`}
             style={activeIndex !== i ? { border: "1px solid var(--border-strong)" } : undefined}
@@ -63,11 +63,11 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
             </div>
             <div className="p-5 bg-bg group-hover:bg-surface transition-colors duration-300 relative">
-              <div className="absolute top-0 left-0 w-0 h-px bg-[#c41230] group-hover:w-full transition-all duration-500" />
-              <span className="text-[#c41230] text-xs font-semibold tracking-widest uppercase block mb-1">
+              <div className="absolute top-0 left-0 w-0 h-px bg-[#FF3B30] group-hover:w-full transition-all duration-500" />
+              <span className="text-[#FF3B30] text-xs font-semibold tracking-widest uppercase block mb-1">
                 {project.type} · {project.location}
               </span>
-              <h3 className="display-heading text-fg group-hover:text-[#c41230] transition-colors duration-200" style={{ fontSize: "1.2rem" }}>
+              <h3 className="display-heading text-fg group-hover:text-[#FF3B30] transition-colors duration-200" style={{ fontSize: "1.2rem" }}>
                 {project.name}
               </h3>
             </div>

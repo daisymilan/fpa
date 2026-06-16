@@ -64,7 +64,7 @@ export default function LanguageSelector() {
                 onClick={() => { setLang(l.code as Language); setOpen(false); }}
                 className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-left transition-colors duration-150"
                 style={{
-                  color: isActive ? "#c41230" : "var(--fg-muted)",
+                  color: isActive ? "#FF3B30" : "var(--fg-muted)",
                   background: isActive ? "var(--overlay)" : "transparent",
                 }}
                 onMouseEnter={(e) => {
@@ -83,7 +83,7 @@ export default function LanguageSelector() {
                 <span className="text-base leading-none">{l.flag}</span>
                 <span className="font-medium">{l.label}</span>
                 {isActive && (
-                  <svg className="w-3 h-3 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: "#c41230" }}>
+                  <svg className="w-3 h-3 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: "#FF3B30" }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                 )}

@@ -14,13 +14,13 @@ export default function WhyArchitect() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end mb-16">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#c41230]" />
-              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
+              <div className="w-8 h-px bg-[#FF3B30]" />
+              <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
             </div>
             <h2 className="display-heading text-fg" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
               {tx.heading1}
               <br />
-              <span className="text-[#c41230]">{tx.heading2}</span>
+              <span className="text-[#FF3B30]">{tx.heading2}</span>
             </h2>
           </div>
           <p className="text-fg-muted leading-relaxed text-sm">
@@ -42,10 +42,10 @@ export default function WhyArchitect() {
               }}
             >
               <div className="flex items-center justify-between">
-                <h3 className="display-heading text-fg group-hover:text-[#c41230] transition-colors duration-200 text-sm" style={{ letterSpacing: "0.12em" }}>
+                <h3 className="display-heading text-fg group-hover:text-[#FF3B30] transition-colors duration-200 text-sm" style={{ letterSpacing: "0.12em" }}>
                   {reason.title}
                 </h3>
-                <div className="w-16 h-px bg-[#c41230]/60 flex-shrink-0 ml-4" />
+                <div className="w-16 h-px bg-[#FF3B30]/60 flex-shrink-0 ml-4" />
               </div>
               <p className="text-fg-dim text-sm leading-relaxed">{reason.description}</p>
             </div>

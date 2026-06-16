@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:CLAUDE_CODE_MAX_OUTPUT_TOKENS = \"100000\"; Write-Output \"CLAUDE_CODE_MAX_OUTPUT_TOKENS set to: $env:CLAUDE_CODE_MAX_OUTPUT_TOKENS\")",
+      "Bash(npx tsc *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git remote *)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\logo.png\" -Destination \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\app\\\\icon.png\" -Force)"
+    ]
+  }
+}
