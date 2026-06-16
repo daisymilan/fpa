@@ -22,6 +22,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/portfolio/project-1/cover.jpg",
     images: [
+      "/images/portfolio/project-1/cover.jpg",
       "/images/portfolio/project-1/master-bedroom.jpg",
       "/images/portfolio/project-1/loft-lounge.jpg",
       "/images/portfolio/project-1/living-room.jpg",
@@ -52,6 +53,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/portfolio/project-2/cover.jpg",
     images: [
+      "/images/portfolio/project-2/cover.jpg",
       "/images/portfolio/project-2/interior-living.jpg",
       "/images/portfolio/project-2/exterior-dusk.jpg",
       "/images/portfolio/project-2/exterior-pool.jpg",
@@ -79,6 +81,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/portfolio/project-3/cover.jpg",
     images: [
+      "/images/portfolio/project-3/cover.jpg",
       "/images/portfolio/project-3/front-elevation.jpg",
       "/images/portfolio/project-3/side-view.jpg",
       "/images/portfolio/project-3/carport-angle.jpg",
@@ -109,6 +112,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/portfolio/project-5/cover.jpg",
     images: [
+      "/images/portfolio/project-5/cover.jpg",
       "/images/portfolio/project-5/exterior-detail.jpg",
       "/images/portfolio/project-5/foyer.jpg",
       "/images/portfolio/project-5/courtyard.jpg",
@@ -142,6 +146,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/portfolio/project-6/cover.jpg",
     images: [
+      "/images/portfolio/project-6/cover.jpg",
       "/images/portfolio/project-6/before-empty.jpg",
       "/images/portfolio/project-6/before-construction.jpg",
       "/images/portfolio/project-6/during-niche.jpg",
@@ -170,6 +175,7 @@ export const projects: Project[] = [
     ],
     coverImage: "/images/portfolio/project-4/cover.jpg",
     images: [
+      "/images/portfolio/project-4/cover.jpg",
       "/images/portfolio/project-4/exterior-composite.jpg",
       "/images/portfolio/project-4/interior-open-plan.jpg",
       "/images/portfolio/project-4/reception.jpg",
