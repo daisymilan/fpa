@@ -8,7 +8,8 @@
       "Bash(git push *)",
       "Bash(git remote *)",
       "PowerShell(Copy-Item \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\logo.png\" -Destination \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\app\\\\icon.png\" -Force)",
-      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\portfolio\\\\project-5\")"
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\portfolio\\\\project-5\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\portfolio\\\\project-6\")"
     ]
   }
 }

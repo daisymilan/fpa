@@ -121,6 +121,35 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "home-office-renovation-baguio",
+    name: "Home Office Room Renovation",
+    type: "Renovation",
+    location: "Baguio City, Benguet",
+    description:
+      "A compact room renovation that transformed a raw, unfinished shell into a fully functional and atmospherically rich home office. Working within a tight footprint, the design maximizes every surface — from the backlit floating desk niche to the wall-mounted organization system — delivering a space that feels intentional, professional, and distinctly personal.",
+    concept:
+      "The design draws on an industrial-meets-warm-contemporary aesthetic, using concrete microcement wall texture and a barn-door sliding system to ground the space in tactility, while LED strip ceiling lighting and a backlit 3D diamond panel feature wall introduce controlled drama and ambiance. The result is a workspace that performs equally well as a focused study room and a content creation studio — a complete before-to-after transformation of what was once a bare, neglected room.",
+    keyFeatures: [
+      "Full room transformation from unfinished bare shell to polished home office",
+      "Backlit floating desk niche with 3D diamond-textured feature panel",
+      "LED strip perimeter ceiling lighting for warm ambient glow",
+      "Industrial barn door in dark steel finish for space-efficient access",
+      "Concrete microcement wall texture applied throughout",
+      "Wall-mounted desk organizer with cork board, blackboard, and magnetic panels",
+      "Ergonomic gaming and content creation desk setup",
+      "Integrated window plant shelf with succulents and cacti",
+      "Woven rattan ceiling pendant for warmth against the industrial palette",
+    ],
+    coverImage: "/images/portfolio/project-6/cover.jpg",
+    images: [
+      "/images/portfolio/project-6/before-empty.jpg",
+      "/images/portfolio/project-6/before-construction.jpg",
+      "/images/portfolio/project-6/during-niche.jpg",
+      "/images/portfolio/project-6/after-gaming.jpg",
+    ],
+    featured: false,
+  },
+  {
     slug: "3-storey-office-building-ifugao",
     name: "3 Storey Office Building",
     type: "Commercial",
