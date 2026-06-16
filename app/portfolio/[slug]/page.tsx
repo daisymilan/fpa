@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getProjectBySlug, projects } from "@/lib/projects";
+import ProjectGallery from "@/components/portfolio/ProjectGallery";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -108,13 +109,7 @@ export default async function ProjectPage({ params }: Props) {
             <div className="w-8 h-px bg-[#FF3B30]" />
             <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Project Gallery</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-            {project.images.map((img, i) => (
-              <div key={img} className={`relative overflow-hidden bg-surface ${i === 0 ? "md:col-span-2 h-96" : "h-64"}`}>
-                <Image src={img} alt={`${project.name} — image ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-700" sizes={i === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"} />
-              </div>
-            ))}
-          </div>
+          <ProjectGallery images={project.images} projectName={project.name} />
         </div>
       </section>
 
