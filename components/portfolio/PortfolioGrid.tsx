@@ -4,37 +4,42 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
-const categories = ["All", "Residential", "Commercial", "Interior Design", "Renovation"] as const;
+const categoryValues = ["All", "Residential", "Commercial", "Interior Design", "Renovation"] as const;
 
 interface PortfolioGridProps {
   projects: Project[];
 }
 
 export default function PortfolioGrid({ projects }: PortfolioGridProps) {
-  const [active, setActive] = useState<string>("All");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { lang } = useLanguage();
+  const tx = t[lang].portfolioPage;
 
+  const activeValue = categoryValues[activeIndex];
   const filtered =
-    active === "All"
+    activeValue === "All"
       ? projects
-      : projects.filter((p) => p.type === active);
+      : projects.filter((p) => p.type === activeValue);
 
   return (
     <div>
       {/* Filter tabs */}
       <div className="flex flex-wrap gap-2 mb-12">
-        {categories.map((cat) => (
+        {tx.categories.map((label, i) => (
           <button
-            key={cat}
-            onClick={() => setActive(cat)}
+            key={i}
+            onClick={() => setActiveIndex(i)}
             className={`px-5 py-2 text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200 ${
-              active === cat
+              activeIndex === i
                 ? "bg-[#c41230] text-white border border-[#c41230]"
                 : "text-fg-dim hover:text-fg"
             }`}
-            style={active !== cat ? { border: "1px solid var(--border-strong)" } : undefined}
+            style={activeIndex !== i ? { border: "1px solid var(--border-strong)" } : undefined}
           >
-            {cat}
+            {label}
           </button>
         ))}
       </div>
@@ -72,7 +77,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
 
       {filtered.length === 0 && (
         <div className="text-center py-20 text-fg-faint">
-          No projects in this category yet.
+          {tx.empty}
         </div>
       )}
     </div>

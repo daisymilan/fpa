@@ -1,13 +1,12 @@
 "use client";
 
 import { useState } from "react";
-
-const projectTypes = [
-  "Residential Design","Commercial Design","Interior Design","Renovation",
-  "Space Planning","Building Permit","3D Visualization","Other",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 export default function ContactForm() {
+  const { lang } = useLanguage();
+  const tx = t[lang].form;
   const [form, setForm] = useState({ name: "", email: "", phone: "", projectType: "", location: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -45,10 +44,10 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="display-heading text-fg mb-3" style={{ fontSize: "1.75rem" }}>
-          Thank You, {form.name}!
+          {tx.successTitle.replace('{name}', form.name)}
         </h3>
         <p className="text-fg-dim text-sm">
-          We have received your message and will get back to you within 1–2 business days.
+          {tx.successDesc}
         </p>
       </div>
     );
@@ -58,7 +57,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className={labelClass}>Full Name *</label>
+          <label htmlFor="name" className={labelClass}>{tx.nameLabel}</label>
           <input id="name" name="name" type="text" required value={form.name} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="Juan dela Cruz"
             onFocus={(e) => (e.target.style.borderColor = "#c41230")}
@@ -66,7 +65,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className={labelClass}>Email Address *</label>
+          <label htmlFor="email" className={labelClass}>{tx.emailLabel}</label>
           <input id="email" name="email" type="email" required value={form.email} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="juan@email.com"
             onFocus={(e) => (e.target.style.borderColor = "#c41230")}
@@ -77,7 +76,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className={labelClass}>Phone Number</label>
+          <label htmlFor="phone" className={labelClass}>{tx.phoneLabel}</label>
           <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="09XX XXX XXXX"
             onFocus={(e) => (e.target.style.borderColor = "#c41230")}
@@ -85,20 +84,20 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="projectType" className={labelClass}>Project Type *</label>
+          <label htmlFor="projectType" className={labelClass}>{tx.typeLabel}</label>
           <select id="projectType" name="projectType" required value={form.projectType} onChange={handleChange}
             className={`${inputClass} appearance-none`} style={inputStyle}
             onFocus={(e) => (e.target.style.borderColor = "#c41230")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
           >
-            <option value="">Select a service...</option>
-            {projectTypes.map((type) => <option key={type} value={type}>{type}</option>)}
+            <option value="">{tx.typePlaceholder}</option>
+            {tx.projectTypes.map((type) => <option key={type} value={type}>{type}</option>)}
           </select>
         </div>
       </div>
 
       <div>
-        <label htmlFor="location" className={labelClass}>Project Location</label>
+        <label htmlFor="location" className={labelClass}>{tx.locationLabel}</label>
         <input id="location" name="location" type="text" value={form.location} onChange={handleChange}
           className={inputClass} style={inputStyle} placeholder="City / Municipality / Province"
           onFocus={(e) => (e.target.style.borderColor = "#c41230")}
@@ -107,10 +106,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className={labelClass}>Project Description *</label>
+        <label htmlFor="message" className={labelClass}>{tx.messageLabel}</label>
         <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange}
           className={`${inputClass} resize-none`} style={inputStyle}
-          placeholder="Tell us about your project — type, size, budget range, timeline, and any specific requirements..."
+          placeholder={tx.messagePlaceholder}
           onFocus={(e) => (e.target.style.borderColor = "#c41230")}
           onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
@@ -120,16 +119,16 @@ export default function ContactForm() {
         type="submit" disabled={status === "sending"}
         className="w-full py-4 bg-[#c41230] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#8b0000] transition-colors duration-200 disabled:opacity-60"
       >
-        {status === "sending" ? "Sending..." : "Send Message"}
+        {status === "sending" ? tx.sending : tx.submit}
       </button>
 
       {status === "error" && (
         <p className="text-[#c41230] text-sm text-center">
-          Something went wrong. Please try again or email us directly at fpadesignconsultancy@gmail.com.
+          {tx.errorMsg}
         </p>
       )}
       <p className="text-fg-faint text-xs text-center">
-        We respond to all inquiries within 1–2 business days.
+        {tx.note}
       </p>
     </form>
   );

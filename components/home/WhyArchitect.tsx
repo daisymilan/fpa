@@ -1,31 +1,12 @@
-const reasons = [
-  {
-    title: "Legal Compliance",
-    description: "A licensed architect ensures your project complies with the National Building Code of the Philippines, local zoning laws, and safety regulations — protecting you from legal liability and costly corrections.",
-  },
-  {
-    title: "Structural Safety",
-    description: "Architects design with structural integrity in mind, coordinating with structural engineers to ensure your building is safe, durable, and engineered for local conditions including seismic and typhoon loads.",
-  },
-  {
-    title: "Long-Term Cost Savings",
-    description: "Proper design planning eliminates costly change orders during construction. An architect optimizes your floor plan, materials, and systems — reducing waste and maximizing the value of every peso spent.",
-  },
-  {
-    title: "Optimized Space Planning",
-    description: "Great architecture is about making every square meter work harder. Architects create spaces that flow naturally, feel generous, and serve your daily life far better than an unplanned structure ever could.",
-  },
-  {
-    title: "Climate-Responsive Design",
-    description: "Baguio's cool highland climate and the Philippines' typhoon and seismic exposure demand specific design strategies. We design buildings that respond intelligently to local conditions for comfort, durability, and energy efficiency.",
-  },
-  {
-    title: "Project Coordination",
-    description: "Your architect is the single point of accountability, coordinating engineers, contractors, and suppliers to keep your project on schedule, on budget, and aligned with your original vision.",
-  },
-];
+"use client";
+
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 export default function WhyArchitect() {
+  const { lang } = useLanguage();
+  const tx = t[lang].why;
+
   return (
     <section className="section-padding bg-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -34,30 +15,30 @@ export default function WhyArchitect() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-[#c41230]" />
-              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">The Value of Professional Design</span>
+              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
             </div>
             <h2 className="display-heading text-fg" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-              Why Hire a Licensed
+              {tx.heading1}
               <br />
-              Architect?
+              <span className="text-[#c41230]">{tx.heading2}</span>
             </h2>
           </div>
           <p className="text-fg-muted leading-relaxed text-sm">
-            Building without professional design guidance is one of the most common and costly mistakes a property owner can make. Here is why working with a licensed architect protects your investment.
+            {tx.intro}
           </p>
         </div>
 
-        {/* Capabilities list */}
+        {/* Reasons grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0" style={{ "--tw-divide-opacity": 1 } as React.CSSProperties}>
-          {reasons.map((reason, i) => (
+          {tx.reasons.map((reason, i) => (
             <div
-              key={reason.title}
+              key={i}
               className={`py-8 px-0 flex flex-col gap-3 group ${
                 i % 2 === 0 ? "md:pr-12" : "md:pl-12"
               }`}
               style={{
                 borderRight: i % 2 === 0 ? `1px solid var(--border)` : undefined,
-                borderBottom: i < reasons.length - 2 ? `1px solid var(--border)` : undefined,
+                borderBottom: i < tx.reasons.length - 2 ? `1px solid var(--border)` : undefined,
               }}
             >
               <div className="flex items-center justify-between">

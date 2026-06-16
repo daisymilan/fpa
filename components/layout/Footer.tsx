@@ -1,26 +1,24 @@
+"use client";
+
 import Link from "next/link";
 import FPALogo from "@/components/ui/FPALogo";
-
-const services = [
-  "Architectural Design",
-  "Interior Design",
-  "Renovation Design",
-  "Space Planning",
-  "Project Management",
-  "Building Permit Assistance",
-  "3D Visualization",
-  "CAD Drafting",
-];
-
-const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/contact", label: "Contact" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 export default function Footer() {
+  const { lang } = useLanguage();
+  const tx = t[lang].footer;
+  const nav = t[lang].nav;
+  const serviceItems = t[lang].services.items;
+
+  const quickLinks = [
+    { href: "/", label: nav.home },
+    { href: "/about", label: nav.about },
+    { href: "/services", label: nav.services },
+    { href: "/portfolio", label: nav.portfolio },
+    { href: "/contact", label: nav.contact },
+  ];
+
   return (
     <footer className="bg-bg text-fg-muted" style={{ borderTop: "1px solid var(--border)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
@@ -29,11 +27,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <FPALogo className="h-10 mb-6" />
             <p className="text-fg-dim text-sm leading-relaxed mb-6">
-              Designing Spaces. Building Futures.
+              {tx.tagline}
             </p>
             <p className="text-fg-dim text-sm leading-relaxed">
-              Licensed architectural firm based in Baguio City, serving clients
-              in the Philippines and worldwide.
+              {tx.desc}
             </p>
             <div className="flex gap-4 mt-6">
               <a
@@ -66,7 +63,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-fg text-sm font-semibold tracking-widest uppercase mb-6">
-              Quick Links
+              {tx.quickLinksLabel}
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -82,13 +79,13 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-fg text-sm font-semibold tracking-widest uppercase mb-6">
-              Services
+              {tx.servicesLabel}
             </h3>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
+              {serviceItems.map((service, i) => (
+                <li key={i}>
                   <Link href="/services" className="text-fg-dim text-sm hover:text-[#c41230] transition-colors duration-200">
-                    {service}
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -98,7 +95,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-fg text-sm font-semibold tracking-widest uppercase mb-6">
-              Contact Us
+              {tx.contactLabel}
             </h3>
             <ul className="space-y-4">
               <li className="flex gap-3">

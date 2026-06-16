@@ -4,12 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
-const stats = [
-  { value: "UAP", label: "Member, United Architects of the Philippines" },
-  { value: "SO2", label: "Certified Safety Officer" },
-  { value: "Global", label: "Worldwide Project Reach" },
-  { value: "360°", label: "Full-Service Architecture & Design" },
-];
+const statValues = ["UAP", "SO2", "Global", "360°"];
 
 export default function AboutSection() {
   const { lang } = useLanguage();
@@ -39,11 +34,7 @@ export default function AboutSection() {
             </p>
 
             <p className="text-fg-muted leading-relaxed mb-10 text-sm">
-              Our approach is rooted in the belief that every project — from a
-              family home to a commercial building — deserves rigorous design
-              thinking, climate-responsive planning, and meticulous execution.
-              We guide clients from initial concept through building permit
-              approval and construction completion.
+              {tx.p2}
             </p>
 
             <Link
@@ -57,12 +48,12 @@ export default function AboutSection() {
 
           {/* Right: Stats grid */}
           <div className="grid grid-cols-2 gap-[1px]" style={{ background: "var(--gap-color)" }}>
-            {stats.map((stat) => (
-              <div key={stat.value} className="bg-bg p-8 flex flex-col justify-between min-h-[160px] hover:bg-surface transition-colors group">
+            {statValues.map((value, i) => (
+              <div key={value} className="bg-bg p-8 flex flex-col justify-between min-h-[160px] hover:bg-surface transition-colors group">
                 <span className="text-[#c41230] leading-none mb-4 display-heading" style={{ fontSize: "2.5rem" }}>
-                  {stat.value}
+                  {value}
                 </span>
-                <span className="text-fg-dim text-sm leading-snug">{stat.label}</span>
+                <span className="text-fg-dim text-sm leading-snug">{tx.statLabels[i]}</span>
               </div>
             ))}
           </div>

@@ -1,9 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { getFeaturedProjects } from "@/lib/projects";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { t } from "@/lib/translations";
 
 export default function FeaturedProjects() {
   const projects = getFeaturedProjects();
+  const { lang } = useLanguage();
+  const tx = t[lang].projects;
 
   return (
     <section className="section-padding bg-bg">
@@ -13,16 +19,16 @@ export default function FeaturedProjects() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-[#c41230]" />
-              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">Our Work</span>
+              <span className="text-[#c41230] text-xs font-semibold tracking-[0.3em] uppercase">{tx.tag}</span>
             </div>
             <h2 className="display-heading text-fg" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-              Featured
+              {tx.heading1}
               <br />
-              Projects
+              <span className="text-[#c41230]">{tx.heading2}</span>
             </h2>
           </div>
           <Link href="/portfolio" className="inline-flex items-center gap-3 text-fg text-xs font-semibold tracking-[0.2em] uppercase group flex-shrink-0">
-            Full Portfolio
+            {tx.cta}
             <span className="block w-8 h-px group-hover:w-14 transition-all duration-300" style={{ background: "var(--fg)" }} />
           </Link>
         </div>
@@ -48,7 +54,7 @@ export default function FeaturedProjects() {
                   {projects[0].name}
                 </h3>
                 <Link href={`/portfolio/${projects[0].slug}`} className="inline-flex items-center gap-2 text-white/70 text-xs tracking-widest uppercase hover:text-white group/link">
-                  View Project
+                  {tx.viewProject}
                   <span className="w-6 h-px bg-white/60 group-hover/link:w-10 transition-all duration-300" />
                 </Link>
               </div>
@@ -75,7 +81,7 @@ export default function FeaturedProjects() {
                     {project.name}
                   </h3>
                   <Link href={`/portfolio/${project.slug}`} className="inline-flex items-center gap-2 text-white/70 text-xs tracking-widest uppercase hover:text-white group/link">
-                    View Project
+                    {tx.viewProject}
                     <span className="w-6 h-px bg-white/60 group-hover/link:w-10 transition-all duration-300" />
                   </Link>
                 </div>
