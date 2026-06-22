@@ -5,11 +5,21 @@ import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
-const skills = [
-  "Architectural Design", "Construction Project Management", "Construction Supervision",
-  "Interior Design", "Space Planning", "Cabinet Design", "Renovation Design",
-  "Building Permit Documentation", "Revit Architecture", "SketchUp", "Lumion",
-  "Enscape", "AutoCAD", "Project Coordination",
+const skills: { label: string; href?: string }[] = [
+  { label: "Architectural Design", href: "/services/architectural-design" },
+  { label: "Construction Project Management", href: "/services/construction-project-management" },
+  { label: "Construction Supervision", href: "/services/construction-supervision" },
+  { label: "Interior Design", href: "/services/interior-design" },
+  { label: "Space Planning", href: "/services/space-planning" },
+  { label: "Cabinet Design", href: "/services/cabinet-design" },
+  { label: "Renovation Design", href: "/services/renovation-remodeling" },
+  { label: "Building Permit Documentation", href: "/services/building-permit-documentation" },
+  { label: "Revit Architecture" },
+  { label: "SketchUp" },
+  { label: "Lumion" },
+  { label: "Enscape" },
+  { label: "AutoCAD" },
+  { label: "Project Coordination" },
 ];
 
 const certifications = [
@@ -73,6 +83,15 @@ export default function AboutContent() {
                 {tx.bio.map((para, i) => <p key={i}>{para}</p>)}
               </div>
 
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link href="/services" className="inline-flex items-center justify-center px-8 py-3 bg-[#FF3B30] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#E0352B] transition-colors duration-200">
+                  Our Services
+                </Link>
+                <Link href="/portfolio" className="inline-flex items-center justify-center px-8 py-3 text-fg text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200" style={{ border: "1px solid var(--border-strong)" }}>
+                  View Our Work
+                </Link>
+              </div>
+
               <div className="mt-8 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
                 <p className="text-xs text-fg-faint tracking-widest uppercase mb-3">{tx.langTag}</p>
                 <div className="flex gap-3 flex-wrap">
@@ -114,9 +133,22 @@ export default function AboutContent() {
               </div>
               <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>{tx.skillsHeading}</h2>
               <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span key={skill} className="px-4 py-2 text-fg-muted text-sm hover:text-fg transition-colors duration-200" style={{ border: "1px solid var(--border-strong)" }}>{skill}</span>
-                ))}
+                {skills.map((skill) =>
+                  skill.href ? (
+                    <Link
+                      key={skill.label}
+                      href={skill.href}
+                      className="px-4 py-2 text-fg-muted text-sm hover:text-[#FF3B30] hover:border-[#FF3B30] transition-colors duration-200"
+                      style={{ border: "1px solid var(--border-strong)" }}
+                    >
+                      {skill.label}
+                    </Link>
+                  ) : (
+                    <span key={skill.label} className="px-4 py-2 text-fg-muted text-sm hover:text-fg transition-colors duration-200" style={{ border: "1px solid var(--border-strong)" }}>
+                      {skill.label}
+                    </span>
+                  )
+                )}
               </div>
             </div>
 

@@ -8,6 +8,7 @@ export interface Project {
   keyFeatures: string[];
   coverImage: string;
   images: string[];
+  imageAlts: string[];
   featured: boolean;
 }
 

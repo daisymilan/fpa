@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProjectBySlug, projects } from "@/lib/projects";
 import ProjectGallery from "@/components/portfolio/ProjectGallery";
+import ProjectStructuredData from "@/components/ui/ProjectStructuredData";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -18,13 +19,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title: `${project.name} — ${project.type} in ${project.location}`,
+    title: `${project.name} — ${project.type} in ${project.location} | FPA Design Consultancy`,
     description: project.description,
     alternates: { canonical: `https://www.fp-architect.com/portfolio/${slug}` },
     openGraph: {
       title: `${project.name} | FPA Design Consultancy`,
       description: project.description,
-      images: [{ url: project.coverImage, alt: project.name }],
+      url: `https://www.fp-architect.com/portfolio/${slug}`,
+      images: [
+        {
+          url: project.coverImage,
+          width: 1200,
+          height: 630,
+          alt: `${project.name} — ${project.type} in ${project.location} by FPA Design Consultancy`,
+        },
+      ],
     },
   };
 }
@@ -38,9 +47,18 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
+      <ProjectStructuredData project={project} />
+
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
-        <Image src={project.coverImage} alt={project.name} fill priority className="object-cover object-center" sizes="100vw" />
+        <Image
+          src={project.coverImage}
+          alt={project.imageAlts[0] ?? `${project.name} — ${project.type} in ${project.location} by FPA Design Consultancy`}
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-8 flex flex-col justify-end pb-16">
           <div className="flex items-center gap-3 mb-4">
@@ -109,7 +127,7 @@ export default async function ProjectPage({ params }: Props) {
             <div className="w-8 h-px bg-[#FF3B30]" />
             <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Project Gallery</span>
           </div>
-          <ProjectGallery images={project.images} projectName={project.name} />
+          <ProjectGallery images={project.images} imageAlts={project.imageAlts} projectName={project.name} />
         </div>
       </section>
 

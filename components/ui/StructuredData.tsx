@@ -1,23 +1,26 @@
 export default function StructuredData() {
+  const baseUrl = "https://www.fp-architect.com";
+
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": "https://www.fp-architect.com/#business",
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": `${baseUrl}/#business`,
         name: "FPA Design Consultancy",
         alternateName: "FPA Design",
         description:
           "Licensed architectural firm in Baguio City, Philippines specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance. Serving clients in the Philippines and worldwide.",
-        url: "https://www.fp-architect.com",
-        logo: "https://www.fp-architect.com/images/logo.png",
-        image: "https://www.fp-architect.com/images/og-image.jpg",
+        url: baseUrl,
+        logo: `${baseUrl}/images/logo.png`,
+        image: `${baseUrl}/images/og-image.jpg`,
         telephone: ["+63744244644", "+639454221874"],
         email: "fpadesignconsultancy@gmail.com",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Baguio City",
           addressRegion: "Benguet",
+          postalCode: "2600",
           addressCountry: "PH",
         },
         geo: {
@@ -28,13 +31,7 @@ export default function StructuredData() {
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
-            dayOfWeek: [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-            ],
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             opens: "08:00",
             closes: "17:00",
           },
@@ -47,34 +44,127 @@ export default function StructuredData() {
         areaServed: ["Philippines", "Worldwide"],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Architectural Services",
+          name: "Architectural & Design Services",
           itemListElement: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Architectural Design" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interior Design" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Renovation Design" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Space Planning" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Project Management" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Construction Supervision" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Building Permit Assistance" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "3D Visualization" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "CAD Drafting" } },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Architectural Design",
+                url: `${baseUrl}/services/architectural-design`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Interior Design",
+                url: `${baseUrl}/services/interior-design`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Renovation & Remodeling",
+                url: `${baseUrl}/services/renovation-remodeling`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Space Planning",
+                url: `${baseUrl}/services/space-planning`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Construction Project Management",
+                url: `${baseUrl}/services/construction-project-management`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Construction Supervision",
+                url: `${baseUrl}/services/construction-supervision`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Building Permit Documentation",
+                url: `${baseUrl}/services/building-permit-documentation`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "3D Visualization & Rendering",
+                url: `${baseUrl}/services/3d-visualization-rendering`,
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Cabinet Design",
+                url: `${baseUrl}/services/cabinet-design`,
+              },
+            },
           ],
         },
       },
       {
         "@type": "Person",
-        "@id": "https://www.fp-architect.com/#architect",
+        "@id": `${baseUrl}/#architect`,
         name: "Friendzel B. Pengi",
         jobTitle: "Licensed Architect",
         honorificPrefix: "Arch.",
         honorificSuffix: "UAP",
-        worksFor: { "@id": "https://www.fp-architect.com/#business" },
+        worksFor: { "@id": `${baseUrl}/#business` },
         alumniOf: {
           "@type": "CollegeOrUniversity",
           name: "Lyceum Northwestern University",
         },
-        image: "https://www.fp-architect.com/images/about/architect.jpg",
+        image: `${baseUrl}/images/about/architect.jpg`,
         knowsLanguage: ["English", "Filipino", "Ilocano"],
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "Licensed Architect",
+            credentialCategory: "Professional License",
+            recognizedBy: {
+              "@type": "Organization",
+              name: "Professional Regulation Commission (PRC)",
+              addressCountry: "PH",
+            },
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "Safety Officer 2 (SO2)",
+            credentialCategory: "Professional Certification",
+            recognizedBy: {
+              "@type": "Organization",
+              name: "Department of Labor and Employment (DOLE)",
+              addressCountry: "PH",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${baseUrl}/#website`,
+        url: baseUrl,
+        name: "FPA Design Consultancy",
+        publisher: { "@id": `${baseUrl}/#business` },
+        inLanguage: "en-PH",
       },
     ],
   };

@@ -5,10 +5,11 @@ import Image from "next/image";
 
 interface Props {
   images: string[];
+  imageAlts: string[];
   projectName: string;
 }
 
-export default function ProjectGallery({ images, projectName }: Props) {
+export default function ProjectGallery({ images, imageAlts, projectName }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
 
   const close = useCallback(() => setSelected(null), []);
@@ -42,7 +43,7 @@ export default function ProjectGallery({ images, projectName }: Props) {
           >
             <Image
               src={img}
-              alt={`${projectName} — image ${i + 1}`}
+              alt={imageAlts[i] ?? `${projectName} — image ${i + 1}`}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               sizes={i === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}

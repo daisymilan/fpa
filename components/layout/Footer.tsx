@@ -5,6 +5,19 @@ import FPALogo from "@/components/ui/FPALogo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
+// Slugs indexed to match t[lang].services.items order
+const SERVICE_SLUGS = [
+  "/services/architectural-design",
+  "/services/interior-design",
+  "/services/renovation-remodeling",
+  "/services/space-planning",
+  "/services/construction-project-management",
+  "/services/construction-supervision",
+  "/services/building-permit-documentation",
+  "/services/3d-visualization-rendering",
+  "/services", // CAD Drafting — no individual page
+];
+
 export default function Footer() {
   const { lang } = useLanguage();
   const tx = t[lang].footer;
@@ -84,7 +97,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {serviceItems.map((service, i) => (
                 <li key={i}>
-                  <Link href="/services" className="text-fg-dim text-sm hover:text-[#FF3B30] transition-colors duration-200">
+                  <Link href={SERVICE_SLUGS[i] ?? "/services"} className="text-fg-dim text-sm hover:text-[#FF3B30] transition-colors duration-200">
                     {service.title}
                   </Link>
                 </li>

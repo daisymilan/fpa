@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StructuredData from "@/components/ui/StructuredData";
+import HtmlLangSync from "@/components/ui/HtmlLangSync";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -90,6 +91,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${cormorant.variable}`}>
       <body className="antialiased">
         <Providers>
+          <HtmlLangSync />
           <StructuredData />
           <Navbar />
           <main>{children}</main>
