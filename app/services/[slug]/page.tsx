@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getServiceBySlug, services } from "@/lib/services";
+import { getServiceBySlug, services, ServiceData } from "@/lib/services";
 import { getProjectBySlug } from "@/lib/projects";
 
 interface Props {
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${service.title} | FPA Design Consultancy`,
       description: service.metaDescription,
       url: `https://www.fp-architect.com/services/${slug}`,
+      images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
     },
   };
 }
@@ -39,6 +40,10 @@ export default async function ServicePage({ params }: Props) {
     .map((s) => getProjectBySlug(s))
     .filter(Boolean)
     .slice(0, 3);
+
+  const relatedServices = service.relatedServiceSlugs
+    .map((s) => getServiceBySlug(s))
+    .filter((s): s is ServiceData => s !== undefined);
 
   const baseUrl = "https://www.fp-architect.com";
 
@@ -65,11 +70,42 @@ export default async function ServicePage({ params }: Props) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${baseUrl}/services/${slug}#service`,
     name: service.title,
+    serviceType: service.title,
+    category: "Architectural Services",
     description: service.description,
-    provider: { "@type": "LocalBusiness", "@id": `${baseUrl}/#business` },
+    provider: { "@id": `${baseUrl}/#business` },
     areaServed: ["Philippines", "Worldwide"],
     url: `${baseUrl}/services/${slug}`,
+    offers: {
+      "@type": "Offer",
+      seller: { "@id": `${baseUrl}/#business` },
+      areaServed: ["Philippines", "Worldwide"],
+      availableAtOrFrom: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Baguio City",
+          addressRegion: "Benguet",
+          postalCode: "2600",
+          addressCountry: "PH",
+        },
+      },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.title} Deliverables`,
+      itemListElement: service.deliverables.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Service",
+          name: item,
+          provider: { "@id": `${baseUrl}/#business` },
+        },
+      })),
+    },
   };
 
   return (
@@ -211,6 +247,47 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      {relatedServices.length > 0 && (
+        <section className="section-padding bg-bg-alt" style={{ borderTop: "1px solid var(--border)" }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-px bg-[#FF3B30]" />
+              <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Complete Your Project</span>
+            </div>
+            <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
+              Related Services
+            </h2>
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1px]"
+              style={{ background: "var(--gap-color)" }}
+            >
+              {relatedServices.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  className="group bg-bg-alt p-8 hover:bg-bg transition-colors duration-200 relative"
+                >
+                  <div className="absolute top-0 left-0 w-0 h-px bg-[#FF3B30] group-hover:w-full transition-all duration-500" />
+                  <h3
+                    className="display-heading text-fg group-hover:text-[#FF3B30] transition-colors duration-200 mb-3"
+                    style={{ fontSize: "1.05rem", letterSpacing: "0.07em" }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-fg-dim text-xs leading-relaxed mb-5 line-clamp-2">
+                    {s.description}
+                  </p>
+                  <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.15em] uppercase">
+                    Learn More →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-20 bg-[#FF3B30]">

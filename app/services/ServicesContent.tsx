@@ -3,9 +3,19 @@
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
-import { services } from "@/lib/services";
-
 const numbers = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
+
+const SERVICE_SLUGS = [
+  "architectural-design",
+  "construction-project-management",
+  "construction-supervision",
+  "interior-design",
+  "space-planning",
+  "cabinet-design",
+  "renovation-remodeling",
+  "building-permit-documentation",
+  "3d-visualization-rendering",
+] as const;
 
 const globalFaqs = [
   {
@@ -34,22 +44,8 @@ export default function ServicesContent() {
   const { lang } = useLanguage();
   const tx = t[lang].servicesPage;
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: globalFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Page hero */}
       <section className="pt-40 pb-20 bg-bg" style={{ borderBottom: "1px solid var(--border)" }}>
@@ -94,9 +90,9 @@ export default function ServicesContent() {
                     ))}
                   </ul>
                 </div>
-                {services[i] && (
+                {SERVICE_SLUGS[i] && (
                   <Link
-                    href={`/services/${services[i].slug}`}
+                    href={`/services/${SERVICE_SLUGS[i]}`}
                     className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.15em] uppercase text-[#FF3B30] hover:gap-3 transition-all duration-200"
                   >
                     Learn More →

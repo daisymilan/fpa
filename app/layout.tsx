@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | FPA Design Consultancy",
   },
   description:
-    "FPA Design Consultancy is a licensed architectural firm in Baguio City led by Arch. Friendzel B. Pengi, UAP. Specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance — serving clients in the Philippines and worldwide.",
+    "Licensed architect in Baguio City, Philippines — residential, commercial, and interior design, renovation, and building permits by FPA Design Consultancy.",
   keywords: [
     "architect Baguio",
     "architect Benguet",
@@ -62,13 +62,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "FPA Design Consultancy | Architect in Baguio City",
-    description:
-      "Licensed architectural firm in Baguio City specializing in residential, commercial, and interior design.",
-    images: ["/images/og-image.jpg"],
-  },
   robots: {
     index: true,
     follow: true,
@@ -89,12 +82,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${cormorant.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://formspree.io" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="antialiased">
         <Providers>
           <HtmlLangSync />
           <StructuredData />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:bg-[#FF3B30] focus:text-white focus:text-xs focus:font-semibold focus:tracking-widest focus:uppercase"
+          >
+            Skip to main content
+          </a>
           <Navbar />
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Footer />
         </Providers>
       </body>

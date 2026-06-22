@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
 export default function ContactForm() {
+  const router = useRouter();
   const { lang } = useLanguage();
   const tx = t[lang].form;
   const [form, setForm] = useState({ name: "", email: "", phone: "", projectType: "", location: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -22,7 +24,7 @@ export default function ContactForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
     });
-    if (res.ok) setStatus("sent");
+    if (res.ok) { router.push("/thank-you"); return; }
     else setStatus("error");
   };
 
@@ -35,30 +37,12 @@ export default function ContactForm() {
   const labelClass = "block text-xs text-fg-faint tracking-widest uppercase mb-2";
   const inputClass = "w-full px-4 py-3 text-sm focus:outline-none transition-colors";
 
-  if (status === "sent") {
-    return (
-      <div className="text-center py-12">
-        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-6" style={{ background: "rgba(255,59,48,0.1)", border: "1px solid rgba(255,59,48,0.2)" }}>
-          <svg className="w-8 h-8 text-[#FF3B30]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 className="display-heading text-fg mb-3" style={{ fontSize: "1.75rem" }}>
-          {tx.successTitle.replace('{name}', form.name)}
-        </h3>
-        <p className="text-fg-dim text-sm">
-          {tx.successDesc}
-        </p>
-      </div>
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className={labelClass}>{tx.nameLabel}</label>
-          <input id="name" name="name" type="text" required value={form.name} onChange={handleChange}
+          <input id="name" name="name" type="text" required autoComplete="name" value={form.name} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="Juan dela Cruz"
             onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -66,7 +50,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>{tx.emailLabel}</label>
-          <input id="email" name="email" type="email" required value={form.email} onChange={handleChange}
+          <input id="email" name="email" type="email" required autoComplete="email" value={form.email} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="juan@email.com"
             onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -77,7 +61,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="phone" className={labelClass}>{tx.phoneLabel}</label>
-          <input id="phone" name="phone" type="tel" value={form.phone} onChange={handleChange}
+          <input id="phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange}
             className={inputClass} style={inputStyle} placeholder="09XX XXX XXXX"
             onFocus={(e) => (e.target.style.borderColor = "#FF3B30")}
             onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -114,6 +98,10 @@ export default function ContactForm() {
           onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
         />
       </div>
+
+      <p className="text-fg-dim text-xs text-center">
+        We typically respond within 24 business hours.
+      </p>
 
       <button
         type="submit" disabled={status === "sending"}
