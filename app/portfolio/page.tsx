@@ -40,7 +40,7 @@ const collectionPageSchema = {
     "@type": "CreativeWork",
     "@id": `${baseUrl}/portfolio/${p.slug}`,
     name: p.name,
-    description: p.metaDescription,
+    description: p.description,
     url: `${baseUrl}/portfolio/${p.slug}`,
     image: `${baseUrl}${p.coverImage}`,
     genre: p.type,
