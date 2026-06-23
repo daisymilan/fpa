@@ -12,6 +12,7 @@ export interface ServiceData {
   description: string;
   deliverables: string[];
   relatedProjectSlugs: string[];
+  relatedServiceSlugs: string[];
   faqs: ServiceFAQ[];
 }
 
@@ -44,6 +45,11 @@ export const services: ServiceData[] = [
       "bungalow-residence-with-loft-la-union",
       "3-bedroom-bungalow-residence-tagudin",
       "3-storey-office-building-ifugao",
+    ],
+    relatedServiceSlugs: [
+      "building-permit-documentation",
+      "3d-visualization-rendering",
+      "construction-supervision",
     ],
     faqs: [
       {
@@ -95,6 +101,11 @@ export const services: ServiceData[] = [
       "3-bedroom-bungalow-residence-tagudin",
       "3-storey-office-building-ifugao",
     ],
+    relatedServiceSlugs: [
+      "construction-supervision",
+      "architectural-design",
+      "building-permit-documentation",
+    ],
     faqs: [
       {
         question: "What is construction project management?",
@@ -141,6 +152,11 @@ export const services: ServiceData[] = [
       "3-bedroom-bungalow-residence-tagudin",
       "3-storey-office-building-ifugao",
     ],
+    relatedServiceSlugs: [
+      "construction-project-management",
+      "architectural-design",
+      "building-permit-documentation",
+    ],
     faqs: [
       {
         question: "What does a construction supervisor do?",
@@ -185,6 +201,11 @@ export const services: ServiceData[] = [
       "bungalow-residence-with-loft-nueva-vizcaya",
       "3-bedroom-bungalow-residence-tagudin",
       "home-office-renovation-baguio",
+    ],
+    relatedServiceSlugs: [
+      "cabinet-design",
+      "space-planning",
+      "3d-visualization-rendering",
     ],
     faqs: [
       {
@@ -236,6 +257,11 @@ export const services: ServiceData[] = [
       "3-bedroom-bungalow-residence-tagudin",
       "3-storey-office-building-ifugao",
     ],
+    relatedServiceSlugs: [
+      "interior-design",
+      "architectural-design",
+      "cabinet-design",
+    ],
     faqs: [
       {
         question: "What is space planning in architecture?",
@@ -280,6 +306,11 @@ export const services: ServiceData[] = [
       "bungalow-residence-with-loft-nueva-vizcaya",
       "home-office-renovation-baguio",
     ],
+    relatedServiceSlugs: [
+      "interior-design",
+      "space-planning",
+      "renovation-remodeling",
+    ],
     faqs: [
       {
         question: "What types of cabinets do you design?",
@@ -322,6 +353,11 @@ export const services: ServiceData[] = [
       "Permit assistance if required",
     ],
     relatedProjectSlugs: ["home-office-renovation-baguio"],
+    relatedServiceSlugs: [
+      "interior-design",
+      "cabinet-design",
+      "building-permit-documentation",
+    ],
     faqs: [
       {
         question: "How much does a room renovation cost in the Philippines?",
@@ -374,6 +410,11 @@ export const services: ServiceData[] = [
       "bungalow-residence-with-loft-la-union",
       "3-bedroom-bungalow-residence-tagudin",
       "3-storey-office-building-ifugao",
+    ],
+    relatedServiceSlugs: [
+      "architectural-design",
+      "construction-supervision",
+      "construction-project-management",
     ],
     faqs: [
       {
@@ -430,6 +471,11 @@ export const services: ServiceData[] = [
       "bungalow-residence-with-loft-la-union",
       "3-bedroom-bungalow-residence-tagudin",
       "3-storey-office-building-ifugao",
+    ],
+    relatedServiceSlugs: [
+      "architectural-design",
+      "interior-design",
+      "space-planning",
     ],
     faqs: [
       {
