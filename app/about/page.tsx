@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: "About | Arch. Friendzel B. Pengi, UAP — Licensed Architect, Baguio City",
   description:
     "Arch. Friendzel B. Pengi, UAP — PRC-licensed architect, Safety Officer 2, and founder of FPA Design Consultancy, Baguio City, Benguet, Philippines.",
+  keywords: [
+    "Arch. Friendzel B. Pengi",
+    "FPA Design Consultancy founder",
+    "licensed architect Baguio City",
+    "UAP architect Philippines",
+    "PRC licensed architect Baguio",
+    "Safety Officer 2 architect",
+    "Lyceum Northwestern University architecture",
+    "architect Benguet",
+  ],
   alternates: { canonical: "https://www.fp-architect.com/about" },
   openGraph: {
     title: "About Arch. Friendzel B. Pengi, UAP | FPA Design Consultancy",

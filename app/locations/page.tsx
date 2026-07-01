@@ -7,6 +7,24 @@ export const metadata: Metadata = {
   description:
     "FPA Design Consultancy serves clients across the Philippines — Baguio City (HQ), Ifugao, Nueva Vizcaya, La Union, and Ilocos Sur — with completed projects in each location.",
   alternates: { canonical: "https://www.fp-architect.com/locations" },
+  keywords: [
+    "architect service areas Philippines",
+    "architect Baguio City",
+    "architect Ifugao",
+    "architect Nueva Vizcaya",
+    "architect La Union",
+    "architect Ilocos Sur",
+    "architect Northern Luzon",
+    "FPA Design Consultancy locations",
+    "remote architect Philippines",
+  ],
+  openGraph: {
+    title: "Service Locations | FPA Design Consultancy",
+    description:
+      "FPA Design Consultancy serves Baguio City, Ifugao, Nueva Vizcaya, La Union, and Ilocos Sur — with remote design services available worldwide.",
+    url: "https://www.fp-architect.com/locations",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const baseUrl = "https://www.fp-architect.com";
@@ -20,12 +38,43 @@ const breadcrumbSchema = {
   ],
 };
 
+const locationsListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "FPA Design Consultancy — Service Locations",
+  description:
+    "Locations served by FPA Design Consultancy across the Philippines, including Baguio City HQ and remote design services worldwide.",
+  numberOfItems: locations.length,
+  itemListElement: locations.map((loc, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "LocalBusiness",
+      "@id": `${baseUrl}/locations/${loc.slug}`,
+      name: `FPA Design Consultancy — ${loc.city}`,
+      url: `${baseUrl}/locations/${loc.slug}`,
+      description: loc.intro,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: loc.city,
+        addressRegion: loc.province,
+        addressCountry: "PH",
+      },
+      parentOrganization: { "@id": `${baseUrl}/#business` },
+    },
+  })),
+};
+
 export default function LocationsPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsListSchema) }}
       />
 
       {/* Hero */}

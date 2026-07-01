@@ -5,14 +5,19 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
         "@id": `${baseUrl}/#business`,
         name: "FPA Design Consultancy",
+        legalName: "FPA Design Consultancy",
         alternateName: "FPA Design",
         description:
           "Licensed architectural firm in Baguio City, Philippines specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance. Serving clients in the Philippines and worldwide.",
         url: baseUrl,
-        logo: `${baseUrl}/images/logo.png`,
+        logo: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/images/logo.png`,
+          contentUrl: `${baseUrl}/images/logo.png`,
+        },
         image: `${baseUrl}/images/og-image.jpg`,
         telephone: ["+63744244644", "+639454221874"],
         email: "fpadesignconsultancy@gmail.com",
@@ -41,7 +46,66 @@ export default function StructuredData() {
           "https://www.instagram.com/fpadesignconsultancy",
         ],
         priceRange: "₱₱",
-        areaServed: ["Philippines", "Worldwide"],
+        currenciesAccepted: "PHP",
+        paymentAccepted: "Cash, Bank Transfer, GCash",
+        areaServed: [
+          {
+            "@type": "City",
+            name: "Baguio City",
+            containedInPlace: { "@type": "State", name: "Benguet", containedInPlace: { "@type": "Country", name: "Philippines" } },
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Ifugao",
+            containedInPlace: { "@type": "Country", name: "Philippines" },
+          },
+          {
+            "@type": "AdministrativeArea",
+            name: "Nueva Vizcaya",
+            containedInPlace: { "@type": "Country", name: "Philippines" },
+          },
+          {
+            "@type": "State",
+            name: "La Union",
+            containedInPlace: { "@type": "Country", name: "Philippines" },
+          },
+          {
+            "@type": "State",
+            name: "Ilocos Sur",
+            containedInPlace: { "@type": "Country", name: "Philippines" },
+          },
+          { "@type": "Country", name: "Philippines" },
+        ],
+        serviceArea: {
+          "@type": "GeoCircle",
+          geoMidpoint: { "@type": "GeoCoordinates", latitude: 16.4023, longitude: 120.596 },
+          description: "Baguio City, Cordillera Administrative Region, and Northern Luzon, Philippines",
+        },
+        founder: { "@id": `${baseUrl}/#architect` },
+        employee: { "@id": `${baseUrl}/#architect` },
+        potentialAction: [
+          {
+            "@type": "ReserveAction",
+            name: "Book a Free Consultation",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: `${baseUrl}/contact`,
+              actionPlatform: [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform",
+              ],
+            },
+            result: {
+              "@type": "Reservation",
+              name: "Initial Design Consultation",
+            },
+          },
+          {
+            "@type": "CommunicateAction",
+            name: "Call FPA Design Consultancy",
+            target: "tel:+63744244644",
+          },
+        ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Architectural & Design Services",
@@ -125,6 +189,7 @@ export default function StructuredData() {
         "@type": "Person",
         "@id": `${baseUrl}/#architect`,
         name: "Friendzel B. Pengi",
+        url: `${baseUrl}/about`,
         jobTitle: "Licensed Architect",
         honorificPrefix: "Arch.",
         honorificSuffix: "UAP",
