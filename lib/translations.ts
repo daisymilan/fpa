@@ -13,6 +13,7 @@ export const languages: { code: Language; label: string; flag: string }[] = [
 export interface ServiceItem { title: string; description: string }
 export interface ProcessStep { title: string; description: string }
 export interface WhyReason { title: string; description: string }
+export interface FaqItem { question: string; answer: string }
 export interface ServicePageItem { title: string; description: string; deliverables: string[] }
 
 export interface Translations {
@@ -30,6 +31,7 @@ export interface Translations {
   servicesPage: { tag: string; heading1: string; heading2: string; desc: string; delivLabel: string; ctaTag: string; ctaHeading: string; ctaDesc: string; ctaBtn1: string; ctaBtn2: string; items: ServicePageItem[] };
   contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string };
   form: { nameLabel: string; emailLabel: string; phoneLabel: string; typeLabel: string; typePlaceholder: string; locationLabel: string; messageLabel: string; messagePlaceholder: string; submit: string; sending: string; successTitle: string; successDesc: string; errorMsg: string; note: string; projectTypes: [string, string, string, string, string, string, string, string] };
+  faq: { tag: string; heading1: string; heading2: string; cta: string; items: FaqItem[] };
 }
 
 export const t: Record<Language, Translations> = {
@@ -212,6 +214,42 @@ export const t: Record<Language, Translations> = {
       note: 'We respond to all inquiries within 1–2 business days.',
       projectTypes: ['Residential Design', 'Commercial Design', 'Interior Design', 'Renovation', 'Space Planning', 'Building Permit', '3D Visualization', 'Other'],
     },
+    faq: {
+      tag: 'Common Questions',
+      heading1: 'Frequently Asked',
+      heading2: 'Questions',
+      cta: 'Ask Us Anything',
+      items: [
+        {
+          question: 'How much does an architect cost in the Philippines?',
+          answer: 'Architect fees in the Philippines are guided by UAP Document 201 and typically range from 8–12% of total construction cost for full design and supervision services. The exact fee depends on project type, scope, and complexity. FPA Design Consultancy offers a free initial consultation — contact us for a clear, itemised quote tailored to your project.',
+        },
+        {
+          question: 'Do I need a licensed architect for a building permit in the Philippines?',
+          answer: 'Yes. Under the National Building Code of the Philippines (PD 1096) and Republic Act 9266, all architectural documents submitted for a building permit must be signed and sealed by a PRC-licensed architect. Any submission without a licensed architect\'s seal will be rejected by your local government unit (LGU).',
+        },
+        {
+          question: 'How long does it take to design a house?',
+          answer: 'Design timelines vary by project size and complexity. A typical single-family home takes 4–8 weeks from schematic design through final construction documents. Building permit processing at the LGU then adds another 4–12 weeks depending on your municipality. We provide a clear project timeline during your first consultation.',
+        },
+        {
+          question: 'What areas does FPA Design Consultancy serve?',
+          answer: 'We are based in Baguio City, Benguet, and regularly serve clients across the Cordillera Administrative Region, Ilocos Region, and Northern Luzon. We also offer full remote design services for clients anywhere in the Philippines and worldwide — consultations, revisions, and complete construction documents can all be delivered digitally.',
+        },
+        {
+          question: 'Why hire a licensed architect instead of a draftsman or contractor?',
+          answer: 'Only a licensed architect can legally sign and seal building permit documents in the Philippines — a draftsman or contractor cannot. Beyond legal compliance, architects are trained to optimise space, structure, climate response, and cost-efficiency in ways that prevent costly construction errors and maximise the long-term value of your investment.',
+        },
+        {
+          question: 'What is included in your architectural design service?',
+          answer: 'Our architectural design service covers schematic design options, floor plan development, elevation and section drawings, 3D visualisation renders, and final construction documents. We coordinate with structural, electrical, and sanitary engineers and manage the full building permit documentation — guiding your project from concept through permit approval.',
+        },
+        {
+          question: 'Can I work with FPA Design Consultancy if I am outside Baguio City?',
+          answer: 'Absolutely. We serve clients across the Philippines and internationally, including OFWs building homes in the Philippines from abroad. Our process is fully designed for remote collaboration — video consultations, digital file exchange, and phased design reviews mean location is no barrier to working with us.',
+        },
+      ],
+    },
   },
   fil: {
     nav: { home: 'Tahanan', about: 'Tungkol Sa Amin', services: 'Mga Serbisyo', portfolio: 'Portfolio', contact: 'Makipag-ugnayan', quote: 'Kumuha ng Quote' },
@@ -392,6 +430,42 @@ export const t: Record<Language, Translations> = {
       note: 'Tumutugon kami sa lahat ng katanungan sa loob ng 1–2 araw ng trabaho.',
       projectTypes: ['Residential Design', 'Commercial Design', 'Interior Design', 'Renovation', 'Space Planning', 'Building Permit', '3D Visualization', 'Iba pa'],
     },
+    faq: {
+      tag: 'Mga Katanungan',
+      heading1: 'Mga Madalas',
+      heading2: 'Itanong',
+      cta: 'Magtanong sa Amin',
+      items: [
+        {
+          question: 'Magkano ang bayad ng arkitekto sa Pilipinas?',
+          answer: 'Ang mga bayad ng arkitekto sa Pilipinas ay ginagabayan ng UAP Document 201 at karaniwang nasa 8–12% ng kabuuang gastos sa konstruksiyon para sa kumpletong serbisyo sa disenyo at superbiyon. Ang eksaktong bayad ay nakasalalay sa uri, saklaw, at kumplikasyon ng proyekto. Nag-aalok ang FPA Design Consultancy ng libreng unang konsultasyon — makipag-ugnayan sa amin para sa personalisadong quote.',
+        },
+        {
+          question: 'Kailangan ba ng lisensyadong arkitekto para sa building permit sa Pilipinas?',
+          answer: 'Oo. Sa ilalim ng National Building Code of the Philippines (PD 1096) at Republic Act 9266, ang lahat ng arkitekturang dokumento na isinumite para sa building permit ay dapat na pirmado at sinselyuhan ng isang PRC-lisensyadong arkitekto. Ang mga sumisinumiteng walang selyo ng lisensyadong arkitekto ay itatanggi ng inyong lokal na pamahalaan (LGU).',
+        },
+        {
+          question: 'Gaano katagal ang pagdidisenyo ng bahay?',
+          answer: 'Nag-iiba-iba ang mga timeline ng disenyo ayon sa laki at kumplikasyon ng proyekto. Ang isang karaniwang single-family home ay karaniwang tumatagal ng 4–8 linggo mula sa schematic design hanggang sa mga huling dokumento ng konstruksiyon. Ang pagpoproseso ng building permit sa LGU ay nagdadagdag ng karagdagang 4–12 linggo. Bibigyan kayo ng malinaw na timeline sa inyong unang konsultasyon.',
+        },
+        {
+          question: 'Aling mga lugar ang pinaglilingkuran ng FPA Design Consultancy?',
+          answer: 'Nakabase kami sa Baguio City, Benguet, at regular naming pinaglilingkuran ang mga kliyente sa buong Cordillera Administrative Region, Ilocos Region, at Hilagang Luzon. Nag-aalok din kami ng kumpletong remote na serbisyo sa disenyo para sa mga kliyente kahit saan sa Pilipinas at sa buong mundo — kasama na ang mga OFW na nagtatayo ng tahanan sa Pilipinas mula sa ibang bansa.',
+        },
+        {
+          question: 'Bakit kumuha ng lisensyadong arkitekto kaysa sa draftsman o kontratista?',
+          answer: 'Tanging ang isang lisensyadong arkitekto lamang ang maaaring legal na mag-sign at mag-seal ng mga dokumento ng building permit sa Pilipinas — hindi kayang gawin ng draftsman o kontratista. Bukod sa legal na pagsunod, ang mga arkitekto ay sinanay upang ma-optimize ang espasyo, istruktura, pagtugon sa klima, at kahusayan ng gastos — pinipigilan ang mga mahal na pagkakamali sa konstruksiyon.',
+        },
+        {
+          question: 'Ano ang kasama sa inyong serbisyo sa arkitekturang disenyo?',
+          answer: 'Ang aming serbisyo sa arkitekturang disenyo ay sumasaklaw sa mga pagpipilian sa schematic design, pagbuo ng floor plan, elevation at section drawings, 3D visualization renders, at mga huling dokumento ng konstruksiyon. Nakikipagtulungan kami sa mga istruktural, elektrikal, at sanitary na inhinyero at pinamamahalaan ang kumpletong dokumentasyon ng building permit.',
+        },
+        {
+          question: 'Maaari bang makipagtulungan sa FPA Design Consultancy ang mga nasa labas ng Baguio City?',
+          answer: 'Syempre. Naglilingkod kami sa mga kliyente sa buong Pilipinas at sa internasyonal, kasama na ang mga OFW na nagtatayo ng tahanan sa Pilipinas mula sa ibang bansa. Ang aming proseso ay dinisenyo para sa remote na pakikipagtulungan — sa pamamagitan ng video konsultasyon, palitan ng digital na file, at mga phased na review ng disenyo.',
+        },
+      ],
+    },
   },
   zh: {
     nav: { home: '首页', about: '关于我们', services: '服务', portfolio: '作品集', contact: '联系我们', quote: '获取报价' },
@@ -559,6 +633,42 @@ export const t: Record<Language, Translations> = {
       errorMsg: '提交失败，请重试，或直接发送邮件至 fpadesignconsultancy@gmail.com。',
       note: '我们会在 1–2 个工作日内回复所有咨询。',
       projectTypes: ['住宅设计', '商业设计', '室内设计', '改造翻新', '空间规划', '建筑许可', '3D 可视化', '其他'],
+    },
+    faq: {
+      tag: '常见问题',
+      heading1: '常见',
+      heading2: '问答',
+      cta: '随时咨询我们',
+      items: [
+        {
+          question: '在菲律宾聘请建筑师需要多少费用？',
+          answer: '菲律宾建筑师费用以 UAP Document 201 为指导，全套设计及监理服务通常为总建设造价的 8–12%。实际费用取决于项目类型、服务范围及复杂程度。FPA Design Consultancy 提供免费初步咨询，欢迎联系我们获取个性化报价。',
+        },
+        {
+          question: '在菲律宾申请建筑许可证需要持牌建筑师吗？',
+          answer: '是的。根据菲律宾国家建筑规范（PD 1096）及 Republic Act 9266，所有提交至地方政府单位（LGU）的建筑申请文件，必须由 PRC 认证的持牌建筑师签署并加盖执业印章，否则申请将被驳回。',
+        },
+        {
+          question: '设计一栋住宅需要多长时间？',
+          answer: '设计周期因项目规模和复杂程度而异。一般单户住宅从概念方案到最终施工图纸约需 4–8 周。地方政府的建筑许可审批通常需要额外 4–12 周，具体取决于所在市镇。我们将在初次咨询时为您提供明确的时间节点。',
+        },
+        {
+          question: 'FPA Design Consultancy 服务哪些地区？',
+          answer: '我们总部位于菲律宾本盖省碧瑶市，主要服务科迪勒拉行政区（CAR）、伊罗戈斯地区及北吕宋地区的客户。同时，我们也为菲律宾全境及海外客户提供完整的远程设计服务——咨询、方案修改及完整施工图均可通过数字化方式交付。',
+        },
+        {
+          question: '为什么要聘请持牌建筑师，而不是找绘图员或承包商？',
+          answer: '在菲律宾，只有持牌建筑师才有权合法签署并加盖建筑许可申请文件的印章，绘图员和承包商均不具备此资质。除法规合规外，建筑师还受过专业训练，能够优化空间布局、结构设计、气候适应性及成本效益，有效避免施工中的高昂变更，最大化您的投资回报。',
+        },
+        {
+          question: '你们的建筑设计服务包含哪些内容？',
+          answer: '我们的建筑设计服务涵盖方案设计选项、平面图深化、立面及剖面图、三维可视化效果图，以及最终施工图纸。我们负责与结构、电气及给排水工程师协调，并全程管理建筑许可证申请文件——引导您的项目从概念到审批全流程。',
+        },
+        {
+          question: '碧瑶市以外的客户能否与 FPA Design Consultancy 合作？',
+          answer: '当然可以。我们服务于菲律宾全境及海外客户，包括在菲律宾建房的海外菲律宾工人（OFW）。我们的工作流程完全支持远程协作——通过视频咨询、数字文件交换及分阶段设计评审，地域不是障碍。',
+        },
+      ],
     },
   },
   ja: {
@@ -728,6 +838,42 @@ export const t: Record<Language, Translations> = {
       note: 'すべてのお問い合わせに 1〜2 営業日以内に回答いたします。',
       projectTypes: ['住宅設計', '商業設計', 'インテリアデザイン', 'リノベーション', 'スペースプランニング', '建築確認申請', '3Dビジュアライゼーション', 'その他'],
     },
+    faq: {
+      tag: 'よくある質問',
+      heading1: 'よくある',
+      heading2: 'ご質問',
+      cta: 'お気軽にお問い合わせください',
+      items: [
+        {
+          question: 'フィリピンで建築士に依頼する費用はいくらですか？',
+          answer: 'フィリピンの建築士費用は UAP Document 201 を指針とし、設計・監理のフルサービスで総工事費の 8〜12% が目安です。実際の費用はプロジェクトの種別・範囲・複雑さによって異なります。FPA Design Consultancy では無料の初回相談を承っておりますので、お気軽にご連絡ください。',
+        },
+        {
+          question: 'フィリピンで建築許可申請に建築士は必要ですか？',
+          answer: 'はい、必要です。フィリピン国家建築基準法（PD 1096）および Republic Act 9266 により、建築許可申請に提出するすべての建築図書は、PRC 認定の公認建築士による署名と押印が義務付けられています。未署名・押印のない書類は地方自治体（LGU）に受理されません。',
+        },
+        {
+          question: '住宅の設計にはどのくらいの期間がかかりますか？',
+          answer: '設計期間はプロジェクトの規模と複雑さによって異なります。一般的な一戸建て住宅では、基本設計から最終施工図書の完成まで 4〜8 週間が目安です。LGU での建築確認申請処理にはさらに 4〜12 週間が必要です。初回相談時に明確な工程表をご提示します。',
+        },
+        {
+          question: 'FPA Design Consultancy のサービスエリアはどこですか？',
+          answer: '当事務所はバギオ市（ベンゲット州）を拠点とし、コルディリェラ行政地域（CAR）・イロコス地方・北ルソン全域のクライアントを定期的にサポートしています。また、フィリピン全国および海外のクライアントに向けたフルリモート設計サービスも提供しており、ビデオ相談・デジタルファイル交換・フェーズごとの設計確認で対応可能です。',
+        },
+        {
+          question: '製図士や施工業者ではなく、公認建築士に依頼すべき理由は何ですか？',
+          answer: 'フィリピンでは、建築許可申請書類に署名・押印できるのは公認建築士のみです。製図士や施工業者にはその資格がありません。法的要件に加え、建築士は空間・構造・気候対応・コスト効率を最適化する専門訓練を受けており、施工中の高額な設計変更を防ぎ、長期的な資産価値を最大化します。',
+        },
+        {
+          question: '建築設計サービスには何が含まれますか？',
+          answer: '建築設計サービスには、基本設計案・平面図の発展・立面図および断面図・3D ビジュアライゼーション・最終施工図書が含まれます。構造・電気・衛生設備エンジニアとの調整、および建築確認申請書類の管理も担当し、コンセプトから申請承認まで一貫してサポートします。',
+        },
+        {
+          question: 'バギオ市外のクライアントとも取引できますか？',
+          answer: 'もちろんです。フィリピン全国および海外（フィリピンに住宅を建てる OFW を含む）のクライアントにサービスを提供しています。ビデオ相談・デジタルファイル交換・段階的な設計レビューによるリモートコラボレーションが可能です。場所は問いません。',
+        },
+      ],
+    },
   },
   ko: {
     nav: { home: '홈', about: '회사 소개', services: '서비스', portfolio: '포트폴리오', contact: '문의하기', quote: '견적 문의' },
@@ -895,6 +1041,42 @@ export const t: Record<Language, Translations> = {
       errorMsg: '문제가 발생했습니다. 다시 시도하거나 fpadesignconsultancy@gmail.com으로 직접 이메일을 보내주세요.',
       note: '모든 문의에 1–2 영업일 이내에 답변드립니다.',
       projectTypes: ['주거 설계', '상업 설계', '인테리어 디자인', '리노베이션', '공간 계획', '건축 허가', '3D 시각화', '기타'],
+    },
+    faq: {
+      tag: '자주 묻는 질문',
+      heading1: '자주 묻는',
+      heading2: '질문들',
+      cta: '무엇이든 문의하세요',
+      items: [
+        {
+          question: '필리핀에서 건축가를 고용하는 비용은 얼마인가요?',
+          answer: '필리핀 건축가 수임료는 UAP Document 201을 기준으로 하며, 설계 및 감리 전체 서비스의 경우 총 공사비의 8–12% 수준이 일반적입니다. 실제 비용은 프로젝트 유형, 범위, 복잡도에 따라 달라집니다. FPA Design Consultancy는 무료 초기 상담을 제공하오니 맞춤 견적을 위해 문의해 주세요.',
+        },
+        {
+          question: '필리핀에서 건축 허가를 받으려면 면허 건축가가 필요한가요?',
+          answer: '네. 필리핀 국가 건축 법규(PD 1096) 및 Republic Act 9266에 따라, 건축 허가 신청에 제출되는 모든 건축 서류에는 PRC 면허 건축가의 서명과 직인이 있어야 합니다. 면허 건축가의 직인 없이 제출된 서류는 지방 정부(LGU)에서 반려됩니다.',
+        },
+        {
+          question: '주택 설계에는 얼마나 걸리나요?',
+          answer: '설계 기간은 프로젝트 규모와 복잡도에 따라 다릅니다. 일반적인 단독 주택은 기본 설계부터 최종 시공 도면까지 4–8주가 소요됩니다. 이후 LGU의 건축 허가 처리에는 지자체마다 다르지만 4–12주가 추가로 필요합니다. 초기 상담 시 명확한 일정을 안내해 드립니다.',
+        },
+        {
+          question: 'FPA Design Consultancy는 어느 지역을 서비스하나요?',
+          answer: '저희는 필리핀 벵겟 주 바기오 시에 위치하며, 코르딜레라 행정구역(CAR), 일로코스 지역, 북루손 전역의 고객을 정기적으로 지원합니다. 또한 필리핀 전역 및 해외 고객을 위한 원격 설계 서비스도 제공합니다. 상담부터 도면 납품까지 모두 디지털로 진행 가능합니다.',
+        },
+        {
+          question: '제도사나 시공업자 대신 면허 건축가를 고용해야 하는 이유는 무엇인가요?',
+          answer: '필리핀에서 건축 허가 서류에 법적으로 서명하고 직인을 찍을 수 있는 것은 면허 건축가뿐입니다. 법적 준수 외에도, 건축가는 공간, 구조, 기후 대응, 비용 효율을 최적화하는 전문 교육을 받았습니다. 전문적인 설계는 시공 오류를 예방하고 장기적으로 자산 가치를 극대화합니다.',
+        },
+        {
+          question: '건축 설계 서비스에는 무엇이 포함되나요?',
+          answer: '건축 설계 서비스에는 기본 설계 옵션, 평면도 개발, 입면도 및 단면도, 3D 시각화 렌더링, 최종 시공 도면이 포함됩니다. 구조, 전기, 위생 엔지니어와 협업하며 건축 허가 서류 관리까지 담당하여 프로젝트를 개념 단계부터 허가 승인까지 안내합니다.',
+        },
+        {
+          question: '바기오 시 외부에 있어도 FPA Design Consultancy와 함께 작업할 수 있나요?',
+          answer: '물론입니다. 저희는 필리핀 전역 및 해외 고객과 함께 일하며, 해외에서 필리핀에 주택을 짓는 OFW도 포함됩니다. 화상 상담, 디지털 파일 교환, 단계별 설계 검토를 통한 원격 협업이 가능합니다. 위치는 문제가 되지 않습니다.',
+        },
+      ],
     },
   },
   ar: {
@@ -1064,6 +1246,42 @@ export const t: Record<Language, Translations> = {
       note: 'نرد على جميع الاستفسارات خلال 1–2 يوم عمل.',
       projectTypes: ['تصميم سكني', 'تصميم تجاري', 'تصميم داخلي', 'تجديد وترميم', 'تخطيط فراغات', 'رخصة بناء', 'تصور ثلاثي الأبعاد', 'أخرى'],
     },
+    faq: {
+      tag: 'أسئلة شائعة',
+      heading1: 'الأسئلة',
+      heading2: 'الشائعة',
+      cta: 'اسألنا أي شيء',
+      items: [
+        {
+          question: 'كم تكلف خدمات المهندس المعماري في الفلبين؟',
+          answer: 'تتراوح رسوم المهندس المعماري في الفلبين عادةً بين 8–12% من التكلفة الإجمالية للبناء مقابل خدمات التصميم والإشراف الكاملة، وفقاً لوثيقة UAP رقم 201. تعتمد الرسوم الفعلية على نوع المشروع ونطاقه وتعقيده. تقدم FPA Design Consultancy استشارة أولية مجانية — تواصل معنا للحصول على عرض سعر مخصص.',
+        },
+        {
+          question: 'هل أحتاج إلى مهندس معماري مرخص للحصول على تصريح بناء في الفلبين؟',
+          answer: 'نعم. بموجب قانون البناء الوطني الفلبيني (PD 1096) والقانون رقم 9266، يجب أن تحمل جميع الوثائق المعمارية المقدمة لطلب تصريح البناء توقيع وختم مهندس معماري مرخص من PRC. سيُرفض أي طلب يُقدَّم دون ختم المهندس المعماري المرخص من قبل الحكومة المحلية.',
+        },
+        {
+          question: 'كم من الوقت يستغرق تصميم منزل؟',
+          answer: 'تتفاوت جداول التصميم حسب حجم المشروع وتعقيده. يستغرق المنزل العائلي المعتاد 4–8 أسابيع من التصميم التخطيطي حتى وثائق البناء النهائية. تستلزم معالجة تصريح البناء في الحكومة المحلية 4–12 أسبوعاً إضافية. نقدم جدولاً زمنياً واضحاً خلال استشارتك الأولى.',
+        },
+        {
+          question: 'ما المناطق التي تخدمها FPA Design Consultancy؟',
+          answer: 'يقع مقرنا في مدينة باغيو، بنغيت، ونخدم بانتظام عملاء في جميع أنحاء المنطقة الإدارية كورديليرا وإقليم إيلوكوس وشمال لوزون. كما نقدم خدمات التصميم عن بُعد لعملاء في جميع أنحاء الفلبين وحول العالم — تتم الاستشارات والمراجعات وتسليم وثائق البناء رقمياً.',
+        },
+        {
+          question: 'لماذا يُفضَّل توظيف مهندس معماري مرخص بدلاً من رسام أو مقاول؟',
+          answer: 'في الفلبين، المهندس المعماري المرخص وحده هو من يملك حق التوقيع وختم وثائق تصريح البناء قانونياً. علاوة على الامتثال القانوني، يتلقى المهندسون المعماريون تدريباً متخصصاً في تحسين المساحة والهيكل والاستجابة المناخية والكفاءة في التكاليف، مما يحول دون الأخطاء المكلفة ويزيد قيمة استثمارك.',
+        },
+        {
+          question: 'ما الذي يتضمنه مشروع التصميم المعماري الخاص بكم؟',
+          answer: 'تشمل خدمة التصميم المعماري لدينا خيارات التصميم التخطيطي، وتطوير المخططات الأرضية، ورسومات الواجهات والمقاطع، ومخرجات التصور ثلاثي الأبعاد، ووثائق البناء النهائية. نتولى التنسيق مع المهندسين الإنشائيين والكهربائيين وهندسة الصحة، وندير وثائق تصريح البناء من الفكرة حتى الموافقة.',
+        },
+        {
+          question: 'هل يمكنني العمل مع FPA Design Consultancy إذا كنت خارج مدينة باغيو؟',
+          answer: 'بالتأكيد. نعمل مع عملاء من جميع أنحاء الفلبين والعالم، بما فيهم العمال الفلبينيين في الخارج (OFW) الراغبين في بناء منازل في الفلبين. تستوعب عمليتنا التعاون عن بُعد من خلال المشاورات عبر الفيديو وتبادل الملفات الرقمية ومراجعات التصميم المرحلية.',
+        },
+      ],
+    },
   },
   es: {
     nav: { home: 'Inicio', about: 'Acerca de', services: 'Servicios', portfolio: 'Portafolio', contact: 'Contacto', quote: 'Solicitar Cotización' },
@@ -1231,6 +1449,42 @@ export const t: Record<Language, Translations> = {
       errorMsg: 'Algo salió mal. Por favor intente nuevamente o envíenos un correo directamente a fpadesignconsultancy@gmail.com.',
       note: 'Respondemos a todas las consultas dentro de 1–2 días hábiles.',
       projectTypes: ['Diseño Residencial', 'Diseño Comercial', 'Diseño de Interiores', 'Renovación', 'Planificación de Espacios', 'Permiso de Construcción', 'Visualización 3D', 'Otro'],
+    },
+    faq: {
+      tag: 'Preguntas Frecuentes',
+      heading1: 'Preguntas',
+      heading2: 'Frecuentes',
+      cta: 'Pregúntenos lo que sea',
+      items: [
+        {
+          question: '¿Cuánto cuesta un arquitecto en Filipinas?',
+          answer: 'Los honorarios de los arquitectos en Filipinas se rigen por el Documento UAP 201 y suelen oscilar entre el 8 y el 12% del costo total de construcción por servicios completos de diseño y supervisión. El honorario exacto depende del tipo, alcance y complejidad del proyecto. FPA Design Consultancy ofrece una consulta inicial gratuita — contáctenos para un presupuesto personalizado.',
+        },
+        {
+          question: '¿Necesito un arquitecto licenciado para un permiso de construcción en Filipinas?',
+          answer: 'Sí. De acuerdo con el Código Nacional de Construcción de Filipinas (PD 1096) y la Ley de la República 9266, todos los documentos arquitectónicos presentados para una solicitud de permiso de construcción deben estar firmados y sellados por un arquitecto con licencia PRC. Las solicitudes sin el sello de un arquitecto licenciado serán rechazadas por su gobierno local (LGU).',
+        },
+        {
+          question: '¿Cuánto tiempo tarda el diseño de una casa?',
+          answer: 'Los plazos de diseño varían según el tamaño y la complejidad del proyecto. Una vivienda unifamiliar típica tarda entre 4 y 8 semanas desde el diseño esquemático hasta los documentos de construcción finales. El trámite del permiso de construcción ante la LGU añade entre 4 y 12 semanas adicionales según el municipio. Proporcionamos un cronograma claro durante su primera consulta.',
+        },
+        {
+          question: '¿Qué áreas atiende FPA Design Consultancy?',
+          answer: 'Tenemos nuestra sede en Baguio City, Benguet, y atendemos regularmente a clientes en toda la Región Administrativa de Cordillera, la Región de Ilocos y el norte de Luzón. También ofrecemos servicios de diseño completamente remotos para clientes en cualquier parte de Filipinas y del mundo — consultas, revisiones y documentos de construcción completos se entregan digitalmente.',
+        },
+        {
+          question: '¿Por qué contratar un arquitecto licenciado en lugar de un dibujante o contratista?',
+          answer: 'En Filipinas, solo un arquitecto licenciado puede firmar y sellar legalmente los documentos para el permiso de construcción — un dibujante o contratista no puede hacerlo. Más allá del cumplimiento legal, los arquitectos están capacitados para optimizar espacio, estructura, respuesta climática y eficiencia de costos. El diseño profesional previene errores costosos en la construcción y maximiza el valor de su inversión.',
+        },
+        {
+          question: '¿Qué incluye su servicio de diseño arquitectónico?',
+          answer: 'Nuestro servicio de diseño arquitectónico incluye opciones de diseño esquemático, desarrollo de plantas arquitectónicas, planos de elevación y sección, renders de visualización 3D y documentos de construcción finales. Coordinamos con ingenieros estructurales, eléctricos y sanitarios, y gestionamos la documentación del permiso de construcción — guiando su proyecto desde el concepto hasta la aprobación.',
+        },
+        {
+          question: '¿Puedo trabajar con FPA Design Consultancy si estoy fuera de Baguio City?',
+          answer: 'Por supuesto. Trabajamos con clientes de todo Filipinas e internacionalmente, incluidos los trabajadores filipinos en el extranjero (OFW) que construyen casas en Filipinas desde el exterior. Nuestro proceso está diseñado para la colaboración remota mediante consultas por video, intercambio de archivos digitales y revisiones de diseño por fases — la ubicación no es un obstáculo.',
+        },
+      ],
     },
   },
 };

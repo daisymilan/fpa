@@ -40,24 +40,28 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
-      {/* Slides */}
-      {slideImages.map((slide, i) => (
-        <div
-          key={slide.src}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            i === current ? (animating ? "opacity-0" : "opacity-100") : "opacity-0"
-          }`}
-        >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-        </div>
-      ))}
+      {/* Slides — only render current and next to avoid loading all images */}
+      {slideImages.map((slide, i) => {
+        const nextIdx = (current + 1) % slideImages.length;
+        if (i !== current && i !== nextIdx) return null;
+        return (
+          <div
+            key={slide.src}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              i === current ? (animating ? "opacity-0" : "opacity-100") : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
+        );
+      })}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 hero-gradient" />

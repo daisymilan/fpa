@@ -6,6 +6,16 @@ export const projects: Project[] = [
     name: "Bungalow Residence with Loft",
     type: "Residential",
     location: "Nueva Vizcaya",
+    seoTitle:
+      "Modern Minimalist Bungalow with Loft — Nueva Vizcaya | FPA Design Consultancy",
+    metaDescription:
+      "Minimalist bungalow with loft in Nueva Vizcaya — open-plan living, gold vanity master suite, spa-inspired bathroom, and layered lighting design by FPA Design Consultancy, Baguio City.",
+    relatedServiceSlugs: [
+      "architectural-design",
+      "interior-design",
+      "space-planning",
+      "3d-visualization-rendering",
+    ],
     description:
       "This modern minimalist residence in Nueva Vizcaya is a masterful expression of clean architecture and curated living. Designed with a refined white-dominant palette, the home balances openness and privacy through thoughtful spatial planning and a loft component that adds vertical interest without sacrificing the calm, uncluttered aesthetic that defines the design.",
     concept:
@@ -48,6 +58,16 @@ export const projects: Project[] = [
     name: "2 Storey Residence",
     type: "Residential",
     location: "Ifugao",
+    seoTitle:
+      "Contemporary 2 Storey Residence — Ifugao Highlands | FPA Design Consultancy",
+    metaDescription:
+      "Bioclimatic two-storey tropical home in Ifugao with double-height clerestory skylight, private swimming pool, and dramatic glass facade by FPA Design Consultancy, Baguio City.",
+    relatedServiceSlugs: [
+      "architectural-design",
+      "interior-design",
+      "space-planning",
+      "3d-visualization-rendering",
+    ],
     description:
       "Situated in the highlands of Ifugao, this two-storey residence is a bold statement in contemporary tropical architecture. The design maximizes natural daylight through a dramatic double-height living area crowned by a full-length clerestory skylight, allowing sunlight to penetrate deep into the home's interior while creating a sense of airiness and connection to the surrounding landscape.",
     concept:
@@ -81,6 +101,15 @@ export const projects: Project[] = [
     name: "Bungalow Residence with Loft",
     type: "Residential",
     location: "La Union",
+    seoTitle:
+      "Typhoon-Resistant Bungalow with Loft — La Union, Philippines | FPA Design Consultancy",
+    metaDescription:
+      "Climate-responsive bungalow in La Union — engineered pyramidal hip roof for typhoon resistance, deep protective overhangs, and tropical outdoor living by FPA Design Consultancy.",
+    relatedServiceSlugs: [
+      "architectural-design",
+      "space-planning",
+      "3d-visualization-rendering",
+    ],
     description:
       "Designed for the typhoon-prone coastal context of La Union, this single-storey bungalow with loft employs a robust and climate-responsive architectural strategy without compromising on contemporary aesthetics. The structure's clean geometric massing and carefully engineered roof form work in tandem to withstand extreme weather conditions while creating a warm, welcoming home for its occupants.",
     concept:
@@ -119,6 +148,16 @@ export const projects: Project[] = [
     name: "3 Bedroom Bungalow Residence",
     type: "Residential",
     location: "Tagudin, Ilocos Sur",
+    seoTitle:
+      "3 Bedroom Bungalow Residence — Tagudin, Ilocos Sur | FPA Design Consultancy",
+    metaDescription:
+      "Three-bedroom bungalow in Tagudin, Ilocos Sur — terracotta hip roof, open-air foyer, private tropical courtyard, and earthy walnut-and-concrete interiors by FPA Design Consultancy.",
+    relatedServiceSlugs: [
+      "architectural-design",
+      "interior-design",
+      "space-planning",
+      "3d-visualization-rendering",
+    ],
     description:
       "A warmly resolved three-bedroom bungalow that demonstrates how modest footprints can yield richly layered living environments. Dark timber cladding, a terracotta-tiled hip roof, and full-height corner glazing give the facade a grounded yet contemporary character, while inside, an earthy palette of taupe, concrete render, and walnut timber creates a sense of calm and cohesion across every space.",
     concept:
@@ -141,7 +180,7 @@ export const projects: Project[] = [
       "/images/portfolio/project-5/foyer.jpg",
       "/images/portfolio/project-5/courtyard.jpg",
       "/images/portfolio/project-5/living-room.jpg",
-      "/images/portfolio/project-5/living-room-dusk.png",
+      "/images/portfolio/project-5/living-room-dusk.jpg",
       "/images/portfolio/project-5/dining.jpg",
       "/images/portfolio/project-5/master-bedroom.jpg",
       "/images/portfolio/project-5/bedroom-2.jpg",
@@ -164,6 +203,16 @@ export const projects: Project[] = [
     name: "Home Office Room Renovation",
     type: "Renovation",
     location: "Baguio City, Benguet",
+    seoTitle:
+      "Home Office Room Renovation — Baguio City Before & After | FPA Design Consultancy",
+    metaDescription:
+      "Home office renovation in Baguio City — full before-to-after transformation into an industrial-contemporary workspace with backlit floating desk niche and LED lighting by FPA Design Consultancy.",
+    relatedServiceSlugs: [
+      "renovation-remodeling",
+      "interior-design",
+      "cabinet-design",
+      "space-planning",
+    ],
     description:
       "A compact room renovation that transformed a raw, unfinished shell into a fully functional and atmospherically rich home office. Working within a tight footprint, the design maximizes every surface — from the backlit floating desk niche to the wall-mounted organization system — delivering a space that feels intentional, professional, and distinctly personal.",
     concept:
@@ -201,6 +250,16 @@ export const projects: Project[] = [
     name: "3 Storey Office Building",
     type: "Commercial",
     location: "Ifugao",
+    seoTitle:
+      "3 Storey Commercial Office Building — Ifugao, Cordillera | FPA Design Consultancy",
+    metaDescription:
+      "Three-storey office building in Ifugao with curvilinear biophilic facade, full-length curtain glazing, and indigenous Filipino design elements by FPA Design Consultancy, Baguio City.",
+    relatedServiceSlugs: [
+      "architectural-design",
+      "construction-project-management",
+      "construction-supervision",
+      "3d-visualization-rendering",
+    ],
     description:
       "This three-storey commercial office building in Ifugao is a landmark project that redefines professional workspace design in the Cordillera region. Its organic, curvilinear facade — composed of sweeping horizontal bands of wood-clad concrete and expansive curtain glazing — represents a departure from conventional commercial architecture toward a more biophilic, human-centered built environment.",
     concept:

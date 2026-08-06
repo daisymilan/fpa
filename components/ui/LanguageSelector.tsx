@@ -53,6 +53,8 @@ export default function LanguageSelector() {
 
       {open && (
         <div
+          role="menu"
+          aria-label="Language options"
           className="absolute right-0 top-full mt-2 py-1 min-w-[170px] shadow-2xl z-50"
           style={{ background: "var(--surface)", border: "1px solid var(--border)" }}
         >
@@ -61,6 +63,7 @@ export default function LanguageSelector() {
             return (
               <button
                 key={l.code}
+                role="menuitem"
                 onClick={() => { setLang(l.code as Language); setOpen(false); }}
                 className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-left transition-colors duration-150"
                 style={{

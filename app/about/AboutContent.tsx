@@ -28,11 +28,18 @@ const certifications = [
   { title: "Project Management", body: "Professional Certification" },
 ];
 
-const serviceArea = [
-  "Philippines", "United States", "Canada", "Australia",
-  "United Kingdom", "Japan", "South Korea", "Singapore",
-  "United Arab Emirates", "Saudi Arabia", "Qatar", "Kuwait",
-  "Hong Kong", "Taiwan", "Germany", "Worldwide",
+const philippineLocations = [
+  { label: "Baguio City, Benguet", slug: "baguio-city-architect", note: "Headquarters" },
+  { label: "Ifugao, Cordillera", slug: "ifugao-architect" },
+  { label: "Nueva Vizcaya", slug: "nueva-vizcaya-architect" },
+  { label: "La Union", slug: "la-union-architect" },
+  { label: "Ilocos Sur", slug: "ilocos-sur-architect" },
+];
+
+const internationalAreas = [
+  "United States", "Canada", "Australia", "United Kingdom",
+  "Japan", "South Korea", "Singapore", "United Arab Emirates",
+  "Saudi Arabia", "Qatar", "Kuwait", "Hong Kong", "Germany", "Worldwide",
 ];
 
 export default function AboutContent() {
@@ -184,10 +191,39 @@ export default function AboutContent() {
             <h2 className="display-heading text-fg" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>{tx.coverageHeading}</h2>
             <p className="text-fg-dim mt-4 max-w-xl mx-auto text-sm">{tx.coverageDesc}</p>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {serviceArea.map((area) => (
-              <span key={area} className="px-5 py-2.5 text-fg-muted text-sm font-medium hover:text-fg transition-colors" style={{ border: "1px solid var(--border-strong)" }}>{area}</span>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-4">
+            <div>
+              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Philippines — Local Projects</p>
+              <div className="flex flex-col gap-2">
+                {philippineLocations.map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    href={`/locations/${loc.slug}`}
+                    className="flex items-center justify-between px-5 py-3 text-fg-muted text-sm hover:text-[#FF3B30] hover:border-[#FF3B30] transition-colors duration-200 group"
+                    style={{ border: "1px solid var(--border-strong)" }}
+                  >
+                    <span>{loc.label}</span>
+                    {loc.note && (
+                      <span className="text-[#FF3B30] text-xs tracking-widest uppercase">{loc.note}</span>
+                    )}
+                    {!loc.note && (
+                      <span className="text-fg-faint text-xs opacity-0 group-hover:opacity-100 transition-opacity">View →</span>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Remote & International</p>
+              <p className="text-fg-muted text-sm leading-relaxed mb-4">
+                Full design documentation and 3D visualization services are available for OFW families and overseas clients building in the Philippines. All deliverables are exchanged digitally; consultations are conducted via video call.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {internationalAreas.map((area) => (
+                  <span key={area} className="px-4 py-2 text-fg-muted text-xs hover:text-fg transition-colors" style={{ border: "1px solid var(--border-strong)" }}>{area}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

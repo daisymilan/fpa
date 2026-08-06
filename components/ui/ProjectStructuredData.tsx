@@ -26,18 +26,19 @@ export default function ProjectStructuredData({ project }: Props) {
   const creativeWorkSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
+    "@id": `${projectUrl}#project`,
     name: project.name,
+    abstract: project.metaDescription,
     description: project.description,
     url: projectUrl,
-    image: project.images.map((img) => `${baseUrl}${img}`),
-    author: {
-      "@type": "Person",
-      "@id": `${baseUrl}/#architect`,
-    },
-    creator: {
-      "@type": "Organization",
-      "@id": `${baseUrl}/#business`,
-    },
+    image: project.images.map((img) => ({
+      "@type": "ImageObject",
+      url: `${baseUrl}${img}`,
+      contentUrl: `${baseUrl}${img}`,
+    })),
+    author: { "@id": `${baseUrl}/#architect` },
+    creator: { "@id": `${baseUrl}/#business` },
+    publisher: { "@id": `${baseUrl}/#business` },
     locationCreated: {
       "@type": "Place",
       name: project.location,
@@ -51,6 +52,8 @@ export default function ProjectStructuredData({ project }: Props) {
       "FPA Design Consultancy",
       "Arch. Friendzel Pengi",
       "architect Philippines",
+      "architectural design Philippines",
+      `${project.type.toLowerCase()} design ${project.location}`,
     ],
   };
 

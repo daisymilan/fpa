@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -11,17 +11,42 @@ interface Props {
 
 export default function ProjectGallery({ images, imageAlts, projectName }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
 
   const close = useCallback(() => setSelected(null), []);
   const prev = useCallback(() => setSelected((i) => (i !== null ? (i - 1 + images.length) % images.length : null)), [images.length]);
   const next = useCallback(() => setSelected((i) => (i !== null ? (i + 1) % images.length : null)), [images.length]);
 
+  // Move focus into lightbox on open; restore on close
+  useEffect(() => {
+    if (selected !== null) {
+      closeButtonRef.current?.focus();
+    } else {
+      triggerRef.current?.focus();
+    }
+  }, [selected]);
+
   useEffect(() => {
     if (selected === null) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "Escape") { close(); return; }
+      if (e.key === "ArrowLeft") { prev(); return; }
+      if (e.key === "ArrowRight") { next(); return; }
+      if (e.key === "Tab") {
+        const focusable = lightboxRef.current?.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -38,7 +63,7 @@ export default function ProjectGallery({ images, imageAlts, projectName }: Props
         {images.map((img, i) => (
           <button
             key={img}
-            onClick={() => setSelected(i)}
+            onClick={(e) => { triggerRef.current = e.currentTarget as HTMLButtonElement; setSelected(i); }}
             className={`relative overflow-hidden bg-surface group cursor-zoom-in ${i === 0 ? "md:col-span-2 h-96" : "h-64"}`}
           >
             <Image
@@ -60,6 +85,10 @@ export default function ProjectGallery({ images, imageAlts, projectName }: Props
       {/* Lightbox */}
       {selected !== null && (
         <div
+          ref={lightboxRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${projectName} — image ${selected + 1} of ${images.length}`}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
           onClick={close}
         >
@@ -70,7 +99,7 @@ export default function ProjectGallery({ images, imageAlts, projectName }: Props
           >
             <Image
               src={images[selected]}
-              alt={`${projectName} — image ${selected + 1}`}
+              alt={imageAlts[selected] ?? `${projectName} — image ${selected + 1}`}
               fill
               className="object-contain"
               sizes="100vw"
@@ -80,9 +109,10 @@ export default function ProjectGallery({ images, imageAlts, projectName }: Props
 
           {/* Close */}
           <button
+            ref={closeButtonRef}
             onClick={close}
             className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-colors rounded-full"
-            aria-label="Close"
+            aria-label="Close lightbox"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />

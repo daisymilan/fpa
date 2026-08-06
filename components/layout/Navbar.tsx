@@ -21,6 +21,7 @@ export default function Navbar() {
     { href: "/about", label: tx.nav.about },
     { href: "/services", label: tx.nav.services },
     { href: "/portfolio", label: tx.nav.portfolio },
+    { href: "/locations", label: "Locations" },
     { href: "/contact", label: tx.nav.contact },
   ];
 
@@ -46,7 +47,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navItems.map((link) => (
               <Link
                 key={link.href}
@@ -95,7 +96,7 @@ export default function Navbar() {
         className={`md:hidden border-t overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
         style={{ background: "var(--bg)", borderTopColor: "var(--border)" }}
       >
-        <nav className="px-6 py-4 flex flex-col gap-1">
+        <nav className="px-6 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
           {navItems.map((link) => (
             <Link
               key={link.href}

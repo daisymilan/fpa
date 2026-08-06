@@ -3,6 +3,9 @@ export interface Project {
   name: string;
   type: "Residential" | "Commercial" | "Interior Design" | "Renovation";
   location: string;
+  seoTitle: string;
+  metaDescription: string;
+  relatedServiceSlugs: string[];
   description: string;
   concept: string;
   keyFeatures: string[];

@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/lib/projects";
 import { services } from "@/lib/services";
+import { locations } from "@/lib/locations";
 
 const baseUrl = "https://www.fp-architect.com";
 
@@ -53,5 +54,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: project.images.map((img) => `${baseUrl}${img}`),
   }));
 
-  return [...staticPages, ...servicePages, ...projectPages];
+  const locationIndexPage: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/locations`,
+      lastModified: new Date("2026-06-22"),
+      priority: 0.8,
+      changeFrequency: "monthly",
+    },
+  ];
+
+  const locationPages: MetadataRoute.Sitemap = locations.map((loc) => ({
+    url: `${baseUrl}/locations/${loc.slug}`,
+    lastModified: new Date("2026-06-22"),
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  }));
+
+  return [...staticPages, ...servicePages, ...projectPages, ...locationIndexPage, ...locationPages];
 }

@@ -40,7 +40,7 @@ export default function FeaturedProjects() {
             <div className="relative h-80 lg:h-full min-h-[400px] overflow-hidden">
               <Image
                 src={projects[0].coverImage}
-                alt={projects[0].name}
+                alt={projects[0].imageAlts[0] ?? projects[0].name}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -67,7 +67,7 @@ export default function FeaturedProjects() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={project.coverImage}
-                  alt={project.name}
+                  alt={project.imageAlts[0] ?? project.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

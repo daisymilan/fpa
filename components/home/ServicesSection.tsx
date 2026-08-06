@@ -6,6 +6,19 @@ import { t } from "@/lib/translations";
 
 const numbers = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
 
+// Indexed to match t[lang].services.items order
+const SERVICE_SLUGS = [
+  "/services/architectural-design",
+  "/services/interior-design",
+  "/services/renovation-remodeling",
+  "/services/space-planning",
+  "/services/construction-project-management",
+  "/services/construction-supervision",
+  "/services/building-permit-documentation",
+  "/services/3d-visualization-rendering",
+  "/services",
+];
+
 export default function ServicesSection() {
   const { lang } = useLanguage();
   const tx = t[lang].services;
@@ -35,14 +48,18 @@ export default function ServicesSection() {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px]" style={{ background: "var(--gap-color)" }}>
           {tx.items.map((service, i) => (
-            <div key={i} className="bg-bg-alt p-8 hover:bg-surface transition-colors duration-300 group relative overflow-hidden">
+            <Link
+              key={i}
+              href={SERVICE_SLUGS[i]}
+              className="block bg-bg-alt p-8 hover:bg-surface transition-colors duration-300 group relative overflow-hidden"
+            >
               <div className="absolute top-0 left-0 w-0 h-px bg-[#FF3B30] group-hover:w-full transition-all duration-500" />
               <span className="text-[#FF3B30] text-xs font-medium tracking-widest block mb-4">{numbers[i]}</span>
               <h3 className="display-heading text-fg mb-3 group-hover:text-[#FF3B30] transition-colors duration-200" style={{ fontSize: "1.1rem", letterSpacing: "0.08em" }}>
                 {service.title}
               </h3>
               <p className="text-fg-dim text-sm leading-relaxed">{service.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

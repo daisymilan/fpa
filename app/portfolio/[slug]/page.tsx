@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getProjectBySlug, projects } from "@/lib/projects";
+import { getServiceBySlug } from "@/lib/services";
 import ProjectGallery from "@/components/portfolio/ProjectGallery";
 import ProjectStructuredData from "@/components/ui/ProjectStructuredData";
 
@@ -19,19 +20,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title: `${project.name} — ${project.type} in ${project.location} | FPA Design Consultancy`,
-    description: project.description,
+    title: project.seoTitle,
+    description: project.metaDescription,
     alternates: { canonical: `https://www.fp-architect.com/portfolio/${slug}` },
     openGraph: {
-      title: `${project.name} | FPA Design Consultancy`,
-      description: project.description,
+      title: project.seoTitle,
+      description: project.metaDescription,
       url: `https://www.fp-architect.com/portfolio/${slug}`,
       images: [
         {
           url: project.coverImage,
           width: 1200,
           height: 630,
-          alt: `${project.name} — ${project.type} in ${project.location} by FPA Design Consultancy`,
+          alt: project.imageAlts[0] ?? `${project.name} — ${project.type} in ${project.location} by FPA Design Consultancy`,
         },
       ],
     },
@@ -44,6 +45,10 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   const otherProjects = projects.filter((p) => p.slug !== slug).slice(0, 3);
+
+  const relatedServices = project.relatedServiceSlugs
+    .map((s) => getServiceBySlug(s))
+    .filter(Boolean);
 
   return (
     <>
@@ -131,6 +136,43 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Related Services */}
+      {relatedServices.length > 0 && (
+        <section className="section-padding bg-bg-alt" style={{ borderTop: "1px solid var(--border)" }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-10">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-px bg-[#FF3B30]" />
+                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Services Used</span>
+              </div>
+              <Link href="/services" className="text-fg-dim text-xs tracking-widest uppercase hover:text-fg transition-colors">All Services →</Link>
+            </div>
+            <h2 className="display-heading text-fg mb-8" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+              Related Architectural Services
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px]" style={{ background: "var(--gap-color)" }}>
+              {relatedServices.map((service) => service && (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="group bg-bg-alt p-6 hover:bg-bg transition-colors duration-200 relative"
+                >
+                  <div className="absolute top-0 left-0 w-0 h-px bg-[#FF3B30] group-hover:w-full transition-all duration-500" />
+                  <h3
+                    className="display-heading text-fg group-hover:text-[#FF3B30] transition-colors mb-3"
+                    style={{ fontSize: "0.95rem", letterSpacing: "0.06em" }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p className="text-fg-dim text-xs leading-relaxed mb-4 line-clamp-2">{service.description}</p>
+                  <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.15em] uppercase">Learn More →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Other projects */}
       {otherProjects.length > 0 && (
         <section className="section-padding bg-bg-alt" style={{ borderTop: "1px solid var(--border)" }}>
@@ -146,7 +188,7 @@ export default async function ProjectPage({ params }: Props) {
               {otherProjects.map((p) => (
                 <Link key={p.slug} href={`/portfolio/${p.slug}`} className="group block overflow-hidden bg-bg-alt">
                   <div className="relative h-52 overflow-hidden">
-                    <Image src={p.coverImage} alt={p.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                    <Image src={p.coverImage} alt={p.imageAlts[0] ?? p.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-4 bg-surface group-hover:bg-surface-2 transition-colors duration-200 relative">

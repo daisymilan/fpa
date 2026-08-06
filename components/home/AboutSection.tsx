@@ -6,6 +6,14 @@ import { t } from "@/lib/translations";
 
 const statValues = ["UAP", "SO2", "Global", "360°"];
 
+const servedLocations = [
+  { label: "Baguio City", slug: "baguio-city-architect" },
+  { label: "Ifugao", slug: "ifugao-architect" },
+  { label: "Nueva Vizcaya", slug: "nueva-vizcaya-architect" },
+  { label: "La Union", slug: "la-union-architect" },
+  { label: "Ilocos Sur", slug: "ilocos-sur-architect" },
+];
+
 export default function AboutSection() {
   const { lang } = useLanguage();
   const tx = t[lang].about;
@@ -44,6 +52,22 @@ export default function AboutSection() {
               {tx.cta}
               <span className="block w-8 h-px group-hover:w-14 transition-all duration-300" style={{ background: "var(--fg)" }} />
             </Link>
+
+            <div className="mt-8">
+              <p className="text-fg-faint text-xs tracking-[0.25em] uppercase mb-3">Projects in</p>
+              <div className="flex flex-wrap gap-2">
+                {servedLocations.map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    href={`/locations/${loc.slug}`}
+                    className="px-3 py-1.5 text-fg-dim text-xs hover:text-[#FF3B30] hover:border-[#FF3B30] transition-colors duration-200"
+                    style={{ border: "1px solid var(--border-strong)" }}
+                  >
+                    {loc.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Right: Stats grid */}

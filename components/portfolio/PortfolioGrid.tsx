@@ -55,7 +55,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
             <div className="relative h-72 overflow-hidden">
               <Image
                 src={project.coverImage}
-                alt={project.name}
+                alt={project.imageAlts[0] ?? project.name}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

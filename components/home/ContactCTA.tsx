@@ -34,13 +34,6 @@ export default function ContactCTA() {
             >
               {tx.cta1}
             </Link>
-            <a
-              href="tel:+639454221874"
-              className="inline-flex items-center justify-center gap-3 px-10 py-4 text-fg text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200"
-              style={{ border: "1px solid var(--border-strong)" }}
-            >
-              {tx.cta2}
-            </a>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-8 mt-12 pt-10" style={{ borderTop: "1px solid var(--border)" }}>
@@ -49,13 +42,6 @@ export default function ContactCTA() {
               <a href="mailto:fpadesignconsultancy@gmail.com" className="text-fg-muted text-sm hover:text-fg transition-colors">
                 fpadesignconsultancy@gmail.com
               </a>
-            </div>
-            <div>
-              <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{tx.phoneLabel}</p>
-              <div className="flex flex-col gap-0.5">
-                <a href="tel:+63744244644" className="text-fg-muted text-sm hover:text-fg transition-colors">(074) 424 4644</a>
-                <a href="tel:+639454221874" className="text-fg-muted text-sm hover:text-fg transition-colors">0945 422 1874</a>
-              </div>
             </div>
             <div>
               <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{tx.locationLabel}</p>
