@@ -3,11 +3,11 @@ import ContactContent from "./ContactContent";
 
 export const metadata: Metadata = {
   title: "Contact | Architect in Baguio City — Get a Consultation",
-  description: "Contact FPA Design Consultancy — architect in Baguio City. Architectural design, interior design, renovation, and building permits. Send us a message to get started.",
+  description: "Contact FPA Design Consultancy — architect in Baguio City. Architectural design, interior design, renovation, and building permits. Call +63 969 180 7841.",
   alternates: { canonical: "https://www.fp-architect.com/contact" },
   openGraph: {
     title: "Contact FPA Design Consultancy | Architect in Baguio City",
-    description: "Reach out for a free consultation — architectural design, interior design, renovation, and building permits. Send us a message to get started.",
+    description: "Reach out for a free consultation — architectural design, interior design, renovation, and building permits. Call +63 969 180 7841.",
     url: "https://www.fp-architect.com/contact",
     images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
   },

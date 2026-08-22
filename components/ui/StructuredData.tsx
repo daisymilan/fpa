@@ -19,6 +19,7 @@ export default function StructuredData() {
           contentUrl: `${baseUrl}/images/logo.png`,
         },
         image: `${baseUrl}/images/og-image.jpg`,
+        telephone: "+639691807841",
         email: "fpadesignconsultancy@gmail.com",
         address: {
           "@type": "PostalAddress",
@@ -98,6 +99,11 @@ export default function StructuredData() {
               "@type": "Reservation",
               name: "Initial Design Consultation",
             },
+          },
+          {
+            "@type": "CommunicateAction",
+            name: "Call FPA Design Consultancy",
+            target: "tel:+639691807841",
           },
         ],
         hasOfferCatalog: {
