@@ -1,28 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell($env:CLAUDE_CODE_MAX_OUTPUT_TOKENS = \"100000\"; Write-Output \"CLAUDE_CODE_MAX_OUTPUT_TOKENS set to: $env:CLAUDE_CODE_MAX_OUTPUT_TOKENS\")",
       "Bash(npx tsc *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(git remote *)",
-      "PowerShell(Copy-Item \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\logo.png\" -Destination \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\app\\\\icon.png\" -Force)",
-      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\portfolio\\\\project-5\")",
-      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\public\\\\images\\\\portfolio\\\\project-6\")",
-      "Bash(mkdir -p \"c:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\fpa-design-consultancy\\\\app\\\\locations\\\\[slug]\")",
-      "Bash(pandoc --version)",
-      "Bash(pandoc c:/Users/acer/Desktop/FPA/fpa-design-consultancy/audit-report.md -o c:/Users/acer/Desktop/FPA/FPA-Production-Readiness-Audit.docx --from markdown --to docx --highlight-style tango -V geometry:margin=1in)",
-      "PowerShell(pandoc --version 2>$null)",
-      "PowerShell(Get-Command pandoc -ErrorAction SilentlyContinue)",
       "PowerShell(node --version)",
-      "PowerShell(npm --version)",
-      "Read(//c/Program Files/Pandoc/**)",
-      "PowerShell($f = Get-Item \"C:\\\\Users\\\\acer\\\\Desktop\\\\FPA\\\\FPA-Production-Readiness-Audit.docx\"; \"{0:N0} KB\" -f \\($f.Length / 1KB\\))",
-      "PowerShell(npm uninstall docx --save-dev --silent 2>&1)"
-    ],
-    "additionalDirectories": [
-      "c:\\Users\\acer\\Desktop\\FPA\\fpa-design-consultancy\\app\\locations"
+      "PowerShell(npm --version)"
     ]
   }
 }
