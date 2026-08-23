@@ -84,7 +84,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://m.me/FPADesignConsultancy"
+                href="https://m.me/100082100103789"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Messenger"
