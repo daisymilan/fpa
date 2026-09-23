@@ -6,6 +6,13 @@ import { getFeaturedProjects } from "@/lib/projects";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
 
+// The large first tile spans two rows only at lg, so the orphan tile falls on different counts at md vs lg.
+function lastTileSpan(smallerCount: number) {
+  if (smallerCount >= 3 && smallerCount % 2 === 1) return "lg:col-span-2";
+  if (smallerCount >= 2 && smallerCount % 2 === 0) return "md:col-span-2 lg:col-span-1";
+  return "";
+}
+
 export default function FeaturedProjects() {
   const projects = getFeaturedProjects();
   const { lang } = useLanguage();
@@ -62,8 +69,8 @@ export default function FeaturedProjects() {
           </div>
 
           {/* Smaller projects */}
-          {projects.slice(1).map((project) => (
-            <div key={project.slug} className="group relative overflow-hidden bg-surface">
+          {projects.slice(1).map((project, i, smaller) => (
+            <div key={project.slug} className={`group relative overflow-hidden bg-surface ${i === smaller.length - 1 ? lastTileSpan(smaller.length) : ""}`}>
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={project.coverImage}
