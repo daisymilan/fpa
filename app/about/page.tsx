@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AboutContent from "./AboutContent";
 
 export const metadata: Metadata = {
-  title: "About | Arch. Friendzel B. Pengi, UAP — Licensed Architect, Baguio City | FPA Design Consultancy",
+  title: "Arch. Friendzel B. Pengi, UAP | FPA Design Consultancy",
   description:
     "Arch. Friendzel B. Pengi, UAP — PRC-licensed architect, Safety Officer 2, and founder of FPA Design Consultancy, Baguio City, Benguet, Philippines.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Licensed architect and founder of FPA Design Consultancy, Baguio City. Specializing in residential design, commercial architecture, and interior design.",
     url: "https://www.fp-architect.com/about",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/default.jpg", width: 1200, height: 630 }],
   },
 };
 

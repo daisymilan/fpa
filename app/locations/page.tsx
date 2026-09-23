@@ -5,7 +5,7 @@ import { locations } from "@/lib/locations";
 export const metadata: Metadata = {
   title: "Service Locations | FPA Design Consultancy",
   description:
-    "FPA Design Consultancy serves clients across the Philippines — Baguio City (HQ), Ifugao, Nueva Vizcaya, La Union, and Ilocos Sur — with completed projects in each location.",
+    "FPA Design Consultancy serves Baguio City, Ifugao, Nueva Vizcaya, La Union and Ilocos Sur, plus remote design services for clients worldwide.",
   alternates: { canonical: "https://www.fp-architect.com/locations" },
   keywords: [
     "architect service areas Philippines",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description:
       "FPA Design Consultancy serves Baguio City, Ifugao, Nueva Vizcaya, La Union, and Ilocos Sur — with remote design services available worldwide.",
     url: "https://www.fp-architect.com/locations",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/default.jpg", width: 1200, height: 630 }],
   },
 };
 

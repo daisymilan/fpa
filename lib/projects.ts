@@ -7,9 +7,9 @@ export const projects: Project[] = [
     type: "Residential",
     location: "Nueva Vizcaya",
     seoTitle:
-      "Modern Minimalist Bungalow with Loft — Nueva Vizcaya | FPA Design Consultancy",
+      "Bungalow with Loft, Nueva Vizcaya | FPA Design Consultancy",
     metaDescription:
-      "Minimalist bungalow with loft in Nueva Vizcaya — open-plan living, gold vanity master suite, spa-inspired bathroom, and layered lighting design by FPA Design Consultancy, Baguio City.",
+      "Minimalist bungalow with loft in Nueva Vizcaya — open-plan living, gold vanity master suite, spa-inspired bath and layered lighting design.",
     relatedServiceSlugs: [
       "architectural-design",
       "interior-design",
@@ -59,10 +59,11 @@ export const projects: Project[] = [
     type: "Interior Design",
     location: "Australia",
     country: "AU",
+    lastModified: "2026-09-23",
     seoTitle:
-      "Boutique-Hotel-Inspired Interior Visualisation — Australia | FPA Design Consultancy",
+      "Interior Visualisation, Australia | FPA Design Consultancy",
     metaDescription:
-      "Boutique-hotel-inspired interior visualisation of a two-storey home in Australia — curated furnishings, decorative lighting, bold artwork, and pool courtyard rendered by FPA Design Consultancy, Baguio City.",
+      "Boutique-hotel-inspired 3D interior visualisation of a two-storey Australian home — curated furnishings, bold artwork and a pool courtyard.",
     relatedServiceSlugs: [
       "3d-visualization-rendering",
       "architectural-design",
@@ -129,9 +130,9 @@ export const projects: Project[] = [
     type: "Residential",
     location: "Ifugao",
     seoTitle:
-      "Contemporary 2 Storey Residence — Ifugao Highlands | FPA Design Consultancy",
+      "2 Storey Residence, Ifugao | FPA Design Consultancy",
     metaDescription:
-      "Bioclimatic two-storey tropical home in Ifugao with double-height clerestory skylight, private swimming pool, and dramatic glass facade by FPA Design Consultancy, Baguio City.",
+      "Bioclimatic two-storey home in Ifugao with a double-height clerestory skylight, private pool and glass facade by FPA Design Consultancy.",
     relatedServiceSlugs: [
       "architectural-design",
       "interior-design",
@@ -172,9 +173,9 @@ export const projects: Project[] = [
     type: "Residential",
     location: "La Union",
     seoTitle:
-      "Typhoon-Resistant Bungalow with Loft — La Union, Philippines | FPA Design Consultancy",
+      "Typhoon-Ready Bungalow, La Union | FPA Design Consultancy",
     metaDescription:
-      "Climate-responsive bungalow in La Union — engineered pyramidal hip roof for typhoon resistance, deep protective overhangs, and tropical outdoor living by FPA Design Consultancy.",
+      "Typhoon-resistant bungalow with loft in La Union — engineered pyramidal hip roof, deep overhangs and tropical outdoor living spaces.",
     relatedServiceSlugs: [
       "architectural-design",
       "space-planning",
@@ -219,9 +220,9 @@ export const projects: Project[] = [
     type: "Residential",
     location: "Tagudin, Ilocos Sur",
     seoTitle:
-      "3 Bedroom Bungalow Residence — Tagudin, Ilocos Sur | FPA Design Consultancy",
+      "3 Bedroom Bungalow, Tagudin | FPA Design Consultancy",
     metaDescription:
-      "Three-bedroom bungalow in Tagudin, Ilocos Sur — terracotta hip roof, open-air foyer, private tropical courtyard, and earthy walnut-and-concrete interiors by FPA Design Consultancy.",
+      "Three-bedroom bungalow in Tagudin, Ilocos Sur — terracotta hip roof, open-air foyer, tropical courtyard and walnut-and-concrete interiors.",
     relatedServiceSlugs: [
       "architectural-design",
       "interior-design",
@@ -274,9 +275,9 @@ export const projects: Project[] = [
     type: "Renovation",
     location: "Baguio City, Benguet",
     seoTitle:
-      "Home Office Room Renovation — Baguio City Before & After | FPA Design Consultancy",
+      "Home Office Renovation, Baguio City | FPA Design Consultancy",
     metaDescription:
-      "Home office renovation in Baguio City — full before-to-after transformation into an industrial-contemporary workspace with backlit floating desk niche and LED lighting by FPA Design Consultancy.",
+      "Before-and-after home office renovation in Baguio City — backlit floating desk niche, microcement walls and LED lighting by FPA Design Consultancy.",
     relatedServiceSlugs: [
       "renovation-remodeling",
       "interior-design",
@@ -321,9 +322,9 @@ export const projects: Project[] = [
     type: "Commercial",
     location: "Ifugao",
     seoTitle:
-      "3 Storey Commercial Office Building — Ifugao, Cordillera | FPA Design Consultancy",
+      "3 Storey Office Building, Ifugao | FPA Design Consultancy",
     metaDescription:
-      "Three-storey office building in Ifugao with curvilinear biophilic facade, full-length curtain glazing, and indigenous Filipino design elements by FPA Design Consultancy, Baguio City.",
+      "Three-storey office building in Ifugao with a curvilinear biophilic facade, full-length curtain glazing and indigenous Filipino design elements.",
     relatedServiceSlugs: [
       "architectural-design",
       "construction-project-management",
@@ -362,6 +363,23 @@ export const projects: Project[] = [
     featured: true,
   },
 ];
+
+export const DEFAULT_SHARE_IMAGE = "/images/og/default.jpg";
+const DEFAULT_LAST_MODIFIED = "2026-06-22";
+
+// Share images are generated by scripts/generate-og-images.mjs from each project's cover.
+export function getShareImage(project: Project | undefined): string {
+  const folder = project?.coverImage.match(/\/portfolio\/([^/]+)\/cover\./)?.[1];
+  return folder ? `/images/og/${folder}.jpg` : DEFAULT_SHARE_IMAGE;
+}
+
+export function getLastModified(project: Project): string {
+  return project.lastModified ?? DEFAULT_LAST_MODIFIED;
+}
+
+export function getLatestProjectDate(): string {
+  return projects.map(getLastModified).sort().at(-1) ?? DEFAULT_LAST_MODIFIED;
+}
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

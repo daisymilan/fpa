@@ -7,6 +7,7 @@ interface Props {
 export default function ProjectStructuredData({ project }: Props) {
   const baseUrl = "https://www.fp-architect.com";
   const projectUrl = `${baseUrl}/portfolio/${project.slug}`;
+  const isPhilippines = (project.country ?? "PH") === "PH";
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -42,7 +43,7 @@ export default function ProjectStructuredData({ project }: Props) {
     locationCreated: {
       "@type": "Place",
       name: project.location,
-      addressCountry: project.country ?? "PH",
+      addressCountry: isPhilippines ? "PH" : project.country,
     },
     genre: project.type,
     keywords: [
@@ -51,9 +52,8 @@ export default function ProjectStructuredData({ project }: Props) {
       project.location,
       "FPA Design Consultancy",
       "Arch. Friendzel Pengi",
-      "architect Philippines",
-      "architectural design Philippines",
-      `${project.type.toLowerCase()} design ${project.location}`,
+      ...(isPhilippines ? ["architect Philippines", "architectural design Philippines"] : []),
+      `${project.type.toLowerCase().replace(/ design$/, "")} design ${project.location}`,
     ],
   };
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getProjectBySlug, projects } from "@/lib/projects";
+import { getProjectBySlug, getShareImage, projects } from "@/lib/projects";
 import { getServiceBySlug } from "@/lib/services";
 import ProjectGallery from "@/components/portfolio/ProjectGallery";
 import ProjectStructuredData from "@/components/ui/ProjectStructuredData";
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://www.fp-architect.com/portfolio/${slug}`,
       images: [
         {
-          url: project.coverImage,
+          url: getShareImage(project),
           width: 1200,
           height: 630,
           alt: project.imageAlts[0] ?? `${project.name} — ${project.type} in ${project.location} by FPA Design Consultancy`,

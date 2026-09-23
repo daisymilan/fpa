@@ -22,7 +22,7 @@ export const locations: LocationData[] = [
     isHeadquarters: true,
     metaTitle: "Architect in Baguio City, Benguet | FPA Design Consultancy",
     metaDescription:
-      "Licensed architect in Baguio City, Benguet. FPA Design Consultancy delivers residential design, commercial architecture, interior design, renovation, and building permits across the Cordillera region.",
+      "Licensed architect in Baguio City, Benguet — residential, commercial and interior design, renovation, and building permits across the Cordillera.",
     h1: "Architect in Baguio City",
     intro:
       "FPA Design Consultancy is headquartered in Baguio City, Benguet — the highland capital of the Cordillera Administrative Region. Led by Arch. Friendzel B. Pengi, UAP, the firm provides full architectural, interior, and project management services to homeowners, developers, and institutions throughout Baguio City and the wider Cordillera.",
@@ -43,7 +43,7 @@ export const locations: LocationData[] = [
     region: "Cordillera Administrative Region",
     metaTitle: "Architect in Ifugao, Cordillera | FPA Design Consultancy",
     metaDescription:
-      "Architectural design and construction documentation in Ifugao — residential and commercial projects by FPA Design Consultancy, Baguio City. View completed projects in Ifugao.",
+      "Architect in Ifugao — residential and commercial design and construction documents by FPA Design Consultancy. See our completed Ifugao projects.",
     h1: "Architect in Ifugao",
     intro:
       "FPA Design Consultancy has completed both residential and commercial architectural projects in Ifugao — bringing contemporary, climate-responsive design to the Cordillera highlands. Our Ifugao portfolio includes a two-storey tropical residence and a landmark three-storey commercial office building.",
@@ -62,9 +62,9 @@ export const locations: LocationData[] = [
     city: "Nueva Vizcaya",
     province: "Nueva Vizcaya",
     region: "Cagayan Valley",
-    metaTitle: "Architect in Nueva Vizcaya | FPA Design Consultancy Baguio City",
+    metaTitle: "Architect in Nueva Vizcaya | FPA Design Consultancy",
     metaDescription:
-      "Architectural design services in Nueva Vizcaya — residential design, 3D visualization, and building permits by FPA Design Consultancy, Baguio City. View our completed bungalow project.",
+      "Residential design, 3D visualization and building permits in Nueva Vizcaya by FPA Design Consultancy, Baguio City. See our completed bungalow.",
     h1: "Architect in Nueva Vizcaya",
     intro:
       "FPA Design Consultancy serves clients in Nueva Vizcaya from our base in Baguio City, providing full architectural design, documentation, and building permit services across the province. Our completed modern bungalow project demonstrates our expertise in delivering refined residential design in Nueva Vizcaya.",
@@ -83,9 +83,9 @@ export const locations: LocationData[] = [
     city: "La Union",
     province: "La Union",
     region: "Ilocos Region",
-    metaTitle: "Architect in La Union | FPA Design Consultancy Baguio City",
+    metaTitle: "Architect in La Union | FPA Design Consultancy",
     metaDescription:
-      "Architectural design services in La Union — climate-responsive coastal residential design and building permits by FPA Design Consultancy. View our completed bungalow project in La Union.",
+      "Climate-responsive, typhoon-ready home design and building permits in La Union by FPA Design Consultancy. See our completed La Union bungalow.",
     h1: "Architect in La Union",
     intro:
       "FPA Design Consultancy extends its architectural design and documentation services to La Union, serving clients across the province from our headquarters in Baguio City. Our completed coastal residential project in La Union demonstrates our ability to balance structural resilience with contemporary living in typhoon-prone locations.",
@@ -104,9 +104,9 @@ export const locations: LocationData[] = [
     city: "Ilocos Sur",
     province: "Ilocos Sur",
     region: "Ilocos Region",
-    metaTitle: "Architect in Ilocos Sur | FPA Design Consultancy Baguio City",
+    metaTitle: "Architect in Ilocos Sur | FPA Design Consultancy",
     metaDescription:
-      "Architectural design services in Ilocos Sur — residential design and building permits by FPA Design Consultancy, Baguio City. View our completed 3-bedroom bungalow in Tagudin, Ilocos Sur.",
+      "Architectural design and building permits in Ilocos Sur by FPA Design Consultancy, Baguio City. See our completed 3-bedroom bungalow in Tagudin.",
     h1: "Architect in Ilocos Sur",
     intro:
       "FPA Design Consultancy brings full architectural design and documentation services to clients in Ilocos Sur, reaching the province from our headquarters in Baguio City. Our completed project in Tagudin demonstrates our capacity to deliver richly resolved residential architecture across the Ilocos Region.",

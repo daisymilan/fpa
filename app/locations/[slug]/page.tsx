@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { locations, getLocationBySlug } from "@/lib/locations";
-import { getProjectBySlug } from "@/lib/projects";
+import { getProjectBySlug, getShareImage } from "@/lib/projects";
 import { getServiceBySlug, ServiceData } from "@/lib/services";
 
 interface Props {
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: location.metaTitle,
       description: location.metaDescription,
       url: `https://www.fp-architect.com/locations/${slug}`,
-      images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+      images: [{ url: getShareImage(getProjectBySlug(location.projectSlugs[0] ?? "")), width: 1200, height: 630 }],
     },
   };
 }

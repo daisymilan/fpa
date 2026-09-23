@@ -47,8 +47,8 @@ const webPageSchema = {
   about: { "@id": `${baseUrl}/#business` },
   primaryImageOfPage: {
     "@type": "ImageObject",
-    url: `${baseUrl}/images/og-image.jpg`,
-    contentUrl: `${baseUrl}/images/og-image.jpg`,
+    url: `${baseUrl}/images/og/default.jpg`,
+    contentUrl: `${baseUrl}/images/og/default.jpg`,
     width: 1200,
     height: 630,
   },

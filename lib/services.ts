@@ -14,15 +14,17 @@ export interface ServiceData {
   relatedProjectSlugs: string[];
   relatedServiceSlugs: string[];
   faqs: ServiceFAQ[];
+  worldwide?: boolean;
 }
 
 export const services: ServiceData[] = [
   {
     slug: "architectural-design",
     title: "Architectural Design",
-    metaTitle: "Architectural Design Services in Baguio City | FPA Design Consultancy",
+    worldwide: true,
+    metaTitle: "Architectural Design Services | FPA Design Consultancy",
     metaDescription:
-      "Licensed architectural design services in Baguio City and across the Philippines. From schematic concept to construction documents — residential and commercial projects by Arch. Friendzel B. Pengi, UAP.",
+      "Architectural design for clients in Baguio City and worldwide — from concept to construction documents, by Arch. Friendzel B. Pengi, UAP.",
     keywords: [
       "architectural design Baguio",
       "architect Baguio City",
@@ -77,9 +79,9 @@ export const services: ServiceData[] = [
   {
     slug: "construction-project-management",
     title: "Construction Project Management",
-    metaTitle: "Construction Project Management Baguio City | FPA Design Consultancy",
+    metaTitle: "Construction Management, Baguio | FPA Design Consultancy",
     metaDescription:
-      "Professional construction project management services in the Philippines. End-to-end contractor coordination, scheduling, cost control, and quality oversight by FPA Design Consultancy, Baguio City.",
+      "Construction project management in Baguio City and across the Philippines — contractor coordination, scheduling, cost control and quality oversight.",
     keywords: [
       "construction project management Philippines",
       "construction manager Baguio",
@@ -128,9 +130,9 @@ export const services: ServiceData[] = [
   {
     slug: "construction-supervision",
     title: "Construction Supervision",
-    metaTitle: "Construction Supervision Services Philippines | FPA Design Consultancy",
+    metaTitle: "Construction Supervision | FPA Design Consultancy",
     metaDescription:
-      "On-site architectural construction supervision in Baguio City and across the Philippines. Ensuring quality, plan compliance, and material standards on every project — FPA Design Consultancy.",
+      "On-site construction supervision in Baguio City and across the Philippines — quality, plan compliance and material standards on every project.",
     keywords: [
       "construction supervision Philippines",
       "architectural supervision Baguio",
@@ -178,9 +180,10 @@ export const services: ServiceData[] = [
   {
     slug: "interior-design",
     title: "Interior Design",
-    metaTitle: "Interior Design Services Baguio City | FPA Design Consultancy",
+    worldwide: true,
+    metaTitle: "Interior Design, Baguio & Worldwide | FPA Design Consultancy",
     metaDescription:
-      "Interior design services in Baguio City and across the Philippines. Residential and commercial interiors — space planning, material selection, furniture layouts, and lighting design by FPA Design Consultancy.",
+      "Residential and commercial interior design for clients in Baguio City and worldwide — space planning, materials, furniture layouts and lighting design.",
     keywords: [
       "interior design Baguio",
       "interior designer Baguio City",
@@ -233,9 +236,10 @@ export const services: ServiceData[] = [
   {
     slug: "space-planning",
     title: "Space Planning",
-    metaTitle: "Space Planning Services Philippines | FPA Design Consultancy Baguio",
+    worldwide: true,
+    metaTitle: "Space Planning, Baguio & Worldwide | FPA Design Consultancy",
     metaDescription:
-      "Professional space planning for residential, commercial, and institutional properties in the Philippines. Optimize every square meter with FPA Design Consultancy, Baguio City.",
+      "Space planning for homes, offices and institutional buildings, for clients in the Philippines and worldwide — make every square metre work.",
     keywords: [
       "space planning Philippines",
       "space planning Baguio",
@@ -283,9 +287,10 @@ export const services: ServiceData[] = [
   {
     slug: "cabinet-design",
     title: "Cabinet Design",
-    metaTitle: "Custom Cabinet Design Philippines | FPA Design Consultancy Baguio",
+    worldwide: true,
+    metaTitle: "Custom Cabinet Design | FPA Design Consultancy",
     metaDescription:
-      "Custom cabinet and millwork design in the Philippines — kitchens, bathrooms, bedrooms, and workspaces. Coordinated with your overall interior design by FPA Design Consultancy, Baguio City.",
+      "Custom cabinet and millwork design for kitchens, bathrooms, bedrooms and workspaces, for clients in the Philippines and worldwide.",
     keywords: [
       "cabinet design Philippines",
       "custom kitchen cabinets Baguio",
@@ -333,9 +338,9 @@ export const services: ServiceData[] = [
   {
     slug: "renovation-remodeling",
     title: "Renovation & Remodeling",
-    metaTitle: "Renovation & Remodeling Design Baguio City | FPA Design Consultancy",
+    metaTitle: "Renovation Design, Baguio City | FPA Design Consultancy",
     metaDescription:
-      "Professional renovation and remodeling design in Baguio City and across the Philippines. Room transformations, home renovations, and commercial remodels by FPA Design Consultancy.",
+      "Renovation and remodeling design in Baguio City and across the Philippines — room makeovers, whole-home renovations and commercial remodels.",
     keywords: [
       "renovation design Baguio",
       "home renovation Baguio City",
@@ -385,9 +390,9 @@ export const services: ServiceData[] = [
     slug: "building-permit-documentation",
     title: "Building Permit Documentation",
     metaTitle:
-      "Building Permit Documentation Philippines | FPA Design Consultancy Baguio",
+      "Building Permits, Philippines | FPA Design Consultancy",
     metaDescription:
-      "Building permit preparation and processing in Baguio City and across the Philippines. Full compliance with the National Building Code — architectural drawings, Form B, LGU coordination by FPA Design Consultancy.",
+      "Building permit drawings and processing in Baguio City and across the Philippines — National Building Code compliance, Form B and LGU coordination.",
     keywords: [
       "building permit Philippines",
       "building permit Baguio City",
@@ -445,10 +450,11 @@ export const services: ServiceData[] = [
   {
     slug: "3d-visualization-rendering",
     title: "3D Visualization & Rendering",
+    worldwide: true,
     metaTitle:
-      "3D Architectural Visualization & Rendering Philippines | FPA Design Consultancy",
+      "3D Architectural Rendering | FPA Design Consultancy",
     metaDescription:
-      "Photorealistic 3D architectural visualization and rendering in the Philippines. Exterior and interior renders, virtual walkthroughs using Lumion and Enscape — by FPA Design Consultancy, Baguio City.",
+      "Photorealistic 3D architectural rendering for clients in the Philippines and worldwide — exterior and interior renders and animated walkthroughs.",
     keywords: [
       "3D architectural rendering Philippines",
       "architectural visualization Baguio",

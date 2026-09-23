@@ -5,14 +5,14 @@ import { projects } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Architecture Portfolio | FPA Design Consultancy Baguio City",
   description:
-    "Portfolio of FPA Design Consultancy — residential homes, commercial buildings, and interior design projects across Baguio City and the Philippines.",
+    "Residential, commercial and interior design projects by FPA Design Consultancy — across Baguio City, Northern Luzon and for clients worldwide.",
   alternates: { canonical: "https://www.fp-architect.com/portfolio" },
   openGraph: {
     title: "Portfolio | FPA Design Consultancy — Architectural Projects",
     description:
       "Residential homes, commercial buildings, and interior design projects in Baguio City and across the Philippines by Arch. Friendzel B. Pengi, UAP.",
     url: "https://www.fp-architect.com/portfolio",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/default.jpg", width: 1200, height: 630 }],
   },
 };
 

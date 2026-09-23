@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       "Licensed architectural firm in Baguio City specializing in residential, commercial, and interior design — serving clients in the Philippines and worldwide.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og/default.jpg",
         width: 1200,
         height: 630,
         alt: "FPA Design Consultancy — Designing Spaces. Building Futures.",

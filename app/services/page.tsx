@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Architectural design, interior design, construction management, building permits, and renovation — by FPA Design Consultancy, Baguio City.",
     url: "https://www.fp-architect.com/services",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/og/default.jpg", width: 1200, height: 630 }],
   },
 };
 

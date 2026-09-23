@@ -1,15 +1,16 @@
 import { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
+import { projects, getLastModified, getLatestProjectDate } from "@/lib/projects";
 import { services } from "@/lib/services";
 import { locations } from "@/lib/locations";
 
 const baseUrl = "https://www.fp-architect.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const latestProjectDate = new Date(getLatestProjectDate());
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: latestProjectDate,
       priority: 1.0,
       changeFrequency: "weekly",
     },
@@ -27,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
+      lastModified: latestProjectDate,
       priority: 0.9,
       changeFrequency: "weekly",
     },
@@ -48,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${baseUrl}/portfolio/${project.slug}`,
-    lastModified: new Date("2026-06-22"),
+    lastModified: new Date(getLastModified(project)),
     priority: 0.7,
     changeFrequency: "monthly" as const,
     images: project.images.map((img) => `${baseUrl}${img}`),

@@ -14,6 +14,7 @@ export interface Project {
   images: string[];
   imageAlts: string[];
   video?: ProjectVideo;
+  lastModified?: string;
   featured: boolean;
 }
 

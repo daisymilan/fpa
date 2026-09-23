@@ -75,11 +75,12 @@ export default function StructuredData() {
             containedInPlace: { "@type": "Country", name: "Philippines" },
           },
           { "@type": "Country", name: "Philippines" },
+          "Worldwide",
         ],
         serviceArea: {
           "@type": "GeoCircle",
           geoMidpoint: { "@type": "GeoCoordinates", latitude: 16.4023, longitude: 120.596 },
-          description: "Baguio City, Cordillera Administrative Region, and Northern Luzon, Philippines",
+          description: "Baguio City, Cordillera Administrative Region, and Northern Luzon, Philippines, with remote design services worldwide",
         },
         founder: { "@id": `${baseUrl}/#architect` },
         employee: { "@id": `${baseUrl}/#architect` },

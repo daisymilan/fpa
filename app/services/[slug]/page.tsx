@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getServiceBySlug, services, ServiceData } from "@/lib/services";
-import { getProjectBySlug } from "@/lib/projects";
+import { getProjectBySlug, getShareImage } from "@/lib/projects";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${service.title} | FPA Design Consultancy`,
       description: service.metaDescription,
       url: `https://www.fp-architect.com/services/${slug}`,
-      images: [{ url: "/images/og-image.jpg", width: 1200, height: 630 }],
+      images: [{ url: getShareImage(getProjectBySlug(service.relatedProjectSlugs[0] ?? "")), width: 1200, height: 630 }],
     },
   };
 }
@@ -46,6 +46,7 @@ export default async function ServicePage({ params }: Props) {
     .filter((s): s is ServiceData => s !== undefined);
 
   const baseUrl = "https://www.fp-architect.com";
+  const areaServed = service.worldwide ? ["Philippines", "Worldwide"] : ["Philippines"];
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -76,12 +77,12 @@ export default async function ServicePage({ params }: Props) {
     category: "Architectural Services",
     description: service.description,
     provider: { "@id": `${baseUrl}/#business` },
-    areaServed: ["Philippines", "Worldwide"],
+    areaServed,
     url: `${baseUrl}/services/${slug}`,
     offers: {
       "@type": "Offer",
       seller: { "@id": `${baseUrl}/#business` },
-      areaServed: ["Philippines", "Worldwide"],
+      areaServed,
       availableAtOrFrom: {
         "@type": "Place",
         address: {
