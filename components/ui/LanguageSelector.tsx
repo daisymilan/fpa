@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { languages, type Language } from "@/lib/translations";
+
+const noopSubscribe = () => () => {};
 
 export default function LanguageSelector() {
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false);
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;

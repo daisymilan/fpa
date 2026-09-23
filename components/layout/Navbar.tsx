@@ -13,6 +13,11 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [menuPathname, setMenuPathname] = useState(pathname);
+  if (pathname !== menuPathname) {
+    setMenuPathname(pathname);
+    setMenuOpen(false);
+  }
   const { lang } = useLanguage();
   const tx = t[lang];
 
@@ -30,8 +35,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   return (
     <header

@@ -1,9 +1,27 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useContext, useSyncExternalStore, type ReactNode } from "react";
 import { type Language } from "@/lib/translations";
 
 const VALID_LANGS: Language[] = ["en", "fil", "zh", "ja", "ko", "ar", "es"];
+const STORAGE_KEY = "fpa-lang";
+const listeners = new Set<() => void>();
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  window.addEventListener("storage", listener);
+  return () => {
+    listeners.delete(listener);
+    window.removeEventListener("storage", listener);
+  };
+}
+
+function getSnapshot(): Language {
+  const stored = localStorage.getItem(STORAGE_KEY) as Language | null;
+  return stored && VALID_LANGS.includes(stored) ? stored : "en";
+}
+
+const getServerSnapshot = (): Language => "en";
 
 interface LanguageContextValue {
   lang: Language;
@@ -16,18 +34,11 @@ const LanguageContext = createContext<LanguageContextValue>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Language>("en");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("fpa-lang") as Language | null;
-    if (stored && VALID_LANGS.includes(stored)) {
-      setLangState(stored);
-    }
-  }, []);
+  const lang = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const setLang = (l: Language) => {
-    setLangState(l);
-    localStorage.setItem("fpa-lang", l);
+    localStorage.setItem(STORAGE_KEY, l);
+    listeners.forEach((listener) => listener());
   };
 
   return (
