@@ -132,7 +132,7 @@ export default async function ProjectPage({ params }: Props) {
             <div className="w-8 h-px bg-[#FF3B30]" />
             <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Project Gallery</span>
           </div>
-          <ProjectGallery images={project.images} imageAlts={project.imageAlts} projectName={project.name} />
+          <ProjectGallery images={project.images} imageAlts={project.imageAlts} projectName={project.name} video={project.video} />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ export interface Project {
   name: string;
   type: "Residential" | "Commercial" | "Interior Design" | "Renovation";
   location: string;
+  country?: string;
   seoTitle: string;
   metaDescription: string;
   relatedServiceSlugs: string[];
@@ -12,7 +13,15 @@ export interface Project {
   coverImage: string;
   images: string[];
   imageAlts: string[];
+  video?: ProjectVideo;
   featured: boolean;
+}
+
+export interface ProjectVideo {
+  src: string;
+  poster: string;
+  title: string;
+  description: string;
 }
 
 export interface Service {

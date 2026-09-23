@@ -52,6 +52,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
     changeFrequency: "monthly" as const,
     images: project.images.map((img) => `${baseUrl}${img}`),
+    ...(project.video && {
+      videos: [
+        {
+          title: project.video.title,
+          description: project.video.description,
+          thumbnail_loc: `${baseUrl}${project.video.poster}`,
+          content_loc: `${baseUrl}${project.video.src}`,
+        },
+      ],
+    }),
   }));
 
   const locationIndexPage: MetadataRoute.Sitemap = [

@@ -42,7 +42,7 @@ export default function ProjectStructuredData({ project }: Props) {
     locationCreated: {
       "@type": "Place",
       name: project.location,
-      addressCountry: "PH",
+      addressCountry: project.country ?? "PH",
     },
     genre: project.type,
     keywords: [

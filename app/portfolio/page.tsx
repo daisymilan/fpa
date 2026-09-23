@@ -47,7 +47,7 @@ const collectionPageSchema = {
     locationCreated: {
       "@type": "Place",
       name: p.location,
-      addressCountry: "PH",
+      addressCountry: p.country ?? "PH",
     },
   })),
 };
