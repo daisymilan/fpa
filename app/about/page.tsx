@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AboutContent from "./AboutContent";
 
 export const metadata: Metadata = {
-  title: "About | Arch. Friendzel B. Pengi, UAP — Licensed Architect, Baguio City",
+  title: "About | Arch. Friendzel B. Pengi, UAP — Licensed Architect, Baguio City | FPA Design Consultancy",
   description:
     "Arch. Friendzel B. Pengi, UAP — PRC-licensed architect, Safety Officer 2, and founder of FPA Design Consultancy, Baguio City, Benguet, Philippines.",
   keywords: [

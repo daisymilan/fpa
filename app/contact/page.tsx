@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
 
 export const metadata: Metadata = {
-  title: "Contact | Architect in Baguio City — Get a Consultation",
+  title: "Contact | Architect in Baguio City — Get a Consultation | FPA Design Consultancy",
   description: "Contact FPA Design Consultancy — architect in Baguio City. Architectural design, interior design, renovation, and building permits. Call +63 969 180 7841.",
   alternates: { canonical: "https://www.fp-architect.com/contact" },
   openGraph: {

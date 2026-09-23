@@ -22,10 +22,7 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fp-architect.com"),
-  title: {
-    default: "FPA Design Consultancy | Architect in Baguio City, Benguet",
-    template: "%s | FPA Design Consultancy",
-  },
+  title: "FPA Design Consultancy | Architect in Baguio City, Benguet",
   description:
     "Licensed architect in Baguio City, Philippines — residential, commercial, and interior design, renovation, and building permits by FPA Design Consultancy.",
   keywords: [
