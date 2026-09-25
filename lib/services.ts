@@ -472,6 +472,7 @@ export const services: ServiceData[] = [
       "Presentation-ready output files",
     ],
     relatedProjectSlugs: [
+      "2-storey-house-interior-renovation-australia",
       "bungalow-residence-with-loft-nueva-vizcaya",
       "2-storey-residence-ifugao",
       "bungalow-residence-with-loft-la-union",
