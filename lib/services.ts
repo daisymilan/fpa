@@ -22,7 +22,7 @@ export const services: ServiceData[] = [
     slug: "architectural-design",
     title: "Architectural Design",
     worldwide: true,
-    metaTitle: "Architectural Design Services | FPA Design Consultancy",
+    metaTitle: "Architectural Design in Baguio City | FPA Design Consultancy",
     metaDescription:
       "Architectural design for clients in Baguio City and worldwide — from concept to construction documents, by Arch. Friendzel B. Pengi, UAP.",
     keywords: [
@@ -57,7 +57,7 @@ export const services: ServiceData[] = [
       {
         question: "How much does architectural design cost in the Philippines?",
         answer:
-          "Architectural fees follow the UAP Schedule of Minimum Basic Fees, typically ranging from 5–10% of total construction cost for full design and supervision services. FPA Design Consultancy provides project-specific quotations after an initial consultation.",
+          "Architectural fees follow the UAP Schedule of Minimum Basic Fees, typically ranging from 8–12% of total construction cost for full design and supervision services. FPA Design Consultancy provides project-specific quotations after an initial consultation.",
       },
       {
         question: "How long does an architectural design project take?",
@@ -130,7 +130,7 @@ export const services: ServiceData[] = [
   {
     slug: "construction-supervision",
     title: "Construction Supervision",
-    metaTitle: "Construction Supervision | FPA Design Consultancy",
+    metaTitle: "Construction Supervision, Baguio | FPA Design Consultancy",
     metaDescription:
       "On-site construction supervision in Baguio City and across the Philippines — quality, plan compliance and material standards on every project.",
     keywords: [
@@ -288,7 +288,7 @@ export const services: ServiceData[] = [
     slug: "cabinet-design",
     title: "Cabinet Design",
     worldwide: true,
-    metaTitle: "Custom Cabinet Design | FPA Design Consultancy",
+    metaTitle: "Custom Cabinet Design, Philippines | FPA Design Consultancy",
     metaDescription:
       "Custom cabinet and millwork design for kitchens, bathrooms, bedrooms and workspaces, for clients in the Philippines and worldwide.",
     keywords: [
@@ -452,7 +452,7 @@ export const services: ServiceData[] = [
     title: "3D Visualization & Rendering",
     worldwide: true,
     metaTitle:
-      "3D Architectural Rendering | FPA Design Consultancy",
+      "3D Rendering Services, Philippines | FPA Design Consultancy",
     metaDescription:
       "Photorealistic 3D architectural rendering for clients in the Philippines and worldwide — exterior and interior renders and animated walkthroughs.",
     keywords: [
