@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getServiceBySlug, services, ServiceData } from "@/lib/services";
 import { getProjectBySlug, getShareImage } from "@/lib/projects";
+import { guides } from "@/lib/guides";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,6 +41,8 @@ export default async function ServicePage({ params }: Props) {
     .map((s) => getProjectBySlug(s))
     .filter(Boolean)
     .slice(0, 3);
+
+  const relatedGuides = guides.filter((g) => g.relatedServiceSlugs.includes(service.slug));
 
   const relatedServices = service.relatedServiceSlugs
     .map((s) => getServiceBySlug(s))
@@ -245,6 +248,20 @@ export default async function ServicePage({ params }: Props) {
                 </div>
               ))}
             </div>
+            {relatedGuides.length > 0 && (
+              <div className="mt-12">
+                <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Related Guides</p>
+                <ul className="space-y-3">
+                  {relatedGuides.map((g) => (
+                    <li key={g.slug}>
+                      <Link href={`/guides/${g.slug}`} className="text-fg-muted text-sm hover:text-[#FF3B30] transition-colors">
+                        {g.title} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </section>

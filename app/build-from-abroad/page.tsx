@@ -338,6 +338,13 @@ export default function BuildFromAbroadPage() {
           <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
             Building From Abroad: FAQ
           </h2>
+          <p className="text-fg-muted text-sm leading-relaxed mb-10 -mt-4">
+            For the full step-by-step checklist, read{" "}
+            <Link href="/guides/ofw-guide-building-house-philippines" className="text-fg underline underline-offset-4 decoration-[#FF3B30] hover:text-[#FF3B30] transition-colors">
+              An OFW&apos;s Guide to Building a House in the Philippines
+            </Link>
+            .
+          </p>
           <div className="space-y-8">
             {faqs.map((faq) => (
               <div key={faq.question} className="pb-8" style={{ borderBottom: "1px solid var(--border)" }}>
