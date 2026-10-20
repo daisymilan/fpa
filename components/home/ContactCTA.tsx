@@ -43,8 +43,8 @@ export default function ContactCTA() {
             </a>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-8 mt-12 pt-10" style={{ borderTop: "1px solid var(--border)" }}>
-            <div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8 mt-12 pt-10" style={{ borderTop: "1px solid var(--border)" }}>
+            <div className="col-span-2 sm:col-span-1">
               <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{tx.emailLabel}</p>
               <a href="mailto:fpadesignconsultancy@gmail.com" className="text-fg-muted text-sm hover:text-fg transition-colors">
                 fpadesignconsultancy@gmail.com
@@ -52,11 +52,23 @@ export default function ContactCTA() {
             </div>
             <div>
               <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{tx.phoneLabel}</p>
-              <a href="tel:+639691807841" className="text-fg-muted text-sm hover:text-fg transition-colors">+63 969 180 7841</a>
+              <a href="tel:+639691807841" className="text-fg-muted text-sm hover:text-fg transition-colors whitespace-nowrap">+63 969 180 7841</a>
             </div>
             <div>
               <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{tx.locationLabel}</p>
               <p className="text-fg-muted text-sm">Baguio City, Benguet, Philippines</p>
+            </div>
+            <div>
+              <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">WhatsApp</p>
+              <a href="https://wa.me/639691807841" target="_blank" rel="noopener noreferrer" className="text-fg-muted text-sm hover:text-fg transition-colors whitespace-nowrap">+63 969 180 7841</a>
+            </div>
+            <div>
+              <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">Viber</p>
+              <a href="viber://chat?number=%2B639691807841" className="text-fg-muted text-sm hover:text-fg transition-colors whitespace-nowrap">+63 969 180 7841</a>
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">Messenger</p>
+              <a href="https://m.me/100082100103789" target="_blank" rel="noopener noreferrer" className="text-fg-muted text-sm hover:text-fg transition-colors">FPA Design Consultancy</a>
             </div>
           </div>
         </div>
