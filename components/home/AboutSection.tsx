@@ -54,7 +54,7 @@ export default function AboutSection() {
             </Link>
 
             <div className="mt-8">
-              <p className="text-fg-faint text-xs tracking-[0.25em] uppercase mb-3">Projects in</p>
+              <p className="text-fg-faint text-xs tracking-[0.25em] uppercase mb-3">{t[lang].common.projectsIn}</p>
               <div className="flex flex-wrap gap-2">
                 {servedLocations.map((loc) => (
                   <Link

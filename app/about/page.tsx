@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/localeRoutes";
 import AboutContent from "./AboutContent";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     "Lyceum Northwestern University architecture",
     "architect Benguet",
   ],
-  alternates: { canonical: "https://www.fp-architect.com/about" },
+  alternates: languageAlternates("/about", "en"),
   openGraph: {
     title: "About Arch. Friendzel B. Pengi, UAP | FPA Design Consultancy",
     description:

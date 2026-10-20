@@ -4,6 +4,7 @@ import Link from "next/link";
 import FPALogo from "@/components/ui/FPALogo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
+import { localizeHref } from "@/lib/localeRoutes";
 
 // Slugs indexed to match t[lang].services.items order
 const SERVICE_SLUGS = [
@@ -24,15 +25,17 @@ export default function Footer() {
   const nav = t[lang].nav;
   const serviceItems = t[lang].services.items;
 
+  const common = t[lang].common;
   const quickLinks = [
     { href: "/", label: nav.home },
     { href: "/about", label: nav.about },
     { href: "/services", label: nav.services },
     { href: "/portfolio", label: nav.portfolio },
-    { href: "/locations", label: "Locations" },
-    { href: "/build-from-abroad", label: "Build From Abroad" },
+    { href: "/locations", label: common.locations },
+    { href: "/build-from-abroad", label: common.fromAbroad },
+    { href: "/guides", label: common.guides },
     { href: "/contact", label: nav.contact },
-  ];
+  ].map((link) => ({ ...link, href: localizeHref(link.href, lang) }));
 
   return (
     <footer className="bg-bg text-fg-muted" style={{ borderTop: "1px solid var(--border)" }}>

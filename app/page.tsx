@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/localeRoutes";
 import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -28,9 +29,7 @@ export const metadata: Metadata = {
     "architect Northern Luzon",
     "architect Philippines",
   ],
-  alternates: {
-    canonical: "https://www.fp-architect.com",
-  },
+  alternates: languageAlternates("/", "en"),
 };
 
 const baseUrl = "https://www.fp-architect.com";

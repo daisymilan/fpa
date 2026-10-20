@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { projects, getLastModified, getLatestProjectDate } from "@/lib/projects";
 import { services } from "@/lib/services";
 import { locations } from "@/lib/locations";
+import { guides } from "@/lib/guides";
+import { filipinoPaths, languageAlternates } from "@/lib/localeRoutes";
 
 const baseUrl = "https://www.fp-architect.com";
 
@@ -87,5 +89,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
-  return [...staticPages, ...servicePages, ...projectPages, ...locationIndexPage, ...locationPages];
+  const guidePages: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/guides`, lastModified: new Date("2026-10-21"), priority: 0.7, changeFrequency: "monthly" },
+    ...guides.map((g) => ({
+      url: `${baseUrl}/guides/${g.slug}`,
+      lastModified: new Date(g.updated),
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
+  ];
+
+  // English pages that have a Filipino version list both, and each Filipino page is added.
+  const withLanguages = staticPages.flatMap((page) => {
+    const path = page.url.slice(baseUrl.length) || "/";
+    if (!(filipinoPaths as readonly string[]).includes(path)) return [page];
+    const { languages } = languageAlternates(path, "en");
+    const alternates = { languages: { en: languages.en, fil: languages.fil } };
+    return [{ ...page, alternates }, { ...page, url: languages.fil, alternates }];
+  });
+
+  return [...withLanguages, ...servicePages, ...projectPages, ...locationIndexPage, ...locationPages, ...guidePages];
 }

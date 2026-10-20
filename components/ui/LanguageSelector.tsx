@@ -1,13 +1,17 @@
 "use client";
 
 import { useState, useEffect, useRef, useSyncExternalStore } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { languages, type Language } from "@/lib/translations";
+import { isFilipinoPath, toEnglishPath, toFilipinoPath } from "@/lib/localeRoutes";
 
 const noopSubscribe = () => () => {};
 
 export default function LanguageSelector() {
   const { lang, setLang } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false);
   const ref = useRef<HTMLDivElement>(null);
@@ -24,6 +28,14 @@ export default function LanguageSelector() {
   }, [open]);
 
   if (!mounted) return <div className="w-16 h-8" />;
+
+  // Filipino has its own URLs for some pages; every other language switches in place.
+  const choose = (code: Language) => {
+    setLang(code);
+    setOpen(false);
+    const target = code === "fil" ? toFilipinoPath(pathname) : isFilipinoPath(pathname) ? toEnglishPath(pathname) : null;
+    if (target && target !== pathname) router.push(target);
+  };
 
   const current = languages.find((l) => l.code === lang) ?? languages[0];
 
@@ -64,7 +76,7 @@ export default function LanguageSelector() {
               <button
                 key={l.code}
                 role="menuitem"
-                onClick={() => { setLang(l.code as Language); setOpen(false); }}
+                onClick={() => choose(l.code as Language)}
                 className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-left transition-colors duration-150"
                 style={{
                   color: isActive ? "#FF3B30" : "var(--fg-muted)",

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/localeRoutes";
 import ContactContent from "./ContactContent";
 
 export const metadata: Metadata = {
   title: "Contact an Architect in Baguio City | FPA Design Consultancy",
   description: "Contact FPA Design Consultancy — architect in Baguio City. Architectural design, interior design, renovation, and building permits. Call +63 969 180 7841.",
-  alternates: { canonical: "https://www.fp-architect.com/contact" },
+  alternates: languageAlternates("/contact", "en"),
   openGraph: {
     title: "Contact FPA Design Consultancy | Architect in Baguio City",
     description: "Reach out for a free consultation — architectural design, interior design, renovation, and building permits. Call +63 969 180 7841.",

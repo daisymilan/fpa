@@ -8,6 +8,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageSelector from "@/components/ui/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
+import { localizeHref } from "@/lib/localeRoutes";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,9 +27,14 @@ export default function Navbar() {
     { href: "/about", label: tx.nav.about },
     { href: "/services", label: tx.nav.services },
     { href: "/portfolio", label: tx.nav.portfolio },
-    { href: "/locations", label: "Locations" },
+    { href: "/locations", label: tx.common.locations },
+    { href: "/guides", label: tx.common.guides },
     { href: "/contact", label: tx.nav.contact },
-  ];
+  ].map((item) => ({ ...item, href: localizeHref(item.href, lang) }));
+  // The logo links home and the quote button opens the contact page, so the desktop bar skips
+  // "Home" and "Contact" to leave room for longer translations such as Filipino and Spanish.
+  const desktopItems = navItems.slice(1, -1);
+  const contactHref = localizeHref("/contact", lang);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -45,17 +51,17 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex-shrink-0">
+          <Link href={navItems[0].href} className="flex-shrink-0">
             <FPALogo className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-            {navItems.map((link) => (
+          <nav className="hidden xl:flex items-center gap-5" aria-label="Main navigation">
+            {desktopItems.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-200 ${
+                className={`text-xs font-medium tracking-[0.15em] uppercase whitespace-nowrap transition-colors duration-200 ${
                   pathname === link.href ? "text-[#FF3B30]" : ""
                 }`}
                 style={pathname !== link.href ? { color: "var(--nav-link)" } : undefined}
@@ -68,15 +74,15 @@ export default function Navbar() {
             <ThemeToggle />
             <LanguageSelector />
             <Link
-              href="/contact"
-              className="ml-2 px-5 py-2.5 border border-[#FF3B30] text-[#FF3B30] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#FF3B30] hover:text-white transition-all duration-200"
+              href={contactHref}
+              className="ml-2 px-5 py-2.5 whitespace-nowrap border border-[#FF3B30] text-[#FF3B30] text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#FF3B30] hover:text-white transition-all duration-200"
             >
               {tx.nav.quote}
             </Link>
           </nav>
 
           {/* Mobile controls */}
-          <div className="md:hidden flex items-center gap-3">
+          <div className="xl:hidden flex items-center gap-3">
             <ThemeToggle />
             <LanguageSelector />
             <button
@@ -96,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden border-t overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+        className={`xl:hidden border-t overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[36rem] opacity-100" : "max-h-0 opacity-0"}`}
         style={{ background: "var(--bg)", borderTopColor: "var(--border)" }}
       >
         <nav className="px-6 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
@@ -116,7 +122,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href={contactHref}
             className="mt-4 py-3 border border-[#FF3B30] text-[#FF3B30] text-xs font-semibold tracking-[0.2em] uppercase text-center hover:bg-[#FF3B30] hover:text-white transition-all"
           >
             {tx.nav.quote}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/localeRoutes";
 import PortfolioContent from "./PortfolioContent";
 import { projects } from "@/lib/projects";
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: "Architecture Portfolio | FPA Design Consultancy Baguio City",
   description:
     "Residential, commercial and interior design projects by FPA Design Consultancy — across Baguio City, Northern Luzon and for clients worldwide.",
-  alternates: { canonical: "https://www.fp-architect.com/portfolio" },
+  alternates: languageAlternates("/portfolio", "en"),
   openGraph: {
     title: "Portfolio | FPA Design Consultancy — Architectural Projects",
     description:

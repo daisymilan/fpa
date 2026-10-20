@@ -16,6 +16,7 @@ const localLocations = [
 export default function ContactContent() {
   const { lang } = useLanguage();
   const tx = t[lang].contactPage;
+  const c = t[lang].common;
 
   return (
     <>
@@ -123,10 +124,10 @@ export default function ContactContent() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-[#FF3B30]" />
-                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Service Coverage</span>
+                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">{c.coverageTag}</span>
               </div>
               <h2 className="display-heading text-fg mb-6" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
-                Where We Work
+                {c.coverageHeading}
               </h2>
               <div className="flex flex-col gap-2">
                 {localLocations.map((loc) => (
@@ -138,30 +139,30 @@ export default function ContactContent() {
                   >
                     <span>{loc.label}</span>
                     <span className="text-[#FF3B30] text-xs tracking-widest uppercase">
-                      {loc.note ?? "View →"}
+                      {loc.note ? c.hq : c.view}
                     </span>
                   </Link>
                 ))}
               </div>
             </div>
             <div className="lg:pt-16">
-              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Remote &amp; International</p>
+              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">{c.remoteTag}</p>
               <p className="text-fg-muted text-sm leading-relaxed mb-6">
-                Remote architectural and interior design services are available for OFW families, diaspora clients, and international property owners building in the Philippines. All design documents and 3D visualizations are delivered digitally; consultations are conducted via video call.
+                {c.remoteDescContact}
               </p>
               <div className="flex flex-col items-start gap-4">
                 <Link
                   href="/build-from-abroad"
                   className="inline-flex items-center gap-3 text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase group hover:text-fg transition-colors duration-200"
                 >
-                  How Remote Projects Work
+                  {c.remoteLink}
                   <span className="block w-8 h-px bg-[#FF3B30]/60 group-hover:w-14 transition-all duration-300" />
                 </Link>
                 <Link
                   href="/locations"
                   className="inline-flex items-center gap-3 text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase group hover:text-fg transition-colors duration-200"
                 >
-                  View All Service Locations
+                  {c.allLocations}
                   <span className="block w-8 h-px bg-[#FF3B30]/60 group-hover:w-14 transition-all duration-300" />
                 </Link>
               </div>

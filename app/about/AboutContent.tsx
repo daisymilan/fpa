@@ -45,6 +45,7 @@ const internationalAreas = [
 export default function AboutContent() {
   const { lang } = useLanguage();
   const tx = t[lang].aboutPage;
+  const c = t[lang].common;
 
   return (
     <>
@@ -92,10 +93,10 @@ export default function AboutContent() {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link href="/services" className="inline-flex items-center justify-center px-8 py-3 bg-[#FF3B30] text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#E0352B] transition-colors duration-200">
-                  Our Services
+                  {c.ourServices}
                 </Link>
                 <Link href="/portfolio" className="inline-flex items-center justify-center px-8 py-3 text-fg text-xs font-semibold tracking-[0.2em] uppercase transition-colors duration-200" style={{ border: "1px solid var(--border-strong)" }}>
-                  View Our Work
+                  {c.viewOurWork}
                 </Link>
               </div>
 
@@ -193,7 +194,7 @@ export default function AboutContent() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-4">
             <div>
-              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Philippines — Local Projects</p>
+              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">{c.localProjects}</p>
               <div className="flex flex-col gap-2">
                 {philippineLocations.map((loc) => (
                   <Link
@@ -204,19 +205,19 @@ export default function AboutContent() {
                   >
                     <span>{loc.label}</span>
                     {loc.note && (
-                      <span className="text-[#FF3B30] text-xs tracking-widest uppercase">{loc.note}</span>
+                      <span className="text-[#FF3B30] text-xs tracking-widest uppercase">{c.hq}</span>
                     )}
                     {!loc.note && (
-                      <span className="text-fg-faint text-xs opacity-0 group-hover:opacity-100 transition-opacity">View →</span>
+                      <span className="text-fg-faint text-xs opacity-0 group-hover:opacity-100 transition-opacity">{c.view}</span>
                     )}
                   </Link>
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Remote & International</p>
+              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">{c.remoteTag}</p>
               <p className="text-fg-muted text-sm leading-relaxed mb-4">
-                Full design documentation and 3D visualization services are available for OFW families and overseas clients building in the Philippines. All deliverables are exchanged digitally; consultations are conducted via video call.
+                {c.remoteDescAbout}
               </p>
               <div className="flex flex-wrap gap-2">
                 {internationalAreas.map((area) => (
@@ -227,7 +228,7 @@ export default function AboutContent() {
                 href="/build-from-abroad"
                 className="inline-flex items-center gap-3 mt-6 text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase group hover:text-fg transition-colors duration-200"
               >
-                How Remote Projects Work
+                {c.remoteLink}
                 <span className="block w-8 h-px bg-[#FF3B30]/60 group-hover:w-14 transition-all duration-300" />
               </Link>
             </div>

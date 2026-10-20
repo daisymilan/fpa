@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "@/lib/localeRoutes";
 import ServicesContent from "./ServicesContent";
+import { t } from "@/lib/translations";
 
 export const metadata: Metadata = {
   title: "Architectural Services Baguio City | FPA Design Consultancy",
   description:
     "FPA Design Consultancy offers architectural design, interior design, construction management, building permits, and renovation in Baguio City, Philippines.",
-  alternates: { canonical: "https://www.fp-architect.com/services" },
+  alternates: languageAlternates("/services", "en"),
   openGraph: {
     title: "Architectural Services | FPA Design Consultancy Baguio City",
     description:
@@ -20,28 +22,11 @@ const baseUrl = "https://www.fp-architect.com";
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is FPA Design Consultancy a licensed architectural firm?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. FPA Design Consultancy is led by Arch. Friendzel B. Pengi, UAP — a licensed architect registered with the Professional Regulation Commission (PRC) under Republic Act 9266 and a member of the United Architects of the Philippines." },
-    },
-    {
-      "@type": "Question",
-      name: "Do you serve clients outside Baguio City?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. We serve clients across the Philippines and internationally, offering remote consultation and design services to Filipino families and businesses worldwide." },
-    },
-    {
-      "@type": "Question",
-      name: "How do I start a project with FPA Design Consultancy?",
-      acceptedAnswer: { "@type": "Answer", text: "Simply reach out via our contact page or call us directly. We begin with a free initial consultation to understand your project goals, site conditions, and budget — then recommend the right scope of services." },
-    },
-    {
-      "@type": "Question",
-      name: "Do you handle both residential and commercial projects?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. Our portfolio spans single-family residences, multi-storey homes, commercial office buildings, and interior renovation projects across the Philippines." },
-    },
-  ],
+  mainEntity: t.en.common.servicesFaq.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
 };
 
 const breadcrumbSchema = {

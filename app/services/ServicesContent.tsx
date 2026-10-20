@@ -17,29 +17,6 @@ const SERVICE_SLUGS = [
   "3d-visualization-rendering",
 ] as const;
 
-const globalFaqs = [
-  {
-    question: "Is FPA Design Consultancy a licensed architectural firm?",
-    answer:
-      "Yes. FPA Design Consultancy is led by Arch. Friendzel B. Pengi, UAP — a licensed architect registered with the Professional Regulation Commission (PRC) under Republic Act 9266 and a member of the United Architects of the Philippines.",
-  },
-  {
-    question: "Do you serve clients outside Baguio City?",
-    answer:
-      "Yes. We serve clients across the Philippines and internationally, offering remote consultation and design services to Filipino families and businesses worldwide.",
-  },
-  {
-    question: "How do I start a project with FPA Design Consultancy?",
-    answer:
-      "Simply reach out via our contact page or call us directly. We begin with a free initial consultation to understand your project goals, site conditions, and budget — then recommend the right scope of services.",
-  },
-  {
-    question: "Do you handle both residential and commercial projects?",
-    answer:
-      "Yes. Our portfolio spans single-family residences, multi-storey homes, commercial office buildings, and interior renovation projects across the Philippines.",
-  },
-];
-
 export default function ServicesContent() {
   const { lang } = useLanguage();
   const tx = t[lang].servicesPage;
@@ -113,10 +90,10 @@ export default function ServicesContent() {
               <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">FAQ</span>
             </div>
             <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
-              Frequently Asked Questions
+              {t[lang].common.faqHeading}
             </h2>
             <div className="space-y-8">
-              {globalFaqs.map((faq) => (
+              {t[lang].common.servicesFaq.map((faq) => (
                 <div key={faq.question} className="border-l-2 border-[#FF3B30] pl-6">
                   <h3 className="display-heading text-fg mb-3" style={{ fontSize: "1.05rem", letterSpacing: "0.05em" }}>{faq.question}</h3>
                   <p className="text-fg-muted text-sm leading-relaxed">{faq.answer}</p>
