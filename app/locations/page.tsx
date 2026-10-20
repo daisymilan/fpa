@@ -181,10 +181,10 @@ export default function LocationsPage() {
                 available via digital file exchange and video consultation.
               </p>
               <Link
-                href="/contact"
+                href="/build-from-abroad"
                 className="inline-flex items-center gap-3 text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase group hover:text-fg transition-colors duration-200"
               >
-                Inquire About Remote Services
+                How Remote Projects Work
                 <span className="block w-8 h-px bg-[#FF3B30]/60 group-hover:w-14 transition-all duration-300" />
               </Link>
             </div>

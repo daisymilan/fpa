@@ -23,7 +23,7 @@ export interface Translations {
   services: { tag: string; heading1: string; heading2: string; cta: string; items: ServiceItem[] };
   process: { tag: string; heading: string; desc: string; steps: ProcessStep[] };
   projects: { tag: string; heading1: string; heading2: string; cta: string; viewProject: string };
-  contactCta: { tag: string; heading1: string; heading2: string; desc: string; cta1: string; cta2: string; emailLabel: string; phoneLabel: string; locationLabel: string };
+  contactCta: { tag: string; heading1: string; heading2: string; desc: string; cta1: string; cta2: string; emailLabel: string; phoneLabel: string; locationLabel: string; abroadLink: string };
   why: { tag: string; heading1: string; heading2: string; intro: string; reasons: WhyReason[] };
   footer: { tagline: string; desc: string; quickLinksLabel: string; servicesLabel: string; contactLabel: string };
   portfolioPage: { tag: string; heading1: string; heading2: string; desc: string; categories: [string, string, string, string, string]; empty: string };
@@ -101,6 +101,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'Email',
       phoneLabel: 'Phone',
       locationLabel: 'Location',
+      abroadLink: 'Building from abroad? See how remote projects work',
     },
     why: {
       tag: 'The Value of Professional Design',
@@ -322,6 +323,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'Email',
       phoneLabel: 'Telepono',
       locationLabel: 'Lokasyon',
+      abroadLink: 'Nasa ibang bansa po kayo? Alamin kung paano gumagana ang remote na proyekto',
     },
     why: {
       tag: 'Ang Halaga ng Propesyonal na Disenyo',
@@ -537,6 +539,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: '电子邮件',
       phoneLabel: '电话',
       locationLabel: '地址',
+      abroadLink: '身在海外？了解远程项目如何进行',
     },
     why: {
       tag: '专业设计的价值',
@@ -746,6 +749,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'メール',
       phoneLabel: '電話',
       locationLabel: '所在地',
+      abroadLink: '海外にお住まいですか？リモートでの進め方はこちら',
     },
     why: {
       tag: 'プロデザインの価値',
@@ -955,6 +959,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: '이메일',
       phoneLabel: '전화',
       locationLabel: '위치',
+      abroadLink: '해외에 계신가요? 원격 프로젝트 진행 방식 보기',
     },
     why: {
       tag: '전문 설계의 가치',
@@ -1164,6 +1169,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'البريد الإلكتروني',
       phoneLabel: 'الهاتف',
       locationLabel: 'الموقع',
+      abroadLink: 'تبني من الخارج؟ تعرّف على طريقة عمل المشاريع عن بُعد',
     },
     why: {
       tag: 'قيمة التصميم الاحترافي',
@@ -1373,6 +1379,7 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'Correo Electrónico',
       phoneLabel: 'Teléfono',
       locationLabel: 'Ubicación',
+      abroadLink: '¿Construye desde el extranjero? Vea cómo funcionan los proyectos remotos',
     },
     why: {
       tag: 'El Valor del Diseño Profesional',

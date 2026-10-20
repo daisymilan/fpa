@@ -71,6 +71,14 @@ export default function ContactCTA() {
               <a href="https://m.me/100082100103789" target="_blank" rel="noopener noreferrer" className="text-fg-muted text-sm hover:text-fg transition-colors">FPA Design Consultancy</a>
             </div>
           </div>
+
+          <Link
+            href="/build-from-abroad"
+            className="inline-flex items-center gap-3 mt-10 text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase group hover:text-fg transition-colors duration-200"
+          >
+            {tx.abroadLink}
+            <span className="block w-8 h-px bg-[#FF3B30]/60 group-hover:w-14 transition-all duration-300 flex-shrink-0" />
+          </Link>
         </div>
       </div>
     </section>

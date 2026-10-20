@@ -223,6 +223,13 @@ export default function AboutContent() {
                   <span key={area} className="px-4 py-2 text-fg-muted text-xs hover:text-fg transition-colors" style={{ border: "1px solid var(--border-strong)" }}>{area}</span>
                 ))}
               </div>
+              <Link
+                href="/build-from-abroad"
+                className="inline-flex items-center gap-3 mt-6 text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase group hover:text-fg transition-colors duration-200"
+              >
+                How Remote Projects Work
+                <span className="block w-8 h-px bg-[#FF3B30]/60 group-hover:w-14 transition-all duration-300" />
+              </Link>
             </div>
           </div>
         </div>

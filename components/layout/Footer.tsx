@@ -30,6 +30,7 @@ export default function Footer() {
     { href: "/services", label: nav.services },
     { href: "/portfolio", label: nav.portfolio },
     { href: "/locations", label: "Locations" },
+    { href: "/build-from-abroad", label: "Build From Abroad" },
     { href: "/contact", label: nav.contact },
   ];
 
