@@ -36,10 +36,10 @@ export default function StructuredData() {
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
-            // Matches the Google Business Profile: messages are taken around the clock.
+            // Must match the hours on the Google Business Profile.
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            opens: "00:00",
-            closes: "23:59",
+            opens: "07:00",
+            closes: "19:00",
           },
         ],
         sameAs: [

@@ -227,7 +227,7 @@ export const t: Record<Language, Translations> = {
       formTag: 'Send a Message',
       formHeading: 'Tell Us About Your Project',
       hoursLabel: 'Hours',
-      hoursValue: 'Open 24/7 for messages · replies within 1–2 business days',
+      hoursValue: 'Daily, 7:00 AM – 7:00 PM · messages welcome any time',
       stepsTag: 'What Happens Next',
       stepsHeading: 'After You Get in Touch',
       steps: [
@@ -493,7 +493,7 @@ export const t: Record<Language, Translations> = {
       formTag: 'Magpadala ng Mensahe',
       formHeading: 'Sabihin sa Amin ang Tungkol sa Inyong Proyekto',
       hoursLabel: 'Oras',
-      hoursValue: 'Bukas 24/7 para sa mensahe · sumasagot sa loob ng 1–2 araw ng trabaho',
+      hoursValue: 'Araw-araw, 7:00 AM – 7:00 PM · puwedeng magmensahe anumang oras',
       stepsTag: 'Ano ang Susunod',
       stepsHeading: 'Pagkatapos Ninyong Makipag-ugnayan',
       steps: [
@@ -747,7 +747,7 @@ export const t: Record<Language, Translations> = {
       formTag: '发送消息',
       formHeading: '告诉我们您的项目需求',
       hoursLabel: '营业时间',
-      hoursValue: '全天候接收留言 · 1–2 个工作日内回复',
+      hoursValue: '每天 7:00–19:00 · 随时欢迎留言',
       stepsTag: '接下来',
       stepsHeading: '联系我们之后',
       steps: [
@@ -1001,7 +1001,7 @@ export const t: Record<Language, Translations> = {
       formTag: 'メッセージを送る',
       formHeading: 'プロジェクトの詳細をお聞かせください',
       hoursLabel: '受付時間',
-      hoursValue: 'メッセージは24時間受付 · 1〜2営業日以内に返信',
+      hoursValue: '毎日 7:00〜19:00 · メッセージは24時間受付',
       stepsTag: 'ご相談の流れ',
       stepsHeading: 'お問い合わせ後の流れ',
       steps: [
@@ -1255,7 +1255,7 @@ export const t: Record<Language, Translations> = {
       formTag: '메시지 보내기',
       formHeading: '프로젝트에 대해 알려주세요',
       hoursLabel: '운영 시간',
-      hoursValue: '메시지 24시간 접수 · 영업일 기준 1–2일 내 답변',
+      hoursValue: '매일 오전 7시 – 오후 7시 · 메시지는 언제든 환영합니다',
       stepsTag: '진행 절차',
       stepsHeading: '문의 후 진행 과정',
       steps: [
@@ -1509,7 +1509,7 @@ export const t: Record<Language, Translations> = {
       formTag: 'أرسل رسالة',
       formHeading: 'أخبرنا عن مشروعك',
       hoursLabel: 'ساعات العمل',
-      hoursValue: 'نستقبل الرسائل على مدار الساعة · نرد خلال 1–2 يوم عمل',
+      hoursValue: 'يومياً من 7:00 صباحاً حتى 7:00 مساءً · نستقبل الرسائل في أي وقت',
       stepsTag: 'الخطوات التالية',
       stepsHeading: 'بعد أن تتواصل معنا',
       steps: [
@@ -1763,7 +1763,7 @@ export const t: Record<Language, Translations> = {
       formTag: 'Enviar un Mensaje',
       formHeading: 'Cuéntenos Sobre Su Proyecto',
       hoursLabel: 'Horario',
-      hoursValue: 'Mensajes 24/7 · respondemos en 1–2 días hábiles',
+      hoursValue: 'Todos los días, 7:00 a. m. – 7:00 p. m. · mensajes en cualquier momento',
       stepsTag: 'Próximos Pasos',
       stepsHeading: 'Después de Contactarnos',
       steps: [
