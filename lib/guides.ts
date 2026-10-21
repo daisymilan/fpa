@@ -40,7 +40,7 @@ export const guides: Guide[] = [
     updated: "2026-10-21",
     readingMinutes: 7,
     intro:
-      "Every new house, extension or major renovation in Baguio City needs a building permit before work starts. The National Building Code of the Philippines (PD 1096) requires it, and in Baguio the permit is issued by the City Buildings and Architecture Office (CBAO) at City Hall. This guide lists what the application usually needs and how the process runs. Requirements change from time to time, so always check the current checklist with the CBAO before you file.",
+      "Every new house, extension or major renovation in Baguio City needs a building permit before work starts. The National Building Code of the Philippines (PD 1096) requires it, and in Baguio the permit is issued by the City Buildings and Architecture Office (CBAO), which has its own office separate from City Hall. This guide lists what the application usually needs and how the process runs. Requirements change from time to time, so always check the current checklist with the CBAO before you file.",
     sections: [
       {
         heading: "Who needs a building permit?",
