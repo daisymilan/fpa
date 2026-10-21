@@ -133,7 +133,7 @@ export default function LocationsPage() {
                   <p className="text-fg-faint text-xs tracking-widest uppercase mb-4">
                     {loc.province} · {loc.region}
                   </p>
-                  <p className="text-fg-dim text-xs leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-fg-dim text-xs leading-relaxed mb-6">
                     {loc.intro}
                   </p>
                   <div className="flex items-center justify-between">

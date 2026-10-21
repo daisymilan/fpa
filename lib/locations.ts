@@ -6,6 +6,8 @@ export interface LocationData {
   isHeadquarters?: boolean;
   metaTitle: string;
   metaDescription: string;
+  /** Last real content change (YYYY-MM-DD); the sitemap's lastmod. Update it when the page changes. */
+  updated: string;
   h1: string;
   intro: string;
   context: string;
@@ -16,6 +18,7 @@ export interface LocationData {
 export const locations: LocationData[] = [
   {
     slug: "baguio-city-architect",
+    updated: "2026-09-23",
     city: "Baguio City",
     province: "Benguet",
     region: "Cordillera Administrative Region",
@@ -38,6 +41,7 @@ export const locations: LocationData[] = [
   },
   {
     slug: "ifugao-architect",
+    updated: "2026-09-23",
     city: "Ifugao",
     province: "Ifugao",
     region: "Cordillera Administrative Region",
@@ -59,6 +63,7 @@ export const locations: LocationData[] = [
   },
   {
     slug: "nueva-vizcaya-architect",
+    updated: "2026-09-23",
     city: "Nueva Vizcaya",
     province: "Nueva Vizcaya",
     region: "Cagayan Valley",
@@ -80,6 +85,7 @@ export const locations: LocationData[] = [
   },
   {
     slug: "la-union-architect",
+    updated: "2026-09-23",
     city: "La Union",
     province: "La Union",
     region: "Ilocos Region",
@@ -101,6 +107,7 @@ export const locations: LocationData[] = [
   },
   {
     slug: "ilocos-sur-architect",
+    updated: "2026-09-23",
     city: "Ilocos Sur",
     province: "Ilocos Sur",
     region: "Ilocos Region",

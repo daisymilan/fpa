@@ -320,7 +320,7 @@ export default function BuildFromAbroadPage() {
                 >
                   {s.title}
                 </h3>
-                <p className="text-fg-dim text-xs leading-relaxed mb-5 line-clamp-3">{s.description}</p>
+                <p className="text-fg-dim text-xs leading-relaxed mb-5">{s.description}</p>
                 <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.15em] uppercase">Learn More →</span>
               </Link>
             ))}

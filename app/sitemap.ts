@@ -7,36 +7,52 @@ import { filipinoPaths, languageAlternates } from "@/lib/localeRoutes";
 
 const baseUrl = "https://www.fp-architect.com";
 
+// Last real content change for pages that aren't driven by data files. Update a date when that
+// page's content changes, so Google knows what to recrawl.
+const pageUpdated = {
+  home: "2026-10-21",
+  about: "2026-10-21",
+  services: "2026-10-21",
+  portfolio: "2026-10-21",
+  contact: "2026-10-21",
+  locations: "2026-10-20",
+  buildFromAbroad: "2026-10-21",
+  guides: "2026-10-21",
+};
+
+/** Home and portfolio also change whenever a project is added. */
+const latest = (...dates: string[]) => new Date(dates.sort().at(-1)!);
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const latestProjectDate = new Date(getLatestProjectDate());
+  const latestProjectDate = getLatestProjectDate();
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: latestProjectDate,
+      lastModified: latest(latestProjectDate, pageUpdated.home),
       priority: 1.0,
       changeFrequency: "weekly",
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date("2026-06-22"),
+      lastModified: new Date(pageUpdated.about),
       priority: 0.8,
       changeFrequency: "monthly",
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date("2026-06-22"),
+      lastModified: new Date(pageUpdated.services),
       priority: 0.9,
       changeFrequency: "monthly",
     },
     {
       url: `${baseUrl}/portfolio`,
-      lastModified: latestProjectDate,
+      lastModified: latest(latestProjectDate, pageUpdated.portfolio),
       priority: 0.9,
       changeFrequency: "weekly",
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date("2026-06-22"),
+      lastModified: new Date(pageUpdated.contact),
       priority: 0.8,
       changeFrequency: "monthly",
     },
@@ -44,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date("2026-06-22"),
+    lastModified: new Date(service.updated),
     priority: 0.85,
     changeFrequency: "monthly" as const,
   }));
@@ -70,13 +86,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locationIndexPage: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/locations`,
-      lastModified: new Date("2026-06-22"),
+      lastModified: new Date(pageUpdated.locations),
       priority: 0.8,
       changeFrequency: "monthly",
     },
     {
       url: `${baseUrl}/build-from-abroad`,
-      lastModified: new Date("2026-10-20"),
+      lastModified: new Date(pageUpdated.buildFromAbroad),
       priority: 0.8,
       changeFrequency: "monthly",
     },
@@ -84,13 +100,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationPages: MetadataRoute.Sitemap = locations.map((loc) => ({
     url: `${baseUrl}/locations/${loc.slug}`,
-    lastModified: new Date("2026-06-22"),
+    lastModified: new Date(loc.updated),
     priority: 0.8,
     changeFrequency: "monthly" as const,
   }));
 
   const guidePages: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/guides`, lastModified: new Date("2026-10-21"), priority: 0.7, changeFrequency: "monthly" },
+    { url: `${baseUrl}/guides`, lastModified: new Date(pageUpdated.guides), priority: 0.7, changeFrequency: "monthly" },
     ...guides.map((g) => ({
       url: `${baseUrl}/guides/${g.slug}`,
       lastModified: new Date(g.updated),

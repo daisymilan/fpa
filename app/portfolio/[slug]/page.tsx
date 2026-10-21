@@ -164,7 +164,7 @@ export default async function ProjectPage({ params }: Props) {
                   >
                     {service.title}
                   </h3>
-                  <p className="text-fg-dim text-xs leading-relaxed mb-4 line-clamp-2">{service.description}</p>
+                  <p className="text-fg-dim text-xs leading-relaxed mb-4">{service.description}</p>
                   <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.15em] uppercase">Learn More →</span>
                 </Link>
               ))}

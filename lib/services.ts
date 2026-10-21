@@ -8,6 +8,8 @@ export interface ServiceData {
   title: string;
   metaTitle: string;
   metaDescription: string;
+  /** Last real content change (YYYY-MM-DD); the sitemap's lastmod. Update it when the page changes. */
+  updated: string;
   keywords: string[];
   description: string;
   deliverables: string[];
@@ -20,6 +22,7 @@ export interface ServiceData {
 export const services: ServiceData[] = [
   {
     slug: "architectural-design",
+    updated: "2026-10-21",
     title: "Architectural Design",
     worldwide: true,
     metaTitle: "Architectural Design in Baguio City | FPA Design Consultancy",
@@ -78,6 +81,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "construction-project-management",
+    updated: "2026-10-21",
     title: "Construction Project Management",
     metaTitle: "Construction Management, Baguio | FPA Design Consultancy",
     metaDescription:
@@ -129,6 +133,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "construction-supervision",
+    updated: "2026-10-20",
     title: "Construction Supervision",
     metaTitle: "Construction Supervision, Baguio | FPA Design Consultancy",
     metaDescription:
@@ -179,6 +184,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "interior-design",
+    updated: "2026-09-23",
     title: "Interior Design",
     worldwide: true,
     metaTitle: "Interior Design, Baguio & Worldwide | FPA Design Consultancy",
@@ -235,6 +241,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "space-planning",
+    updated: "2026-09-23",
     title: "Space Planning",
     worldwide: true,
     metaTitle: "Space Planning, Baguio & Worldwide | FPA Design Consultancy",
@@ -286,6 +293,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "cabinet-design",
+    updated: "2026-10-20",
     title: "Cabinet Design",
     worldwide: true,
     metaTitle: "Custom Cabinet Design, Philippines | FPA Design Consultancy",
@@ -337,6 +345,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "renovation-remodeling",
+    updated: "2026-09-23",
     title: "Renovation & Remodeling",
     metaTitle: "Renovation Design, Baguio City | FPA Design Consultancy",
     metaDescription:
@@ -388,6 +397,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "building-permit-documentation",
+    updated: "2026-10-21",
     title: "Building Permit Documentation",
     metaTitle:
       "Building Permits, Philippines | FPA Design Consultancy",
@@ -449,6 +459,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "3d-visualization-rendering",
+    updated: "2026-10-21",
     title: "3D Visualization & Rendering",
     worldwide: true,
     metaTitle:
