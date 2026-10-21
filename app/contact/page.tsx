@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { languageAlternates } from "@/lib/localeRoutes";
 import ContactContent from "./ContactContent";
+import { t } from "@/lib/translations";
 
 export const metadata: Metadata = {
   title: "Contact an Architect in Baguio City | FPA Design Consultancy",
@@ -38,11 +39,22 @@ const contactPageSchema = {
   breadcrumb: { "@id": `${baseUrl}/contact#breadcrumb` },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: t.en.contactPage.faq.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+
 export default function ContactPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ContactContent />
     </>
   );

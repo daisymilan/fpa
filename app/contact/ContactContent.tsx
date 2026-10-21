@@ -69,6 +69,11 @@ export default function ContactContent() {
                     label: tx.emailLabel,
                     content: <a href="mailto:fpadesignconsultancy@gmail.com" className="text-fg-muted text-sm hover:text-fg transition-colors break-all">fpadesignconsultancy@gmail.com</a>,
                   },
+                  {
+                    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />,
+                    label: tx.hoursLabel,
+                    content: <p className="text-fg-muted text-sm leading-relaxed">{tx.hoursValue}</p>,
+                  },
                 ].map(({ icon, label, content }) => (
                   <div key={label} className="flex gap-4">
                     <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ background: "rgba(255,59,48,0.1)", border: "1px solid rgba(255,59,48,0.2)" }}>
@@ -114,6 +119,32 @@ export default function ContactContent() {
               <ContactForm />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* What happens next */}
+      <section className="section-padding bg-bg" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-px bg-[#FF3B30]" />
+            <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">{tx.stepsTag}</span>
+          </div>
+          <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+            {tx.stepsHeading}
+          </h2>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px]" style={{ background: "var(--gap-color)" }}>
+            {tx.steps.map((step, i) => (
+              <li key={step.title} className="bg-bg p-8">
+                <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.2em] block mb-4">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="display-heading text-fg mb-3" style={{ fontSize: "1rem", letterSpacing: "0.07em" }}>
+                  {step.title}
+                </h3>
+                <p className="text-fg-dim text-xs leading-relaxed">{step.description}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -167,6 +198,27 @@ export default function ContactContent() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section-padding bg-bg" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-px bg-[#FF3B30]" />
+            <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">FAQ</span>
+          </div>
+          <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+            {c.faqHeading}
+          </h2>
+          <div className="space-y-8">
+            {tx.faq.map((item) => (
+              <div key={item.question} className="pb-8" style={{ borderBottom: "1px solid var(--border)" }}>
+                <h3 className="text-fg text-base font-semibold mb-3">{item.question}</h3>
+                <p className="text-fg-muted text-sm leading-relaxed">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -29,7 +29,7 @@ export interface Translations {
   portfolioPage: { tag: string; heading1: string; heading2: string; desc: string; categories: [string, string, string, string, string]; empty: string };
   aboutPage: { heroTag: string; heroHeading1: string; heroHeading2: string; principalTag: string; langTag: string; philosophyTag: string; quote: string; expertiseTag: string; skillsHeading: string; credentialsTag: string; certsHeading: string; coverageTag: string; coverageHeading: string; coverageDesc: string; ctaHeading: string; ctaDesc: string; ctaBtn: string; bio: [string, string, string, string]; certDescriptions: [string, string, string] };
   servicesPage: { tag: string; heading1: string; heading2: string; desc: string; delivLabel: string; ctaTag: string; ctaHeading: string; ctaDesc: string; ctaBtn1: string; ctaBtn2: string; items: ServicePageItem[] };
-  contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string };
+  contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string; hoursLabel: string; hoursValue: string; stepsTag: string; stepsHeading: string; steps: ProcessStep[]; faq: FaqItem[] };
   form: { nameLabel: string; emailLabel: string; phoneLabel: string; typeLabel: string; typePlaceholder: string; locationLabel: string; messageLabel: string; messagePlaceholder: string; sendVia: string; emailApp: string; greeting: string; emailSubject: string; opened: string; pasteHint: string; copyHint: string; notOpened: string; copyBtn: string; copiedBtn: string; note: string; projectTypes: [string, string, string, string, string, string, string, string] };
   faq: { tag: string; heading1: string; heading2: string; cta: string; items: FaqItem[] };
   common: { locations: string; guides: string; fromAbroad: string; projectsIn: string; ourServices: string; viewOurWork: string; localProjects: string; remoteTag: string; remoteDescAbout: string; remoteDescContact: string; remoteLink: string; faqHeading: string; portfolioCtaHeading: string; portfolioCtaText: string; portfolioCtaBtn: string; coverageTag: string; coverageHeading: string; hq: string; view: string; allLocations: string; servicesFaq: FaqItem[]; };
@@ -226,6 +226,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'Email',
       formTag: 'Send a Message',
       formHeading: 'Tell Us About Your Project',
+      hoursLabel: 'Hours',
+      hoursValue: 'Open 24/7 for messages · replies within 1–2 business days',
+      stepsTag: 'What Happens Next',
+      stepsHeading: 'After You Get in Touch',
+      steps: [
+        { title: 'Send Your Message', description: 'Use the form, WhatsApp, Viber, Messenger or email, any time of day. Tell us the project type, location, size, budget range and timeline.' },
+        { title: 'We Reply', description: 'We respond to every inquiry within 1–2 business days.' },
+        { title: 'Free Consultation', description: 'We talk through your goals, site conditions and budget, by video call if you are outside Baguio, and recommend the right scope of services.' },
+        { title: 'Itemized Quotation', description: 'You receive a project-specific, itemized quotation, with no obligation. Design starts once you approve it.' },
+      ],
+      faq: [
+        { question: 'How quickly will you reply?', answer: 'We respond to every inquiry within 1–2 business days. You can message us any time: WhatsApp, Viber, Messenger and email are open 24/7.' },
+        { question: 'Is the first consultation free?', answer: 'Yes. The initial consultation is free. Afterwards you receive a project-specific, itemized quotation, with no obligation to go ahead.' },
+        { question: 'What should I include in my first message?', answer: 'Your project type, the location, the approximate floor or lot area, your budget range and your timeline. Photos of the lot or the existing building help too.' },
+        { question: 'Do you work with clients outside Baguio City or abroad?', answer: 'Yes. We work on site in Baguio City, La Union, Ifugao, Nueva Vizcaya and Ilocos Sur, and remotely with clients anywhere in the Philippines and overseas.' },
+      ],
     },
     form: {
       nameLabel: 'Full Name *',
@@ -476,6 +492,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'Email',
       formTag: 'Magpadala ng Mensahe',
       formHeading: 'Sabihin sa Amin ang Tungkol sa Inyong Proyekto',
+      hoursLabel: 'Oras',
+      hoursValue: 'Bukas 24/7 para sa mensahe · sumasagot sa loob ng 1–2 araw ng trabaho',
+      stepsTag: 'Ano ang Susunod',
+      stepsHeading: 'Pagkatapos Ninyong Makipag-ugnayan',
+      steps: [
+        { title: 'Ipadala ang Mensahe', description: 'Gamitin ang form, WhatsApp, Viber, Messenger o email, anumang oras. Sabihin po ang uri ng proyekto, lokasyon, sukat, badyet at timeline.' },
+        { title: 'Sasagot Kami', description: 'Tumutugon kami sa bawat katanungan sa loob ng 1–2 araw ng trabaho.' },
+        { title: 'Libreng Konsultasyon', description: 'Pag-uusapan natin ang inyong mga layunin, ang kondisyon ng lote at ang badyet — sa video call kung nasa labas kayo ng Baguio — at irerekomenda namin ang angkop na saklaw ng serbisyo.' },
+        { title: 'Detalyadong Quotation', description: 'Makatatanggap kayo ng quotation na para sa inyong proyekto at naka-itemize, nang walang obligasyon. Sisimulan ang disenyo kapag inaprubahan na ninyo ito.' },
+      ],
+      faq: [
+        { question: 'Gaano kabilis kayo sumasagot?', answer: 'Tumutugon kami sa bawat katanungan sa loob ng 1–2 araw ng trabaho. Puwede po kayong magmensahe anumang oras: bukas 24/7 ang WhatsApp, Viber, Messenger at email.' },
+        { question: 'Libre ba ang unang konsultasyon?', answer: 'Opo. Libre ang unang konsultasyon. Pagkatapos nito, makatatanggap kayo ng quotation na para sa inyong proyekto at naka-itemize, nang walang obligasyong ituloy.' },
+        { question: 'Ano ang dapat kong isama sa unang mensahe?', answer: 'Ang uri ng proyekto, ang lokasyon, ang tantiyang sukat ng sahig o lote, ang inyong badyet at timeline. Makatutulong din ang mga larawan ng lote o ng kasalukuyang gusali.' },
+        { question: 'Tumatanggap ba kayo ng kliyente sa labas ng Baguio City o sa ibang bansa?', answer: 'Opo. Nagtatrabaho kami on-site sa Baguio City, La Union, Ifugao, Nueva Vizcaya at Ilocos Sur, at remote para sa mga kliyente saanman sa Pilipinas at sa ibang bansa.' },
+      ],
     },
     form: {
       nameLabel: 'Buong Pangalan *',
@@ -714,6 +746,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: '电子邮件',
       formTag: '发送消息',
       formHeading: '告诉我们您的项目需求',
+      hoursLabel: '营业时间',
+      hoursValue: '全天候接收留言 · 1–2 个工作日内回复',
+      stepsTag: '接下来',
+      stepsHeading: '联系我们之后',
+      steps: [
+        { title: '发送留言', description: '随时通过表单、WhatsApp、Viber、Messenger 或电子邮件联系我们。请告诉我们项目类型、地点、面积、预算范围和时间安排。' },
+        { title: '我们回复', description: '我们会在 1–2 个工作日内回复每一条咨询。' },
+        { title: '免费咨询', description: '我们会与您讨论目标、场地条件和预算（如您不在碧瑶，可通过视频通话），并推荐合适的服务范围。' },
+        { title: '详细报价', description: '您将收到针对项目的分项报价，无任何义务。您确认后即开始设计。' },
+      ],
+      faq: [
+        { question: '你们多快回复？', answer: '我们会在 1–2 个工作日内回复每一条咨询。您可以随时留言：WhatsApp、Viber、Messenger 和电子邮件全天候开放。' },
+        { question: '首次咨询免费吗？', answer: '是的。首次咨询免费。之后您将收到针对项目的分项报价，无需承担继续合作的义务。' },
+        { question: '第一次留言应包含哪些内容？', answer: '项目类型、地点、大致建筑面积或地块面积、预算范围和时间安排。地块或现有建筑的照片也很有帮助。' },
+        { question: '你们为碧瑶市以外或海外的客户服务吗？', answer: '是的。我们在碧瑶市、拉乌尼翁、伊富高、新比斯开和南伊罗戈提供现场服务，并为菲律宾各地及海外客户提供远程服务。' },
+      ],
     },
     form: {
       nameLabel: '姓名 *',
@@ -952,6 +1000,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'メールアドレス',
       formTag: 'メッセージを送る',
       formHeading: 'プロジェクトの詳細をお聞かせください',
+      hoursLabel: '受付時間',
+      hoursValue: 'メッセージは24時間受付 · 1〜2営業日以内に返信',
+      stepsTag: 'ご相談の流れ',
+      stepsHeading: 'お問い合わせ後の流れ',
+      steps: [
+        { title: 'メッセージを送る', description: 'フォーム、WhatsApp、Viber、Messenger、メールでいつでもご連絡ください。プロジェクトの種類、所在地、規模、ご予算、スケジュールをお知らせください。' },
+        { title: 'ご返信', description: 'すべてのお問い合わせに1〜2営業日以内にご返信します。' },
+        { title: '無料相談', description: 'ご要望、敷地の状況、ご予算を伺い（バギオ以外の方はビデオ通話で）、最適なサービス内容をご提案します。' },
+        { title: '詳細なお見積もり', description: 'プロジェクトに合わせた項目別のお見積もりをお送りします。ご契約の義務はありません。ご承認後に設計を開始します。' },
+      ],
+      faq: [
+        { question: '返信までどのくらいかかりますか？', answer: 'すべてのお問い合わせに1〜2営業日以内にご返信します。WhatsApp、Viber、Messenger、メールは24時間いつでもご利用いただけます。' },
+        { question: '初回相談は無料ですか？', answer: 'はい、初回相談は無料です。その後、プロジェクトに合わせた項目別のお見積もりをお送りします。ご契約の義務はありません。' },
+        { question: '最初のメッセージには何を書けばよいですか？', answer: 'プロジェクトの種類、所在地、おおよその床面積または敷地面積、ご予算、スケジュールをお知らせください。敷地や既存建物の写真もあると助かります。' },
+        { question: 'バギオ市以外や海外の方にも対応していますか？', answer: 'はい。バギオ市、ラ・ウニオン、イフガオ、ヌエバ・ビスカヤ、南イロコスでは現地対応、フィリピン国内のその他の地域や海外のお客様にはリモートで対応しています。' },
+      ],
     },
     form: {
       nameLabel: 'お名前 *',
@@ -1190,6 +1254,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: '이메일',
       formTag: '메시지 보내기',
       formHeading: '프로젝트에 대해 알려주세요',
+      hoursLabel: '운영 시간',
+      hoursValue: '메시지 24시간 접수 · 영업일 기준 1–2일 내 답변',
+      stepsTag: '진행 절차',
+      stepsHeading: '문의 후 진행 과정',
+      steps: [
+        { title: '메시지 보내기', description: '문의 양식, WhatsApp, Viber, Messenger, 이메일로 언제든 연락하세요. 프로젝트 유형, 위치, 규모, 예산 범위, 일정을 알려 주세요.' },
+        { title: '답변 드리기', description: '모든 문의에 영업일 기준 1–2일 이내에 답변드립니다.' },
+        { title: '무료 상담', description: '목표, 부지 조건, 예산을 함께 검토하고(바기오 외 지역은 화상 통화로) 적합한 서비스 범위를 제안해 드립니다.' },
+        { title: '상세 견적', description: '프로젝트에 맞춘 항목별 견적을 받으시며, 의무는 없습니다. 승인하시면 설계를 시작합니다.' },
+      ],
+      faq: [
+        { question: '답변은 얼마나 빨리 받을 수 있나요?', answer: '모든 문의에 영업일 기준 1–2일 이내에 답변드립니다. WhatsApp, Viber, Messenger, 이메일로 24시간 언제든 메시지를 보내실 수 있습니다.' },
+        { question: '첫 상담은 무료인가요?', answer: '네. 첫 상담은 무료입니다. 이후 프로젝트에 맞춘 항목별 견적을 보내 드리며, 진행할 의무는 없습니다.' },
+        { question: '첫 메시지에는 무엇을 적어야 하나요?', answer: '프로젝트 유형, 위치, 대략적인 연면적 또는 대지 면적, 예산 범위, 일정을 알려 주세요. 부지나 기존 건물 사진이 있으면 더 좋습니다.' },
+        { question: '바기오시 외 지역이나 해외 고객도 가능한가요?', answer: '네. 바기오시, 라우니온, 이푸가오, 누에바비스카야, 일로코스수르에서는 현장 서비스를, 필리핀 전역과 해외 고객에게는 원격 서비스를 제공합니다.' },
+      ],
     },
     form: {
       nameLabel: '성함 *',
@@ -1428,6 +1508,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'البريد الإلكتروني',
       formTag: 'أرسل رسالة',
       formHeading: 'أخبرنا عن مشروعك',
+      hoursLabel: 'ساعات العمل',
+      hoursValue: 'نستقبل الرسائل على مدار الساعة · نرد خلال 1–2 يوم عمل',
+      stepsTag: 'الخطوات التالية',
+      stepsHeading: 'بعد أن تتواصل معنا',
+      steps: [
+        { title: 'أرسل رسالتك', description: 'استخدم النموذج أو WhatsApp أو Viber أو Messenger أو البريد الإلكتروني في أي وقت. أخبرنا بنوع المشروع وموقعه ومساحته والميزانية التقريبية والجدول الزمني.' },
+        { title: 'نرد عليك', description: 'نرد على كل استفسار خلال 1–2 يوم عمل.' },
+        { title: 'استشارة مجانية', description: 'نناقش أهدافك وظروف الموقع والميزانية (عبر مكالمة فيديو إن كنت خارج باغيو)، ونقترح نطاق الخدمات المناسب.' },
+        { title: 'عرض سعر مفصل', description: 'تتلقى عرض سعر مفصلاً خاصاً بمشروعك دون أي التزام. يبدأ التصميم بعد موافقتك.' },
+      ],
+      faq: [
+        { question: 'ما سرعة ردكم؟', answer: 'نرد على كل استفسار خلال 1–2 يوم عمل. يمكنك مراسلتنا في أي وقت، فـ WhatsApp وViber وMessenger والبريد الإلكتروني متاحة على مدار الساعة.' },
+        { question: 'هل الاستشارة الأولى مجانية؟', answer: 'نعم. الاستشارة الأولى مجانية، وبعدها تتلقى عرض سعر مفصلاً خاصاً بمشروعك دون أي التزام بالمتابعة.' },
+        { question: 'ماذا أكتب في رسالتي الأولى؟', answer: 'نوع المشروع والموقع والمساحة التقريبية للبناء أو الأرض والميزانية والجدول الزمني. تساعد أيضاً صور الأرض أو المبنى القائم.' },
+        { question: 'هل تعملون مع عملاء خارج مدينة باغيو أو خارج الفلبين؟', answer: 'نعم. نقدم خدماتنا في الموقع في مدينة باغيو ولا يونيون وإيفوغاو ونويفا فيزكايا وإيلوكوس سور، وعن بُعد للعملاء في أي مكان في الفلبين وخارجها.' },
+      ],
     },
     form: {
       nameLabel: 'الاسم الكامل *',
@@ -1666,6 +1762,22 @@ export const t: Record<Language, Translations> = {
       emailLabel: 'Correo Electrónico',
       formTag: 'Enviar un Mensaje',
       formHeading: 'Cuéntenos Sobre Su Proyecto',
+      hoursLabel: 'Horario',
+      hoursValue: 'Mensajes 24/7 · respondemos en 1–2 días hábiles',
+      stepsTag: 'Próximos Pasos',
+      stepsHeading: 'Después de Contactarnos',
+      steps: [
+        { title: 'Envíe su Mensaje', description: 'Use el formulario, WhatsApp, Viber, Messenger o correo electrónico, a cualquier hora. Indíquenos el tipo de proyecto, la ubicación, el tamaño, el rango de presupuesto y los plazos.' },
+        { title: 'Le Respondemos', description: 'Respondemos a cada consulta en 1–2 días hábiles.' },
+        { title: 'Consulta Gratuita', description: 'Hablamos de sus objetivos, las condiciones del terreno y su presupuesto (por videollamada si está fuera de Baguio) y le recomendamos el alcance de servicios adecuado.' },
+        { title: 'Cotización Detallada', description: 'Recibe una cotización detallada y específica para su proyecto, sin compromiso. El diseño comienza cuando usted la aprueba.' },
+      ],
+      faq: [
+        { question: '¿Qué tan rápido responden?', answer: 'Respondemos a cada consulta en 1–2 días hábiles. Puede escribirnos en cualquier momento: WhatsApp, Viber, Messenger y el correo están disponibles 24/7.' },
+        { question: '¿La primera consulta es gratuita?', answer: 'Sí. La consulta inicial es gratuita. Después recibe una cotización detallada y específica para su proyecto, sin compromiso de continuar.' },
+        { question: '¿Qué debo incluir en mi primer mensaje?', answer: 'El tipo de proyecto, la ubicación, el área aproximada de construcción o del terreno, su rango de presupuesto y los plazos. Las fotos del terreno o del edificio existente también ayudan.' },
+        { question: '¿Trabajan con clientes fuera de Baguio City o en el extranjero?', answer: 'Sí. Trabajamos en sitio en Baguio City, La Union, Ifugao, Nueva Vizcaya e Ilocos Sur, y a distancia con clientes en cualquier lugar de Filipinas y del extranjero.' },
+      ],
     },
     form: {
       nameLabel: 'Nombre Completo *',
