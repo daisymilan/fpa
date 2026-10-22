@@ -5,6 +5,7 @@ import Link from "next/link";
 import { locations, getLocationBySlug } from "@/lib/locations";
 import { getProjectBySlug, getShareImage } from "@/lib/projects";
 import { getServiceBySlug, ServiceData } from "@/lib/services";
+import { getGuideBySlug, type Guide } from "@/lib/guides";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -45,6 +46,20 @@ export default async function LocationPage({ params }: Props) {
   const locationServices = location.featuredServiceSlugs
     .map((s) => getServiceBySlug(s))
     .filter((s): s is ServiceData => s !== undefined);
+
+  const locationGuides = location.guideSlugs
+    .map((s) => getGuideBySlug(s))
+    .filter((g): g is Guide => g !== undefined);
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: location.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -101,6 +116,10 @@ export default async function LocationPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(locationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* Hero */}
@@ -223,6 +242,14 @@ export default async function LocationPage({ params }: Props) {
             </div>
             <div>
               <p className="text-fg-muted text-sm leading-relaxed">{location.context}</p>
+              <ul className="mt-6 space-y-3">
+                {location.considerations.map((item) => (
+                  <li key={item} className="flex gap-3 text-fg-muted text-sm leading-relaxed">
+                    <span className="mt-2 w-1.5 h-1.5 bg-[#FF3B30] flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="mt-8">
                 <Link
                   href="/contact"
@@ -284,6 +311,41 @@ export default async function LocationPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Local FAQ + guides */}
+      <section className="section-padding bg-bg-alt" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-px bg-[#FF3B30]" />
+            <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">FAQ</span>
+          </div>
+          <h2 className="display-heading text-fg mb-10" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}>
+            Building in {location.city}
+          </h2>
+          <div className="space-y-8">
+            {location.faqs.map((faq) => (
+              <div key={faq.question} className="pb-8" style={{ borderBottom: "1px solid var(--border)" }}>
+                <h3 className="text-fg text-base font-semibold mb-3">{faq.question}</h3>
+                <p className="text-fg-muted text-sm leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+          {locationGuides.length > 0 && (
+            <div className="mt-12">
+              <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Related Guides</p>
+              <ul className="space-y-3">
+                {locationGuides.map((g) => (
+                  <li key={g.slug}>
+                    <Link href={`/guides/${g.slug}`} className="text-fg-muted text-sm hover:text-[#FF3B30] transition-colors">
+                      {g.title} →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-20 bg-[#FF3B30]">

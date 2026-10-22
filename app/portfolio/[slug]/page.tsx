@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProjectBySlug, getShareImage, projects } from "@/lib/projects";
 import { getServiceBySlug } from "@/lib/services";
+import { locations } from "@/lib/locations";
+import { getGuideBySlug, type Guide } from "@/lib/guides";
 import ProjectGallery from "@/components/portfolio/ProjectGallery";
 import ProjectStructuredData from "@/components/ui/ProjectStructuredData";
 
@@ -45,6 +47,18 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   const otherProjects = projects.filter((p) => p.slug !== slug).slice(0, 3);
+
+  // Link the project to its area page (or the overseas page for projects abroad) and the guides for that area.
+  const projectLocation = locations.find((l) => project.location.includes(l.city) || project.location.includes(l.province));
+  const isOverseas = !projectLocation && !!project.country && project.country !== "PH";
+  const areaLink = projectLocation
+    ? { href: `/locations/${projectLocation.slug}`, label: `More about building in ${projectLocation.city}` }
+    : isOverseas
+      ? { href: "/build-from-abroad", label: "How we work with overseas clients" }
+      : null;
+  const projectGuides = (projectLocation?.guideSlugs ?? (isOverseas ? ["ofw-guide-building-house-philippines"] : []))
+    .map((g) => getGuideBySlug(g))
+    .filter((g): g is Guide => g !== undefined);
 
   const relatedServices = project.relatedServiceSlugs
     .map((s) => getServiceBySlug(s))
@@ -89,6 +103,23 @@ export default async function ProjectPage({ params }: Props) {
               <p className="text-fg-muted leading-relaxed mb-8 text-base">{project.description}</p>
               <h2 className="display-heading text-fg mb-4" style={{ fontSize: "1.5rem" }}>Design Concept</h2>
               <p className="text-fg-muted leading-relaxed text-sm">{project.concept}</p>
+              {(areaLink || projectGuides.length > 0) && (
+                <div className="mt-10 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
+                  <p className="text-fg-dim text-xs font-semibold tracking-[0.25em] uppercase mb-4">Related Reading</p>
+                  <ul className="space-y-3">
+                    {areaLink && (
+                      <li>
+                        <Link href={areaLink.href} className="text-fg-muted text-sm hover:text-[#FF3B30] transition-colors">{areaLink.label} →</Link>
+                      </li>
+                    )}
+                    {projectGuides.map((g) => (
+                      <li key={g.slug}>
+                        <Link href={`/guides/${g.slug}`} className="text-fg-muted text-sm hover:text-[#FF3B30] transition-colors">{g.title} →</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             {/* Right */}
@@ -98,13 +129,17 @@ export default async function ProjectPage({ params }: Props) {
                 <div className="space-y-5">
                   {[
                     { label: "Project Type", value: project.type },
-                    { label: "Location", value: project.location },
+                    { label: "Location", value: project.location, href: areaLink?.href },
                     { label: "Architect", value: "Arch. Friendzel B. Pengi, UAP" },
                     { label: "Firm", value: "FPA Design Consultancy" },
-                  ].map(({ label, value }) => (
+                  ].map(({ label, value, href }) => (
                     <div key={label} className="pb-4 last:pb-0" style={{ borderBottom: "1px solid var(--border)" }}>
                       <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{label}</p>
-                      <p className="text-fg text-sm font-medium">{value}</p>
+                      {href ? (
+                        <Link href={href} className="text-fg text-sm font-medium hover:text-[#FF3B30] transition-colors">{value}</Link>
+                      ) : (
+                        <p className="text-fg text-sm font-medium">{value}</p>
+                      )}
                     </div>
                   ))}
                 </div>
