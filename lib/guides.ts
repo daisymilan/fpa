@@ -122,6 +122,7 @@ export const guides: Guide[] = [
     relatedServiceSlugs: ["building-permit-documentation", "architectural-design"],
     relatedLinks: [
       { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house in Baguio?" },
+      { href: "/guides/building-on-sloping-lot-baguio", label: "Building on a sloping lot in Baguio" },
       { href: "/locations/baguio-city-architect", label: "Architect in Baguio City" },
     ],
   },
@@ -134,7 +135,7 @@ export const guides: Guide[] = [
     excerpt:
       "Price per square meter by finish level, what an architect costs, the extra costs people forget, and a worked example for a typical family home.",
     published: "2026-10-21",
-    updated: "2026-10-21",
+    updated: "2026-10-22",
     readingMinutes: 6,
     intro:
       "The honest answer is: it depends on the size of the house, the finish level and the lot. This guide gives you the ranges people use for planning in 2026, explains what makes Baguio different, and walks through an example so you can set a realistic budget before you talk to a contractor.",
@@ -165,7 +166,7 @@ export const guides: Guide[] = [
       {
         heading: "Architect's fees",
         paragraphs: [
-          "Architect fees in the Philippines are guided by the UAP schedule of fees (UAP Document 201). For full design and supervision services they typically range from 8–12% of the total construction cost, depending on the project type, size and complexity. FPA Design Consultancy offers a free initial consultation and gives a project-specific, itemized quotation.",
+          "Architect fees in the Philippines are guided by the 2010 Standards of Professional Practice for architects (SPP Document 201 for pre-design services and SPP Document 202 for regular design services). For full design and supervision services they typically range from 8–12% of the total construction cost, depending on the project type, size and complexity. FPA Design Consultancy offers a free initial consultation and gives a project-specific, itemized quotation.",
         ],
       },
       {
@@ -224,6 +225,8 @@ export const guides: Guide[] = [
     relatedServiceSlugs: ["architectural-design", "construction-project-management"],
     relatedLinks: [
       { href: "/guides/building-permit-requirements-baguio-city", label: "Building permit requirements in Baguio City" },
+      { href: "/guides/architect-fees-philippines", label: "How much does an architect cost in the Philippines?" },
+      { href: "/guides/building-on-sloping-lot-baguio", label: "Building on a sloping lot in Baguio" },
       { href: "/portfolio", label: "See houses we have designed" },
     ],
   },
@@ -323,6 +326,284 @@ export const guides: Guide[] = [
     relatedServiceSlugs: ["architectural-design", "construction-project-management", "3d-visualization-rendering"],
     relatedLinks: [
       { href: "/build-from-abroad", label: "How we work with OFW and overseas clients" },
+      { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house?" },
+      { href: "/guides/typhoon-resistant-house-design-philippines", label: "Designing a typhoon-resistant house" },
+    ],
+  },
+  {
+    slug: "architect-fees-philippines",
+    title: "How Much Does an Architect Cost in the Philippines?",
+    metaTitle: "Architect Fees in the Philippines | FPA Design Consultancy",
+    metaDescription:
+      "How Philippine architects charge: percentage of construction cost, what the fee covers and leaves out, paying in stages, and a worked example for a family home.",
+    excerpt:
+      "How licensed architects in the Philippines charge, what the fee covers, what it leaves out, and how to compare quotations fairly.",
+    published: "2026-10-22",
+    updated: "2026-10-22",
+    readingMinutes: 6,
+    intro:
+      "The architect's fee is one of the first questions clients ask, and one of the most confusing. This guide explains how licensed architects in the Philippines usually charge, what the fee covers, what it doesn't, and how to compare quotations so you aren't comparing different things.",
+    sections: [
+      {
+        heading: "How architects usually charge",
+        paragraphs: [
+          "For houses and most building projects, the fee is usually a percentage of the construction cost. For full design and construction supervision services it typically ranges from 8–12% of the total construction cost, depending on the type, size and complexity of the project.",
+          "Other ways of charging include a fixed lump-sum fee for a clearly defined scope, and time-based fees for consultations or small jobs. Whatever the method, the fee and the scope of work should be written into a contract before design starts.",
+        ],
+      },
+      {
+        heading: "Where the percentages come from",
+        paragraphs: [
+          "Fees are guided by the Standards of Professional Practice (SPP) for architects. The current edition was approved by the Board of Architecture in 2010 under the Architecture Act (RA 9266), replacing the 1979 UAP documents. SPP Document 201 covers pre-design services, such as consultation, site analysis, feasibility studies and architectural programming. SPP Document 202 covers regular design services, including the recommended minimum fees. The recommended percentage depends on the kind of building: more complex buildings carry higher percentages, and homes, with their many details per square meter, sit toward the upper end. The final fee is agreed between you and your architect.",
+        ],
+      },
+      {
+        heading: "What the fee usually covers",
+        list: [
+          "Pre-design services, if you need them: site analysis, feasibility studies and the architectural program (SPP Document 201). These are usually agreed as a separate service.",
+          "Schematic design: layout options and the overall concept, based on your brief, lot and budget.",
+          "Design development: the chosen design worked out in detail, often with 3D renders.",
+          "Construction documents: the plans, sections, details and specifications needed to build and to get the permit.",
+          "Coordination with the structural, electrical, sanitary and plumbing engineers. Some architects include the engineering designs and some quote them separately, so ask.",
+          "Help choosing a contractor, and construction-phase services such as site supervision, if they're part of the agreed scope.",
+        ],
+      },
+      {
+        heading: "What the fee usually doesn't cover",
+        list: [
+          "Building permit fees and other government charges paid to the city or municipality",
+          "The lot survey and the soil investigation",
+          "The contractor's cost of building the house",
+          "Travel to distant sites, if the contract says it is charged separately",
+        ],
+      },
+      {
+        heading: "A worked example",
+        paragraphs: [
+          "For a 120 m² family home with a construction cost of ₱4,800,000, a fee of 8–12% for full design and supervision comes to about ₱384,000–₱576,000. It is a planning figure, not a quote: the actual fee depends on the agreed scope.",
+        ],
+        note:
+          "Our guide to house construction costs in Baguio shows how this fits into a full budget.",
+      },
+      {
+        heading: "Paying in stages",
+        paragraphs: [
+          "Fees are normally paid in stages tied to the design phases, so you pay as each stage is delivered rather than all at once. The schedule should be written into the contract.",
+        ],
+      },
+      {
+        heading: "How to compare quotations",
+        list: [
+          "Check that the architect is licensed by the PRC. Only a licensed architect can sign and seal the architectural documents for your building permit.",
+          "Compare the scope, not just the price: number of design options and revisions, engineering designs, permit processing and supervision visits.",
+          "Ask how long each phase takes and what happens if you change the design.",
+          "Be careful with very cheap \"plans only\" offers. Plans that aren't signed and sealed by licensed professionals won't get a permit.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is the architect's fee based on the total construction cost?",
+        answer:
+          "Usually, yes. For full design and supervision services, fees in the Philippines typically range from 8–12% of the total construction cost. A fixed fee can also be agreed for a clearly defined scope.",
+      },
+      {
+        question: "Can I hire an architect for the permit plans only?",
+        answer:
+          "Yes. Design-only services cost less than full design and supervision. The plans still need to be signed and sealed by a licensed architect and licensed engineers to get a building permit.",
+      },
+      {
+        question: "Do you charge for the first consultation?",
+        answer:
+          "No. FPA Design Consultancy offers a free initial consultation. Afterwards you receive a project-specific, itemized quotation.",
+      },
+    ],
+    relatedServiceSlugs: ["architectural-design", "construction-supervision", "building-permit-documentation"],
+    relatedLinks: [
+      { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house in Baguio?" },
+      { href: "/guides/building-permit-requirements-baguio-city", label: "Building permit requirements in Baguio City" },
+    ],
+  },
+  {
+    slug: "building-on-sloping-lot-baguio",
+    title: "Building on a Sloping Lot in Baguio",
+    metaTitle: "Building on a Sloping Lot in Baguio | FPA Design Consultancy",
+    metaDescription:
+      "What to check before building on a steep lot in Baguio: geohazard maps, surveys and soil tests, retaining walls, drainage, and house designs that follow the slope.",
+    excerpt:
+      "Geohazard maps, surveys, soil tests, retaining walls and drainage: what to check before you build on a hillside lot, and designs that make the slope work for you.",
+    published: "2026-10-22",
+    updated: "2026-10-22",
+    readingMinutes: 6,
+    intro:
+      "Many lots in Baguio and the rest of Benguet are on steep hillsides. A slope can give you views and a house with real character, but it adds cost and risk if it isn't handled properly. This guide covers what to check before you buy or build, and the design choices that make a sloping lot work.",
+    sections: [
+      {
+        heading: "Check the lot before you commit",
+        list: [
+          "Look the lot up on the geohazard maps of the Mines and Geosciences Bureau (MGB), which show landslide and flood susceptibility.",
+          "Ask the City Planning office about the zoning and any restrictions in the area. Areas hit by landslides can be declared no-build zones.",
+          "Have a geodetic engineer do a topographic survey. Accurate contours are where a hillside design starts.",
+          "Have a soil investigation done. The structural engineer needs it to design the foundations and retaining walls.",
+        ],
+      },
+      {
+        heading: "Design with the slope, not against it",
+        list: [
+          "Split-level or stepped floor plans follow the contours and cut down on excavation and retaining walls.",
+          "Stepped foundations let the house sit into the hillside instead of on a large flattened platform.",
+          "Place the house on the most stable part of the lot, and keep deep cuts away from the bottom of the slope.",
+          "Balance cut and fill, so soil isn't hauled away or dumped on the slope.",
+          "Plan the driveway, parking and entrance at road level early. Access often decides the layout.",
+        ],
+      },
+      {
+        heading: "Retaining walls and foundations",
+        paragraphs: [
+          "Retaining walls and foundations on a slope must be designed by a licensed civil or structural engineer, following the structural code and the soil investigation. Walls need drainage behind them, such as weep holes and free-draining backfill, so water can't build up pressure. Tall walls should not rely on unreinforced stone or riprap.",
+        ],
+      },
+      {
+        heading: "Drainage is the most important detail",
+        paragraphs: [
+          "Most slope failures during the rainy season are triggered by water. On a hillside, drainage deserves as much attention as the house itself:",
+        ],
+        list: [
+          "Collect all roof water in gutters and downspouts, and pipe it away from the slope.",
+          "Lead surface water through lined canals to the street drainage.",
+          "Install subsurface drains behind retaining walls and around foundations.",
+          "Don't let water pond near the house or soak into the slope above it.",
+          "Keep or plant deep-rooted vegetation on slopes you don't build on.",
+        ],
+      },
+      {
+        heading: "Budget for the slope",
+        paragraphs: [
+          "Excavation, retaining walls, deeper foundations and drainage can add a lot to the structural cost on a steep lot. A design that follows the slope keeps that extra cost down. Our guide to house construction costs in Baguio explains how to build up a realistic budget.",
+        ],
+      },
+      {
+        heading: "Permits",
+        paragraphs: [
+          "A house on a sloping lot needs the same building permit as any other, with structural plans that cover the foundations and retaining walls. If the lot has trees, especially Benguet pines, cutting or relocating them needs government approval. Our building permit guide lists the documents.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is it safe to build on a steep lot in Baguio?",
+        answer:
+          "Often, yes, when the lot isn't in a high landslide-susceptibility area and the house, foundations, retaining walls and drainage are engineered for the site. Check the MGB geohazard maps and get a soil investigation before you design.",
+      },
+      {
+        question: "Is building on a slope more expensive?",
+        answer:
+          "Usually. Excavation, retaining walls, foundations and drainage add cost. A design that follows the slope, with split levels and stepped foundations, keeps the extra cost down.",
+      },
+      {
+        question: "Do I need a soil test for a sloping lot?",
+        answer:
+          "It's strongly recommended. The structural engineer needs the soil data to design safe foundations and retaining walls for a hillside.",
+      },
+    ],
+    relatedServiceSlugs: ["architectural-design", "construction-supervision", "building-permit-documentation"],
+    relatedLinks: [
+      { href: "/guides/building-permit-requirements-baguio-city", label: "Building permit requirements in Baguio City" },
+      { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house in Baguio?" },
+      { href: "/locations/baguio-city-architect", label: "Architect in Baguio City" },
+    ],
+  },
+  {
+    slug: "typhoon-resistant-house-design-philippines",
+    title: "Designing a Typhoon-Resistant House in the Philippines",
+    metaTitle: "Typhoon-Resistant House Design | FPA Design Consultancy",
+    metaDescription:
+      "How to design a house that stands up to typhoons in the Philippines: the structural code, roof shape, roof-to-wall connections, openings and flood levels.",
+    excerpt:
+      "Roof shape, roof-to-wall connections, openings and floor levels: the design decisions that help a house come through typhoon season.",
+    published: "2026-10-22",
+    updated: "2026-10-22",
+    readingMinutes: 6,
+    intro:
+      "On average, about 20 tropical cyclones enter the Philippine Area of Responsibility every year, and most typhoon damage to houses starts at the roof. This guide covers the design decisions that help a house come through a typhoon, from the roof shape to the floor level. Use it to brief your architect and engineer. It isn't a substitute for an engineered design.",
+    sections: [
+      {
+        heading: "Design to the structural code",
+        paragraphs: [
+          "The National Structural Code of the Philippines (NSCP 2015) sets the wind loads a building must resist. They depend on where the building is, since design wind speeds differ across the country, and on how exposed the site is. Coastal sites and open hilltops see higher wind loads. A licensed structural engineer calculates them for your lot.",
+        ],
+      },
+      {
+        heading: "Roof shape and overhangs",
+        list: [
+          "Hip roofs, which slope down on all four sides, generally perform better in strong winds than gable roofs with tall, flat end walls.",
+          "A moderate roof pitch is better than a very flat or very steep one.",
+          "Keep eaves and overhangs short and well tied. Long, unsupported overhangs catch the wind and can pull the roof off.",
+        ],
+        note:
+          "Our La Union bungalow uses a pyramidal hip roof designed for wind-load resistance. It's the defining feature of the house.",
+      },
+      {
+        heading: "Tie the roof down",
+        paragraphs: [
+          "The weakest point is usually where the roof meets the walls. Research after Typhoon Yolanda found that roof panels are often the first thing lost. To prevent it:",
+        ],
+        list: [
+          "Tie the roof framing to the wall beams with steel straps or connectors, not just nails or mortar.",
+          "Fasten roofing sheets with the right fasteners, spaced closer at the edges and corners, where wind uplift is strongest.",
+          "Use roofing and framing of adequate thickness for the design wind load.",
+        ],
+      },
+      {
+        heading: "A continuous load path",
+        paragraphs: [
+          "Wind forces have to travel from the roof through the walls and columns down to the foundations. Every link needs to be connected: roof to beams, beams to columns, walls to the frame and columns to footings. Reinforced concrete frames and properly reinforced hollow-block walls do this well when they're detailed and built correctly.",
+        ],
+      },
+      {
+        heading: "Doors and windows",
+        paragraphs: [
+          "Openings are weak points. If a window or door breaks during a typhoon, wind rushes in, pressure inside the house rises, and the roof can be pushed off from below. Strong frames, impact-resistant glass or storm shutters protect the openings, and with them the roof.",
+        ],
+      },
+      {
+        heading: "Water, flooding and the coast",
+        list: [
+          "Set the finished floor above known flood levels for the site, and plan where water will drain.",
+          "Use gutters and downspouts sized for heavy rain.",
+          "Near the coast, as in much of La Union and Ilocos Sur, use corrosion-resistant fasteners, connectors and finishes. Salt air corrodes ordinary steel.",
+        ],
+      },
+      {
+        heading: "Before each typhoon season",
+        list: [
+          "Check the roof fasteners and replace any rusted or loose ones.",
+          "Clear gutters and drains.",
+          "Trim trees and branches close to the house.",
+          "Secure or store anything loose outdoors.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the best roof for typhoons?",
+        answer:
+          "A well-tied hip roof with a moderate pitch and short overhangs generally performs best. How the roof is connected to the walls matters as much as its shape.",
+      },
+      {
+        question: "Are concrete houses typhoon-proof?",
+        answer:
+          "Concrete walls resist wind well, but many concrete houses still lose their roofs. The roof framing and its connections to the walls are what usually fail, so they need as much attention as the walls.",
+      },
+      {
+        question: "Can an existing house be made more typhoon-resistant?",
+        answer:
+          "Often, yes. Adding roof straps, upgrading fasteners and protecting windows can make a real difference. An engineer should check the existing structure first, and we can design the renovation.",
+      },
+    ],
+    relatedServiceSlugs: ["architectural-design", "renovation-remodeling", "construction-supervision"],
+    relatedLinks: [
+      { href: "/locations/la-union-architect", label: "Architect in La Union" },
       { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house?" },
     ],
   },

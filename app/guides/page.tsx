@@ -5,7 +5,7 @@ import { guides } from "@/lib/guides";
 const baseUrl = "https://www.fp-architect.com";
 const title = "Guides for Home Builders | FPA Design Consultancy";
 const description =
-  "Practical guides to building in the Philippines: building permits in Baguio City, construction costs, and building a house from abroad as an OFW.";
+  "Practical guides to building in the Philippines: Baguio building permits, construction costs, architect fees, sloping lots, typhoon-resistant design and building from abroad.";
 
 export const metadata: Metadata = {
   title,
