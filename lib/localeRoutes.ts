@@ -5,7 +5,15 @@ const baseUrl = "https://www.fp-architect.com";
 
 // Pages with a Filipino version at /fil/... . Everywhere else, other languages stay
 // client-side only (one URL, English to Google).
-export const filipinoPaths = ["/", "/about", "/services", "/portfolio", "/contact"] as const;
+export const filipinoPaths = [
+  "/",
+  "/about",
+  "/services",
+  "/portfolio",
+  "/contact",
+  "/guides/building-permit-requirements-baguio-city",
+  "/guides/house-construction-cost-baguio",
+] as const;
 
 export function isFilipinoPath(pathname: string) {
   return pathname === "/fil" || pathname.startsWith("/fil/");

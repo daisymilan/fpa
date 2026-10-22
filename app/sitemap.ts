@@ -116,7 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // English pages that have a Filipino version list both, and each Filipino page is added.
-  const withLanguages = staticPages.flatMap((page) => {
+  const withLanguages = [...staticPages, ...guidePages].flatMap((page) => {
     const path = page.url.slice(baseUrl.length) || "/";
     if (!(filipinoPaths as readonly string[]).includes(path)) return [page];
     const { languages } = languageAlternates(path, "en");
@@ -124,5 +124,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [{ ...page, alternates }, { ...page, url: languages.fil, alternates }];
   });
 
-  return [...withLanguages, ...servicePages, ...projectPages, ...locationIndexPage, ...locationPages, ...guidePages];
+  return [...withLanguages, ...servicePages, ...projectPages, ...locationIndexPage, ...locationPages];
 }
