@@ -22,7 +22,7 @@ export interface ServiceData {
 export const services: ServiceData[] = [
   {
     slug: "architectural-design",
-    updated: "2026-10-21",
+    updated: "2026-10-22",
     title: "Architectural Design",
     worldwide: true,
     metaTitle: "Architectural Design in Baguio City | FPA Design Consultancy",
@@ -60,7 +60,7 @@ export const services: ServiceData[] = [
       {
         question: "How much does architectural design cost in the Philippines?",
         answer:
-          "Architectural fees follow the UAP Schedule of Minimum Basic Fees, typically ranging from 8–12% of total construction cost for full design and supervision services. FPA Design Consultancy provides project-specific quotations after an initial consultation.",
+          "Architectural fees are guided by the 2010 Standards of Professional Practice for architects (SPP Document 201 for pre-design services and SPP Document 202 for regular design services), typically ranging from 8–12% of total construction cost for full design and supervision services. FPA Design Consultancy provides project-specific quotations after an initial consultation.",
       },
       {
         question: "How long does an architectural design project take?",

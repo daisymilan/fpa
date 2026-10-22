@@ -32,7 +32,7 @@ export interface Translations {
   contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string; hoursLabel: string; hoursValue: string; stepsTag: string; stepsHeading: string; steps: ProcessStep[]; faq: FaqItem[] };
   form: { nameLabel: string; emailLabel: string; phoneLabel: string; typeLabel: string; typePlaceholder: string; locationLabel: string; messageLabel: string; messagePlaceholder: string; sendVia: string; emailApp: string; greeting: string; emailSubject: string; opened: string; pasteHint: string; copyHint: string; notOpened: string; copyBtn: string; copiedBtn: string; note: string; projectTypes: [string, string, string, string, string, string, string, string] };
   faq: { tag: string; heading1: string; heading2: string; cta: string; items: FaqItem[] };
-  common: { locations: string; guides: string; fromAbroad: string; projectsIn: string; ourServices: string; viewOurWork: string; localProjects: string; remoteTag: string; remoteDescAbout: string; remoteDescContact: string; remoteLink: string; faqHeading: string; portfolioCtaHeading: string; portfolioCtaText: string; portfolioCtaBtn: string; coverageTag: string; coverageHeading: string; hq: string; view: string; allLocations: string; servicesFaq: FaqItem[]; };
+  common: { locations: string; guides: string; fromAbroad: string; projectsIn: string; ourServices: string; viewOurWork: string; localProjects: string; remoteTag: string; remoteDescAbout: string; remoteDescContact: string; remoteLink: string; faqHeading: string; portfolioCtaHeading: string; portfolioCtaText: string; portfolioCtaBtn: string; coverageTag: string; coverageHeading: string; hq: string; view: string; allLocations: string; servicesFaq: FaqItem[]; reviewTitle: string; reviewText: string; reviewCta: string; };
 }
 
 export const t: Record<Language, Translations> = {
@@ -58,6 +58,9 @@ export const t: Record<Language, Translations> = {
       hq: 'HQ',
       view: 'View →',
       allLocations: 'View All Service Locations',
+      reviewTitle: 'Worked With Us?',
+      reviewText: 'A short Google review helps other families find a licensed architect they can trust.',
+      reviewCta: 'Leave a Google Review',
       servicesFaq: [
         { question: 'Is FPA Design Consultancy a licensed architectural firm?', answer: 'Yes. FPA Design Consultancy is led by Arch. Friendzel B. Pengi, UAP — a licensed architect registered with the Professional Regulation Commission (PRC) under Republic Act 9266 and a member of the United Architects of the Philippines.' },
         { question: 'Do you serve clients outside Baguio City?', answer: 'Yes. We serve clients across the Philippines and internationally, offering remote consultation and design services to Filipino families and businesses worldwide.' },
@@ -273,7 +276,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: 'How much does an architect cost in the Philippines?',
-          answer: 'Architect fees in the Philippines are guided by UAP Document 201 and typically range from 8–12% of total construction cost for full design and supervision services. The exact fee depends on project type, scope, and complexity. FPA Design Consultancy offers a free initial consultation — contact us for a clear, itemised quote tailored to your project.',
+          answer: 'Architect fees in the Philippines are guided by the Standards of Professional Practice (SPP) for architects, the 2010 edition adopted under the Architecture Act (RA 9266): SPP Document 201 for pre-design services and SPP Document 202 for regular design services. Fees typically range from 8–12% of total construction cost for full design and supervision services. The exact fee depends on project type, scope, and complexity. FPA Design Consultancy offers a free initial consultation — contact us for a clear, itemised quote tailored to your project.',
         },
         {
           question: 'Do I need a licensed architect for a building permit in the Philippines?',
@@ -324,6 +327,9 @@ export const t: Record<Language, Translations> = {
       hq: 'HQ',
       view: 'Tingnan →',
       allLocations: 'Tingnan ang Lahat ng Lokasyon',
+      reviewTitle: 'Nakatrabaho na Kami?',
+      reviewText: 'Malaking tulong ang maikling Google review para makahanap ang ibang pamilya ng lisensyadong arkitektong mapagkakatiwalaan.',
+      reviewCta: 'Mag-iwan ng Google Review',
       servicesFaq: [
         { question: 'Lisensyadong architectural firm ba ang FPA Design Consultancy?', answer: 'Opo. Pinamumunuan ang FPA Design Consultancy ni Arch. Friendzel B. Pengi, UAP — isang lisensyadong arkitekto na rehistrado sa Professional Regulation Commission (PRC) sa ilalim ng Republic Act 9266 at miyembro ng United Architects of the Philippines.' },
         { question: 'Naglilingkod ba kayo sa mga kliyente sa labas ng Baguio City?', answer: 'Opo. Naglilingkod kami sa mga kliyente sa buong Pilipinas at sa ibang bansa, at nag-aalok ng remote na konsultasyon at disenyo para sa mga pamilya at negosyong Pilipino saanman sa mundo.' },
@@ -539,7 +545,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: 'Magkano ang bayad ng arkitekto sa Pilipinas?',
-          answer: 'Ang mga bayad ng arkitekto sa Pilipinas ay ginagabayan ng UAP Document 201 at karaniwang nasa 8–12% ng kabuuang gastos sa konstruksiyon para sa kumpletong serbisyo sa disenyo at superbiyon. Ang eksaktong bayad ay nakasalalay sa uri, saklaw, at kumplikasyon ng proyekto. Nag-aalok ang FPA Design Consultancy ng libreng unang konsultasyon — makipag-ugnayan sa amin para sa personalisadong quote.',
+          answer: 'Ang mga bayad ng arkitekto sa Pilipinas ay ginagabayan ng Standards of Professional Practice (SPP) para sa mga arkitekto, ang 2010 na edisyon sa ilalim ng Architecture Act (RA 9266): SPP Document 201 para sa pre-design services at SPP Document 202 para sa regular design services. Karaniwang nasa 8–12% ito ng kabuuang gastos sa konstruksiyon para sa kumpletong serbisyo sa disenyo at superbiyon. Ang eksaktong bayad ay nakasalalay sa uri, saklaw, at kumplikasyon ng proyekto. Nag-aalok ang FPA Design Consultancy ng libreng unang konsultasyon — makipag-ugnayan sa amin para sa personalisadong quote.',
         },
         {
           question: 'Kailangan ba ng lisensyadong arkitekto para sa building permit sa Pilipinas?',
@@ -590,6 +596,9 @@ export const t: Record<Language, Translations> = {
       hq: '总部',
       view: '查看 →',
       allLocations: '查看所有服务地区',
+      reviewTitle: '与我们合作过？',
+      reviewText: '一条简短的 Google 评价，能帮助更多家庭找到值得信赖的持牌建筑师。',
+      reviewCta: '撰写 Google 评价',
       servicesFaq: [
         { question: 'FPA Design Consultancy 是持牌建筑事务所吗？', answer: '是的。FPA Design Consultancy 由 Arch. Friendzel B. Pengi, UAP 主持，他是根据第 9266 号共和国法令在菲律宾专业监管委员会（PRC）注册的持牌建筑师，也是菲律宾建筑师联合会（UAP）会员。' },
         { question: '你们为碧瑶市以外的客户提供服务吗？', answer: '是的。我们为菲律宾各地及海外客户提供服务，并为世界各地的菲律宾家庭和企业提供远程咨询与设计服务。' },
@@ -793,7 +802,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: '在菲律宾聘请建筑师需要多少费用？',
-          answer: '菲律宾建筑师费用以 UAP Document 201 为指导，全套设计及监理服务通常为总建设造价的 8–12%。实际费用取决于项目类型、服务范围及复杂程度。FPA Design Consultancy 提供免费初步咨询，欢迎联系我们获取个性化报价。',
+          answer: '菲律宾建筑师费用以建筑师《专业执业标准》（SPP，2010 年版，依据第 9266 号共和国法令《建筑法》采用）为指导：SPP 第 201 号文件涵盖设计前期服务，SPP 第 202 号文件涵盖常规设计服务。全套设计及监理服务通常为总建设造价的 8–12%。实际费用取决于项目类型、服务范围及复杂程度。FPA Design Consultancy 提供免费初步咨询，欢迎联系我们获取个性化报价。',
         },
         {
           question: '在菲律宾申请建筑许可证需要持牌建筑师吗？',
@@ -844,6 +853,9 @@ export const t: Record<Language, Translations> = {
       hq: '本社',
       view: '詳しく見る →',
       allLocations: 'すべての対応エリアを見る',
+      reviewTitle: '私たちとお仕事をされた方へ',
+      reviewText: '短い Google レビューが、信頼できる建築士を探している方の助けになります。',
+      reviewCta: 'Google レビューを書く',
       servicesFaq: [
         { question: 'FPA Design Consultancy は登録建築事務所ですか？', answer: 'はい。FPA Design Consultancy は Arch. Friendzel B. Pengi, UAP が率いています。共和国法第 9266 号に基づきフィリピン専門職規制委員会（PRC）に登録された建築士であり、フィリピン建築家連合（UAP）の会員です。' },
         { question: 'バギオ市以外のお客様にも対応していますか？', answer: 'はい。フィリピン全土および海外のお客様に対応しており、世界各地のフィリピン人のご家族や企業にリモートでのご相談・設計サービスを提供しています。' },
@@ -1047,7 +1059,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: 'フィリピンで建築士に依頼する費用はいくらですか？',
-          answer: 'フィリピンの建築士費用は UAP Document 201 を指針とし、設計・監理のフルサービスで総工事費の 8〜12% が目安です。実際の費用はプロジェクトの種別・範囲・複雑さによって異なります。FPA Design Consultancy では無料の初回相談を承っておりますので、お気軽にご連絡ください。',
+          answer: 'フィリピンの建築士費用は、建築士法（共和国法第 9266 号）に基づき採用された 2010 年版「専門業務基準（SPP）」を指針としています。SPP 文書 201 が設計前業務、SPP 文書 202 が通常の設計業務を定めています。設計・監理のフルサービスで総工事費の 8〜12% が目安です。実際の費用はプロジェクトの種別・範囲・複雑さによって異なります。FPA Design Consultancy では無料の初回相談を承っておりますので、お気軽にご連絡ください。',
         },
         {
           question: 'フィリピンで建築許可申請に建築士は必要ですか？',
@@ -1098,6 +1110,9 @@ export const t: Record<Language, Translations> = {
       hq: '본사',
       view: '보기 →',
       allLocations: '모든 서비스 지역 보기',
+      reviewTitle: '저희와 함께하셨나요?',
+      reviewText: '짧은 Google 리뷰가 믿을 수 있는 면허 건축가를 찾는 다른 가족들에게 큰 도움이 됩니다.',
+      reviewCta: 'Google 리뷰 남기기',
       servicesFaq: [
         { question: 'FPA Design Consultancy는 면허를 보유한 건축 사무소인가요?', answer: '네. FPA Design Consultancy는 Arch. Friendzel B. Pengi, UAP가 이끌고 있습니다. 그는 공화국법 제9266호에 따라 필리핀 전문직규제위원회(PRC)에 등록된 면허 건축가이며 필리핀 건축가 연합(UAP) 회원입니다.' },
         { question: '바기오시 외 지역의 고객도 서비스하나요?', answer: '네. 필리핀 전역과 해외의 고객을 대상으로 하며, 전 세계의 필리핀 가족과 기업에 원격 상담 및 설계 서비스를 제공합니다.' },
@@ -1301,7 +1316,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: '필리핀에서 건축가를 고용하는 비용은 얼마인가요?',
-          answer: '필리핀 건축가 수임료는 UAP Document 201을 기준으로 하며, 설계 및 감리 전체 서비스의 경우 총 공사비의 8–12% 수준이 일반적입니다. 실제 비용은 프로젝트 유형, 범위, 복잡도에 따라 달라집니다. FPA Design Consultancy는 무료 초기 상담을 제공하오니 맞춤 견적을 위해 문의해 주세요.',
+          answer: '필리핀 건축가 수임료는 건축법(공화국법 제9266호)에 따라 채택된 2010년판 건축가 전문 업무 기준(SPP)을 기준으로 합니다. SPP 문서 201은 설계 전 단계 서비스를, SPP 문서 202는 일반 설계 서비스를 다룹니다. 설계 및 감리 전체 서비스의 경우 총 공사비의 8–12% 수준이 일반적입니다. 실제 비용은 프로젝트 유형, 범위, 복잡도에 따라 달라집니다. FPA Design Consultancy는 무료 초기 상담을 제공하오니 맞춤 견적을 위해 문의해 주세요.',
         },
         {
           question: '필리핀에서 건축 허가를 받으려면 면허 건축가가 필요한가요?',
@@ -1352,6 +1367,9 @@ export const t: Record<Language, Translations> = {
       hq: 'المقر الرئيسي',
       view: 'عرض →',
       allLocations: 'عرض جميع مناطق الخدمة',
+      reviewTitle: 'هل عملت معنا؟',
+      reviewText: 'تقييم قصير على Google يساعد عائلات أخرى في العثور على مهندس معماري مرخّص يثقون به.',
+      reviewCta: 'اكتب تقييماً على Google',
       servicesFaq: [
         { question: 'هل FPA Design Consultancy مكتب معماري مرخّص؟', answer: 'نعم. يقود FPA Design Consultancy المهندس المعماري Arch. Friendzel B. Pengi, UAP، وهو مهندس معماري مرخّص ومسجّل لدى هيئة التنظيم المهني (PRC) بموجب القانون الجمهوري رقم 9266، وعضو في اتحاد المعماريين الفلبينيين (UAP).' },
         { question: 'هل تخدمون عملاء خارج مدينة باغيو؟', answer: 'نعم. نخدم العملاء في جميع أنحاء الفلبين وخارجها، ونقدم الاستشارات والتصميم عن بُعد للعائلات والشركات الفلبينية حول العالم.' },
@@ -1555,7 +1573,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: 'كم تكلف خدمات المهندس المعماري في الفلبين؟',
-          answer: 'تتراوح رسوم المهندس المعماري في الفلبين عادةً بين 8–12% من التكلفة الإجمالية للبناء مقابل خدمات التصميم والإشراف الكاملة، وفقاً لوثيقة UAP رقم 201. تعتمد الرسوم الفعلية على نوع المشروع ونطاقه وتعقيده. تقدم FPA Design Consultancy استشارة أولية مجانية — تواصل معنا للحصول على عرض سعر مخصص.',
+          answer: 'تسترشد رسوم المهندسين المعماريين في الفلبين بمعايير الممارسة المهنية (SPP) للمعماريين، إصدار 2010 المعتمد بموجب قانون العمارة (القانون الجمهوري رقم 9266): الوثيقة SPP 201 لخدمات ما قبل التصميم، والوثيقة SPP 202 لخدمات التصميم الاعتيادية. وتتراوح الرسوم عادةً بين 8–12% من التكلفة الإجمالية للبناء مقابل خدمات التصميم والإشراف الكاملة، وفقاً لوثيقة UAP رقم 201. تعتمد الرسوم الفعلية على نوع المشروع ونطاقه وتعقيده. تقدم FPA Design Consultancy استشارة أولية مجانية — تواصل معنا للحصول على عرض سعر مخصص.',
         },
         {
           question: 'هل أحتاج إلى مهندس معماري مرخص للحصول على تصريح بناء في الفلبين؟',
@@ -1606,6 +1624,9 @@ export const t: Record<Language, Translations> = {
       hq: 'Sede',
       view: 'Ver →',
       allLocations: 'Ver Todas las Ubicaciones',
+      reviewTitle: '¿Ha Trabajado con Nosotros?',
+      reviewText: 'Una breve reseña en Google ayuda a otras familias a encontrar un arquitecto con licencia en quien confiar.',
+      reviewCta: 'Dejar una Reseña en Google',
       servicesFaq: [
         { question: '¿Es FPA Design Consultancy una firma de arquitectura con licencia?', answer: 'Sí. FPA Design Consultancy está dirigida por Arch. Friendzel B. Pengi, UAP, arquitecto con licencia registrado en la Comisión de Regulación Profesional (PRC) conforme a la Ley de la República 9266 y miembro de United Architects of the Philippines.' },
         { question: '¿Atienden a clientes fuera de Baguio City?', answer: 'Sí. Atendemos a clientes en todo Filipinas y en el extranjero, con consultas y servicios de diseño a distancia para familias y empresas filipinas de todo el mundo.' },
@@ -1809,7 +1830,7 @@ export const t: Record<Language, Translations> = {
       items: [
         {
           question: '¿Cuánto cuesta un arquitecto en Filipinas?',
-          answer: 'Los honorarios de los arquitectos en Filipinas se rigen por el Documento UAP 201 y suelen oscilar entre el 8 y el 12% del costo total de construcción por servicios completos de diseño y supervisión. El honorario exacto depende del tipo, alcance y complejidad del proyecto. FPA Design Consultancy ofrece una consulta inicial gratuita — contáctenos para un presupuesto personalizado.',
+          answer: 'Los honorarios de los arquitectos en Filipinas se rigen por las Normas de Práctica Profesional (SPP) para arquitectos, edición de 2010 adoptada bajo la Ley de Arquitectura (RA 9266): el Documento SPP 201 para servicios de prediseño y el Documento SPP 202 para servicios de diseño regulares. Suelen oscilar entre el 8 y el 12% del costo total de construcción por servicios completos de diseño y supervisión. El honorario exacto depende del tipo, alcance y complejidad del proyecto. FPA Design Consultancy ofrece una consulta inicial gratuita — contáctenos para un presupuesto personalizado.',
         },
         {
           question: '¿Necesito un arquitecto licenciado para un permiso de construcción en Filipinas?',

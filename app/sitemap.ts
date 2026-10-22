@@ -10,14 +10,14 @@ const baseUrl = "https://www.fp-architect.com";
 // Last real content change for pages that aren't driven by data files. Update a date when that
 // page's content changes, so Google knows what to recrawl.
 const pageUpdated = {
-  home: "2026-10-21",
+  home: "2026-10-22",
   about: "2026-10-21",
   services: "2026-10-21",
   portfolio: "2026-10-21",
   contact: "2026-10-21",
   locations: "2026-10-20",
   buildFromAbroad: "2026-10-21",
-  guides: "2026-10-21",
+  guides: "2026-10-22",
 };
 
 /** Home and portfolio also change whenever a project is added. */
