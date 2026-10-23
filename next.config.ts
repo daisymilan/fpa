@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
               "font-src 'self' https://fonts.gstatic.com data:",
               "img-src 'self' data: https: blob:",
               "connect-src 'self' https://fonts.googleapis.com",
-              "frame-src https://www.google.com https://maps.googleapis.com",
+              "frame-src https://www.google.com https://maps.googleapis.com https://www.youtube-nocookie.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",

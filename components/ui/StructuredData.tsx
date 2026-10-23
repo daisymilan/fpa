@@ -45,6 +45,7 @@ export default function StructuredData() {
         sameAs: [
           "https://www.facebook.com/share/1E4rr19U8p/?mibextid=wwXIfr",
           "https://www.instagram.com/fpadesignconsultancy",
+          "https://www.youtube.com/@fpadesignconsultancy",
         ],
         priceRange: "₱₱",
         currenciesAccepted: "PHP",

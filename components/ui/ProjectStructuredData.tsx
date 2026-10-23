@@ -57,6 +57,24 @@ export default function ProjectStructuredData({ project }: Props) {
     ],
   };
 
+  const video = project.video;
+  const videoSchema = video && {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": `${projectUrl}#video`,
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: [
+      `${baseUrl}${video.poster}`,
+      ...(video.youtubeId ? [`https://i.ytimg.com/vi/${video.youtubeId}/maxresdefault.jpg`] : []),
+    ],
+    ...(video.uploadDate && { uploadDate: video.uploadDate }),
+    ...(video.durationSeconds && { duration: `PT${video.durationSeconds}S` }),
+    contentUrl: `${baseUrl}${video.src}`,
+    ...(video.youtubeId && { embedUrl: `https://www.youtube.com/embed/${video.youtubeId}` }),
+    publisher: { "@id": `${baseUrl}/#business` },
+  };
+
   return (
     <>
       <script
@@ -67,6 +85,9 @@ export default function ProjectStructuredData({ project }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
       />
+      {videoSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      )}
     </>
   );
 }

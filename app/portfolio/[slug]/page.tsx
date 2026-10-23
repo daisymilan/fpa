@@ -8,6 +8,7 @@ import { locations } from "@/lib/locations";
 import { getGuideBySlug, type Guide } from "@/lib/guides";
 import ProjectGallery from "@/components/portfolio/ProjectGallery";
 import ProjectStructuredData from "@/components/ui/ProjectStructuredData";
+import YouTubeVideo from "@/components/portfolio/YouTubeVideo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -159,6 +160,38 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Video */}
+      {project.video?.youtubeId && (
+        <section className="pb-20 bg-bg">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-px bg-[#FF3B30]" />
+              <span className="text-[#FF3B30] text-xs font-semibold tracking-[0.3em] uppercase">Video</span>
+            </div>
+            <h2 className="display-heading text-fg mb-8" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>Watch the Walkthrough</h2>
+            <YouTubeVideo id={project.video.youtubeId} title={project.video.title} poster={project.video.poster} />
+            <div className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+              <a
+                href={`https://www.youtube.com/watch?v=${project.video.youtubeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase hover:text-[#FF3B30] transition-colors"
+              >
+                Watch on YouTube →
+              </a>
+              <a
+                href="https://www.youtube.com/@fpadesignconsultancy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-fg-dim text-xs font-semibold tracking-[0.2em] uppercase hover:text-[#FF3B30] transition-colors"
+              >
+                More on our YouTube Channel →
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Gallery */}
       <section className="pb-20 bg-bg">

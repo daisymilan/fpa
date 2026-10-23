@@ -23,6 +23,11 @@ export interface ProjectVideo {
   poster: string;
   title: string;
   description: string;
+  /** YouTube copy of the video, shown as an embed on the project page. */
+  youtubeId?: string;
+  /** Date the video was first published (YYYY-MM-DD), for structured data. */
+  uploadDate?: string;
+  durationSeconds?: number;
 }
 
 export interface Service {

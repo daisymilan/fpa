@@ -121,6 +121,9 @@ export const projects: Project[] = [
       title: "Pool Courtyard Animation — 2 Storey House Interior Renovation, Australia",
       description:
         "Animated 3D visualisation of the plunge pool and courtyard — Australia interior visualisation by FPA Design Consultancy",
+      youtubeId: "FanOoUuwT-g",
+      uploadDate: "2026-09-23",
+      durationSeconds: 35,
     },
     featured: true,
   },
