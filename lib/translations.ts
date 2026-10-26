@@ -29,7 +29,7 @@ export interface Translations {
   portfolioPage: { tag: string; heading1: string; heading2: string; desc: string; categories: [string, string, string, string, string]; empty: string };
   aboutPage: { heroTag: string; heroHeading1: string; heroHeading2: string; principalTag: string; langTag: string; philosophyTag: string; quote: string; expertiseTag: string; skillsHeading: string; credentialsTag: string; certsHeading: string; coverageTag: string; coverageHeading: string; coverageDesc: string; ctaHeading: string; ctaDesc: string; ctaBtn: string; bio: [string, string, string, string]; certDescriptions: [string, string, string] };
   servicesPage: { tag: string; heading1: string; heading2: string; desc: string; delivLabel: string; ctaTag: string; ctaHeading: string; ctaDesc: string; ctaBtn1: string; ctaBtn2: string; items: ServicePageItem[] };
-  contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string; hoursLabel: string; hoursValue: string; stepsTag: string; stepsHeading: string; steps: ProcessStep[]; faq: FaqItem[] };
+  contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; directionsCta: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string; hoursLabel: string; hoursValue: string; stepsTag: string; stepsHeading: string; steps: ProcessStep[]; faq: FaqItem[] };
   form: { nameLabel: string; emailLabel: string; phoneLabel: string; typeLabel: string; typePlaceholder: string; locationLabel: string; messageLabel: string; messagePlaceholder: string; sendVia: string; emailApp: string; greeting: string; emailSubject: string; opened: string; pasteHint: string; copyHint: string; notOpened: string; copyBtn: string; copiedBtn: string; note: string; projectTypes: [string, string, string, string, string, string, string, string] };
   faq: { tag: string; heading1: string; heading2: string; cta: string; items: FaqItem[] };
   common: { locations: string; guides: string; fromAbroad: string; projectsIn: string; ourServices: string; viewOurWork: string; localProjects: string; remoteTag: string; remoteDescAbout: string; remoteDescContact: string; remoteLink: string; faqHeading: string; portfolioCtaHeading: string; portfolioCtaText: string; portfolioCtaBtn: string; coverageTag: string; coverageHeading: string; hq: string; view: string; allLocations: string; servicesFaq: FaqItem[]; reviewTitle: string; reviewText: string; reviewCta: string; };
@@ -225,6 +225,7 @@ export const t: Record<Language, Translations> = {
       infoTag: 'Contact Information',
       infoHeading: 'Reach Us Directly',
       officeLabel: 'Office Location',
+      directionsCta: 'Get Directions',
       phoneLabel: 'Phone',
       emailLabel: 'Email',
       formTag: 'Send a Message',
@@ -494,6 +495,7 @@ export const t: Record<Language, Translations> = {
       infoTag: 'Impormasyon sa Pakikipag-ugnayan',
       infoHeading: 'Direktang Makipag-ugnayan',
       officeLabel: 'Lokasyon ng Opisina',
+      directionsCta: 'Kumuha ng Direksyon',
       phoneLabel: 'Telepono',
       emailLabel: 'Email',
       formTag: 'Magpadala ng Mensahe',
@@ -751,6 +753,7 @@ export const t: Record<Language, Translations> = {
       infoTag: '联系方式',
       infoHeading: '直接联系我们',
       officeLabel: '办公室地址',
+      directionsCta: '获取路线',
       phoneLabel: '电话',
       emailLabel: '电子邮件',
       formTag: '发送消息',
@@ -1008,6 +1011,7 @@ export const t: Record<Language, Translations> = {
       infoTag: 'お問い合わせ先',
       infoHeading: '直接ご連絡ください',
       officeLabel: '事務所所在地',
+      directionsCta: '経路を表示',
       phoneLabel: '電話',
       emailLabel: 'メールアドレス',
       formTag: 'メッセージを送る',
@@ -1265,6 +1269,7 @@ export const t: Record<Language, Translations> = {
       infoTag: '연락처 정보',
       infoHeading: '직접 연락하기',
       officeLabel: '사무소 위치',
+      directionsCta: '길찾기',
       phoneLabel: '전화',
       emailLabel: '이메일',
       formTag: '메시지 보내기',
@@ -1522,6 +1527,7 @@ export const t: Record<Language, Translations> = {
       infoTag: 'معلومات التواصل',
       infoHeading: 'تواصل مباشرة معنا',
       officeLabel: 'موقع المكتب',
+      directionsCta: 'احصل على الاتجاهات',
       phoneLabel: 'الهاتف',
       emailLabel: 'البريد الإلكتروني',
       formTag: 'أرسل رسالة',
@@ -1779,6 +1785,7 @@ export const t: Record<Language, Translations> = {
       infoTag: 'Información de Contacto',
       infoHeading: 'Contáctenos Directamente',
       officeLabel: 'Ubicación de la Oficina',
+      directionsCta: 'Cómo Llegar',
       phoneLabel: 'Teléfono',
       emailLabel: 'Correo Electrónico',
       formTag: 'Enviar un Mensaje',

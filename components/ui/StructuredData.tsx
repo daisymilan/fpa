@@ -1,3 +1,5 @@
+import { GOOGLE_MAPS_URL, OFFICE_GEO, OFFICE_STREET } from "@/lib/business";
+
 export default function StructuredData() {
   const baseUrl = "https://www.fp-architect.com";
 
@@ -23,6 +25,7 @@ export default function StructuredData() {
         email: "fpadesignconsultancy@gmail.com",
         address: {
           "@type": "PostalAddress",
+          streetAddress: OFFICE_STREET,
           addressLocality: "Baguio City",
           addressRegion: "Benguet",
           postalCode: "2600",
@@ -30,9 +33,9 @@ export default function StructuredData() {
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: 16.4023,
-          longitude: 120.596,
+          ...OFFICE_GEO,
         },
+        hasMap: GOOGLE_MAPS_URL,
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",

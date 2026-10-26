@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
+import { OFFICE_STREET } from "@/lib/business";
 
 export default function ContactCTA() {
   const { lang } = useLanguage();
@@ -56,7 +57,7 @@ export default function ContactCTA() {
             </div>
             <div>
               <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">{tx.locationLabel}</p>
-              <p className="text-fg-muted text-sm">Baguio City, Benguet, Philippines</p>
+              <p className="text-fg-muted text-sm">{OFFICE_STREET}<br />Baguio City, Benguet, Philippines</p>
             </div>
             <div>
               <p className="text-xs text-fg-faint tracking-widest uppercase mb-1">WhatsApp</p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import ContactForm from "@/components/contact/ContactForm";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { t } from "@/lib/translations";
-import { GOOGLE_REVIEW_URL } from "@/lib/business";
+import { GOOGLE_DIRECTIONS_URL, GOOGLE_REVIEW_URL, OFFICE_STREET } from "@/lib/business";
 
 const localLocations = [
   { label: "Baguio City, Benguet", slug: "baguio-city-architect", note: "HQ" },
@@ -58,7 +58,12 @@ export default function ContactContent() {
                   {
                     icon: <><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></>,
                     label: tx.officeLabel,
-                    content: <p className="text-fg-muted text-sm leading-relaxed">Baguio City, Benguet<br />Philippines</p>,
+                    content: (
+                      <>
+                        <p className="text-fg-muted text-sm leading-relaxed">{OFFICE_STREET}<br />Baguio City, Benguet 2600<br />Philippines</p>
+                        <a href={GOOGLE_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 text-[#FF3B30] text-sm hover:text-fg transition-colors">{tx.directionsCta} &rarr;</a>
+                      </>
+                    ),
                   },
                   {
                     icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />,
@@ -252,7 +257,7 @@ export default function ContactContent() {
           style={{ border: 0 }}
           allowFullScreen loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="FPA Design Consultancy Location — Baguio City, Benguet"
+          title={`FPA Design Consultancy Location — ${OFFICE_STREET}, Baguio City, Benguet`}
           className="absolute inset-0"
         />
       </section>
