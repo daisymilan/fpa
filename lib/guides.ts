@@ -121,6 +121,7 @@ export const guides: Guide[] = [
     ],
     relatedServiceSlugs: ["building-permit-documentation", "architectural-design"],
     relatedLinks: [
+      { href: "/services/building-permit-documentation", label: "Our building permit drawings and processing service" },
       { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house in Baguio?" },
       { href: "/guides/building-on-sloping-lot-baguio", label: "Building on a sloping lot in Baguio" },
       { href: "/locations/baguio-city-architect", label: "Architect in Baguio City" },
@@ -227,6 +228,7 @@ export const guides: Guide[] = [
       { href: "/guides/building-permit-requirements-baguio-city", label: "Building permit requirements in Baguio City" },
       { href: "/guides/architect-fees-philippines", label: "How much does an architect cost in the Philippines?" },
       { href: "/guides/building-on-sloping-lot-baguio", label: "Building on a sloping lot in Baguio" },
+      { href: "/services/building-permit-documentation", label: "Help with building permit drawings and processing" },
       { href: "/portfolio", label: "See houses we have designed" },
     ],
   },
@@ -326,6 +328,7 @@ export const guides: Guide[] = [
     relatedServiceSlugs: ["architectural-design", "construction-project-management", "3d-visualization-rendering"],
     relatedLinks: [
       { href: "/build-from-abroad", label: "How we work with OFW and overseas clients" },
+      { href: "/services/construction-supervision", label: "What our on-site construction supervision covers" },
       { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house?" },
       { href: "/guides/typhoon-resistant-house-design-philippines", label: "Designing a typhoon-resistant house" },
     ],
@@ -333,14 +336,14 @@ export const guides: Guide[] = [
   {
     slug: "architect-fees-philippines",
     title: "How Much Does an Architect Cost in the Philippines?",
-    metaTitle: "Architect Fees in the Philippines | FPA Design Consultancy",
+    metaTitle: "Architect Fees in the Philippines: Per m² and % Rates (2026)",
     metaDescription:
-      "How Philippine architects charge: percentage of construction cost, what the fee covers and leaves out, paying in stages, and a worked example for a family home.",
+      "Philippine architects usually charge 8–12% of construction cost: about ₱3,200–₱4,800 per m² for a standard-finish home. What it covers, with a worked example.",
     excerpt:
-      "How licensed architects in the Philippines charge, what the fee covers, what it leaves out, and how to compare quotations fairly.",
+      "How licensed architects in the Philippines charge, what that means per square meter, what the fee covers, and how to compare quotations fairly.",
     published: "2026-10-22",
-    updated: "2026-10-22",
-    readingMinutes: 6,
+    updated: "2026-11-16",
+    readingMinutes: 7,
     intro:
       "The architect's fee is one of the first questions clients ask, and one of the most confusing. This guide explains how licensed architects in the Philippines usually charge, what the fee covers, what it doesn't, and how to compare quotations so you aren't comparing different things.",
     sections: [
@@ -350,6 +353,15 @@ export const guides: Guide[] = [
           "For houses and most building projects, the fee is usually a percentage of the construction cost. For full design and construction supervision services it typically ranges from 8–12% of the total construction cost, depending on the type, size and complexity of the project.",
           "Other ways of charging include a fixed lump-sum fee for a clearly defined scope, and time-based fees for consultations or small jobs. Whatever the method, the fee and the scope of work should be written into a contract before design starts.",
         ],
+      },
+      {
+        heading: "Architect fee per square meter",
+        paragraphs: [
+          "Many people ask for the fee per square meter. Architects in the Philippines usually quote a percentage of the construction cost rather than a rate per square meter, but one can be turned into the other.",
+          "For a house with a standard finish, built at about ₱40,000 per m², a fee of 8–12% for full design and supervision works out to about ₱3,200–₱4,800 per square meter of floor area.",
+        ],
+        note:
+          "The fee per square meter moves with the construction cost: a higher finish level costs more to build, so the fee per square meter is higher too. Design-only services, without supervision, cost less.",
       },
       {
         heading: "Where the percentages come from",
@@ -380,7 +392,7 @@ export const guides: Guide[] = [
       {
         heading: "A worked example",
         paragraphs: [
-          "For a 120 m² family home with a construction cost of ₱4,800,000, a fee of 8–12% for full design and supervision comes to about ₱384,000–₱576,000. It is a planning figure, not a quote: the actual fee depends on the agreed scope.",
+          "For a 120 m² family home with a construction cost of ₱4,800,000 (₱40,000 per m²), a fee of 8–12% for full design and supervision comes to about ₱384,000–₱576,000, or about ₱3,200–₱4,800 per square meter. It is a planning figure, not a quote: the actual fee depends on the agreed scope.",
         ],
         note:
           "Our guide to house construction costs in Baguio shows how this fits into a full budget.",
@@ -403,6 +415,11 @@ export const guides: Guide[] = [
     ],
     faqs: [
       {
+        question: "How much is an architect's fee per square meter in the Philippines?",
+        answer:
+          "Architects usually quote a percentage of the construction cost rather than a rate per square meter. For a standard-finish house built at about ₱40,000 per m², the usual 8–12% fee for full design and supervision works out to about ₱3,200–₱4,800 per square meter. The actual fee depends on the agreed scope.",
+      },
+      {
         question: "Is the architect's fee based on the total construction cost?",
         answer:
           "Usually, yes. For full design and supervision services, fees in the Philippines typically range from 8–12% of the total construction cost. A fixed fee can also be agreed for a clearly defined scope.",
@@ -422,6 +439,7 @@ export const guides: Guide[] = [
     relatedLinks: [
       { href: "/guides/house-construction-cost-baguio", label: "How much does it cost to build a house in Baguio?" },
       { href: "/guides/building-permit-requirements-baguio-city", label: "Building permit requirements in Baguio City" },
+      { href: "/services/construction-supervision", label: "What our on-site construction supervision covers" },
     ],
   },
   {
