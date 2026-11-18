@@ -29,7 +29,7 @@ export interface Translations {
   portfolioPage: { tag: string; heading1: string; heading2: string; desc: string; categories: [string, string, string, string, string]; empty: string };
   aboutPage: { heroTag: string; heroHeading1: string; heroHeading2: string; principalTag: string; langTag: string; philosophyTag: string; quote: string; expertiseTag: string; skillsHeading: string; credentialsTag: string; certsHeading: string; coverageTag: string; coverageHeading: string; coverageDesc: string; ctaHeading: string; ctaDesc: string; ctaBtn: string; bio: [string, string, string, string]; certDescriptions: [string, string, string] };
   servicesPage: { tag: string; heading1: string; heading2: string; desc: string; delivLabel: string; ctaTag: string; ctaHeading: string; ctaDesc: string; ctaBtn1: string; ctaBtn2: string; items: ServicePageItem[] };
-  contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; directionsCta: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string; hoursLabel: string; hoursValue: string; stepsTag: string; stepsHeading: string; steps: ProcessStep[]; faq: FaqItem[] };
+  contactPage: { heroTag: string; heroHeading1: string; heroHeading2: string; heroDesc: string; infoTag: string; infoHeading: string; officeLabel: string; directionsCta: string; phoneLabel: string; emailLabel: string; formTag: string; formHeading: string; hoursLabel: string; hoursValue: string; visitLabel: string; visitValue: string; paymentLabel: string; paymentValue: string; stepsTag: string; stepsHeading: string; steps: ProcessStep[]; faq: FaqItem[] };
   form: { nameLabel: string; emailLabel: string; phoneLabel: string; typeLabel: string; typePlaceholder: string; locationLabel: string; messageLabel: string; messagePlaceholder: string; sendVia: string; emailApp: string; greeting: string; emailSubject: string; opened: string; pasteHint: string; copyHint: string; notOpened: string; copyBtn: string; copiedBtn: string; note: string; projectTypes: [string, string, string, string, string, string, string, string] };
   faq: { tag: string; heading1: string; heading2: string; cta: string; items: FaqItem[] };
   common: { locations: string; guides: string; fromAbroad: string; projectsIn: string; ourServices: string; viewOurWork: string; localProjects: string; remoteTag: string; remoteDescAbout: string; remoteDescContact: string; remoteLink: string; faqHeading: string; portfolioCtaHeading: string; portfolioCtaText: string; portfolioCtaBtn: string; coverageTag: string; coverageHeading: string; hq: string; view: string; allLocations: string; servicesFaq: FaqItem[]; reviewTitle: string; reviewText: string; reviewCta: string; };
@@ -72,7 +72,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: 'Designing Spaces.',
       heading2: 'Building Futures.',
-      sub: 'FPA Design Consultancy delivers premium architectural design, interior design, and construction management services worldwide.',
+      sub: 'A licensed architectural firm in Baguio City. We design houses, commercial buildings and interiors, prepare building permit plans and supervise construction across Northern Luzon, and work remotely with OFWs abroad.',
       cta1: 'View Our Work',
       cta2: 'Get a Consultation',
       labels: ['Commercial Architecture', 'Residential Design', 'Modern Living'],
@@ -232,6 +232,10 @@ export const t: Record<Language, Translations> = {
       formHeading: 'Tell Us About Your Project',
       hoursLabel: 'Hours',
       hoursValue: 'Daily, 7:00 AM – 7:00 PM · messages welcome any time',
+      visitLabel: 'Office Visits',
+      visitValue: 'By appointment only. Parking available.',
+      paymentLabel: 'Payment',
+      paymentValue: 'Cash, GCash or bank transfer',
       stepsTag: 'What Happens Next',
       stepsHeading: 'After You Get in Touch',
       steps: [
@@ -245,6 +249,8 @@ export const t: Record<Language, Translations> = {
         { question: 'Is the first consultation free?', answer: 'Yes. The initial consultation is free. Afterwards you receive a project-specific, itemized quotation, with no obligation to go ahead.' },
         { question: 'What should I include in my first message?', answer: 'Your project type, the location, the approximate floor or lot area, your budget range and your timeline. Photos of the lot or the existing building help too.' },
         { question: 'Do you work with clients outside Baguio City or abroad?', answer: 'Yes. We work on site in Baguio City, La Union, Ifugao, Nueva Vizcaya and Ilocos Sur, and remotely with clients anywhere in the Philippines and overseas.' },
+        { question: 'Can I visit your office?', answer: 'Yes, by appointment only. Message or call us first to set a day and time. Parking is available at the office.' },
+        { question: 'How can I pay?', answer: 'We accept cash, GCash and bank transfer.' },
       ],
     },
     form: {
@@ -303,6 +309,10 @@ export const t: Record<Language, Translations> = {
           question: 'Can I work with FPA Design Consultancy if I am outside Baguio City?',
           answer: 'Absolutely. We serve clients across the Philippines and internationally, including OFWs building homes in the Philippines from abroad. Our process is fully designed for remote collaboration — video consultations, digital file exchange, and phased design reviews mean location is no barrier to working with us.',
         },
+        {
+          question: 'Can I visit your office in Baguio City?',
+          answer: 'Yes, by appointment only. Our office is in Baguio City and parking is available. We are open daily from 7:00 AM to 7:00 PM, and we accept cash, GCash and bank transfer. Message or call us first to set a time.',
+        },
       ],
     },
   },
@@ -342,7 +352,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: 'Nagdisenyo ng Espasyo.',
       heading2: 'Nagtatayo ng Kinabukasan.',
-      sub: 'Ang FPA Design Consultancy ay naghahatid ng premium na serbisyo sa arkitektura, interior design, at pamamahala ng konstruksiyon sa buong mundo.',
+      sub: 'Isang lisensyadong architectural firm sa Baguio City. Nagdidisenyo kami ng mga bahay, gusaling pangkomersyo at interior, naghahanda ng mga plano para sa building permit at nagsusuperbisa ng konstruksiyon sa buong Northern Luzon, at nakikipagtulungan nang remote sa mga OFW sa ibang bansa.',
       cta1: 'Tingnan ang Aming Gawa',
       cta2: 'Kumuha ng Konsultasyon',
       labels: ['Komersyal na Arkitektura', 'Residentyal na Disenyo', 'Modernong Pamumuhay'],
@@ -502,6 +512,10 @@ export const t: Record<Language, Translations> = {
       formHeading: 'Sabihin sa Amin ang Tungkol sa Inyong Proyekto',
       hoursLabel: 'Oras',
       hoursValue: 'Araw-araw, 7:00 AM – 7:00 PM · puwedeng magmensahe anumang oras',
+      visitLabel: 'Pagbisita sa Opisina',
+      visitValue: 'Sa appointment lamang. May paradahan.',
+      paymentLabel: 'Bayad',
+      paymentValue: 'Cash, GCash o bank transfer',
       stepsTag: 'Ano ang Susunod',
       stepsHeading: 'Pagkatapos Ninyong Makipag-ugnayan',
       steps: [
@@ -515,6 +529,8 @@ export const t: Record<Language, Translations> = {
         { question: 'Libre ba ang unang konsultasyon?', answer: 'Opo. Libre ang unang konsultasyon. Pagkatapos nito, makatatanggap kayo ng quotation na para sa inyong proyekto at naka-itemize, nang walang obligasyong ituloy.' },
         { question: 'Ano ang dapat kong isama sa unang mensahe?', answer: 'Ang uri ng proyekto, ang lokasyon, ang tantiyang sukat ng sahig o lote, ang inyong badyet at timeline. Makatutulong din ang mga larawan ng lote o ng kasalukuyang gusali.' },
         { question: 'Tumatanggap ba kayo ng kliyente sa labas ng Baguio City o sa ibang bansa?', answer: 'Opo. Nagtatrabaho kami on-site sa Baguio City, La Union, Ifugao, Nueva Vizcaya at Ilocos Sur, at remote para sa mga kliyente saanman sa Pilipinas at sa ibang bansa.' },
+        { question: 'Puwede ba akong bumisita sa inyong opisina?', answer: 'Opo, sa appointment lamang. Magmensahe o tumawag muna sa amin para magtakda ng araw at oras. May paradahan sa opisina.' },
+        { question: 'Paano ako makakabayad?', answer: 'Tumatanggap kami ng cash, GCash at bank transfer.' },
       ],
     },
     form: {
@@ -573,6 +589,10 @@ export const t: Record<Language, Translations> = {
           question: 'Maaari bang makipagtulungan sa FPA Design Consultancy ang mga nasa labas ng Baguio City?',
           answer: 'Syempre. Naglilingkod kami sa mga kliyente sa buong Pilipinas at sa internasyonal, kasama na ang mga OFW na nagtatayo ng tahanan sa Pilipinas mula sa ibang bansa. Ang aming proseso ay dinisenyo para sa remote na pakikipagtulungan — sa pamamagitan ng video konsultasyon, palitan ng digital na file, at mga phased na review ng disenyo.',
         },
+        {
+          question: 'Puwede ba akong bumisita sa inyong opisina sa Baguio City?',
+          answer: 'Opo, sa appointment lamang. Nasa Baguio City ang aming opisina at may paradahan. Bukas kami araw-araw mula 7:00 AM hanggang 7:00 PM, at tumatanggap kami ng cash, GCash at bank transfer. Magmensahe o tumawag muna para magtakda ng oras.',
+        },
       ],
     },
   },
@@ -612,7 +632,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: '设计空间。',
       heading2: '建造未来。',
-      sub: 'FPA Design Consultancy 在全球提供优质的建筑设计、室内设计和施工管理服务。',
+      sub: '碧瑶市持证建筑设计事务所。我们在北吕宋各地设计住宅、商业建筑和室内空间，准备建筑许可图纸并监理施工，也为海外菲律宾劳工（OFW）提供远程设计服务。',
       cta1: '查看作品集',
       cta2: '预约咨询',
       labels: ['商业建筑', '住宅设计', '现代生活'],
@@ -760,6 +780,10 @@ export const t: Record<Language, Translations> = {
       formHeading: '告诉我们您的项目需求',
       hoursLabel: '营业时间',
       hoursValue: '每天 7:00–19:00 · 随时欢迎留言',
+      visitLabel: '到访办公室',
+      visitValue: '仅限预约。设有停车位。',
+      paymentLabel: '付款方式',
+      paymentValue: '现金、GCash 或银行转账',
       stepsTag: '接下来',
       stepsHeading: '联系我们之后',
       steps: [
@@ -773,6 +797,8 @@ export const t: Record<Language, Translations> = {
         { question: '首次咨询免费吗？', answer: '是的。首次咨询免费。之后您将收到针对项目的分项报价，无需承担继续合作的义务。' },
         { question: '第一次留言应包含哪些内容？', answer: '项目类型、地点、大致建筑面积或地块面积、预算范围和时间安排。地块或现有建筑的照片也很有帮助。' },
         { question: '你们为碧瑶市以外或海外的客户服务吗？', answer: '是的。我们在碧瑶市、拉乌尼翁、伊富高、新比斯开和南伊罗戈提供现场服务，并为菲律宾各地及海外客户提供远程服务。' },
+        { question: '我可以去你们的办公室吗？', answer: '可以，但需提前预约。请先发消息或致电约定日期和时间。办公室设有停车位。' },
+        { question: '可以用哪些方式付款？', answer: '我们接受现金、GCash 和银行转账。' },
       ],
     },
     form: {
@@ -831,6 +857,10 @@ export const t: Record<Language, Translations> = {
           question: '碧瑶市以外的客户能否与 FPA Design Consultancy 合作？',
           answer: '当然可以。我们服务于菲律宾全境及海外客户，包括在菲律宾建房的海外菲律宾工人（OFW）。我们的工作流程完全支持远程协作——通过视频咨询、数字文件交换及分阶段设计评审，地域不是障碍。',
         },
+        {
+          question: '我可以去你们在碧瑶市的办公室吗？',
+          answer: '可以，但仅限预约。我们的办公室位于碧瑶市，设有停车位。营业时间为每天 7:00 至 19:00，接受现金、GCash 和银行转账。请先发消息或致电约定时间。',
+        },
       ],
     },
   },
@@ -870,7 +900,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: '空間をデザインする。',
       heading2: '未来を築く。',
-      sub: 'FPA Design Consultancyは、建築設計・インテリアデザイン・施工管理のプレミアムサービスをグローバルに提供しています。',
+      sub: 'バギオ市にある、有資格建築家の設計事務所です。北ルソン全域で住宅・商業建築・インテリアの設計、建築許可図面の作成、施工監理を行い、海外で働くフィリピン人（OFW）の方にもリモートで対応しています。',
       cta1: '実績を見る',
       cta2: '無料相談を予約する',
       labels: ['商業建築', '住宅デザイン', 'モダンリビング'],
@@ -1018,6 +1048,10 @@ export const t: Record<Language, Translations> = {
       formHeading: 'プロジェクトの詳細をお聞かせください',
       hoursLabel: '受付時間',
       hoursValue: '毎日 7:00〜19:00 · メッセージは24時間受付',
+      visitLabel: 'ご来訪',
+      visitValue: '完全予約制。駐車場あり。',
+      paymentLabel: 'お支払い',
+      paymentValue: '現金、GCash、銀行振込',
       stepsTag: 'ご相談の流れ',
       stepsHeading: 'お問い合わせ後の流れ',
       steps: [
@@ -1031,6 +1065,8 @@ export const t: Record<Language, Translations> = {
         { question: '初回相談は無料ですか？', answer: 'はい、初回相談は無料です。その後、プロジェクトに合わせた項目別のお見積もりをお送りします。ご契約の義務はありません。' },
         { question: '最初のメッセージには何を書けばよいですか？', answer: 'プロジェクトの種類、所在地、おおよその床面積または敷地面積、ご予算、スケジュールをお知らせください。敷地や既存建物の写真もあると助かります。' },
         { question: 'バギオ市以外や海外の方にも対応していますか？', answer: 'はい。バギオ市、ラ・ウニオン、イフガオ、ヌエバ・ビスカヤ、南イロコスでは現地対応、フィリピン国内のその他の地域や海外のお客様にはリモートで対応しています。' },
+        { question: '事務所を訪問できますか？', answer: 'はい、予約制です。事前にメッセージまたはお電話で日時をご相談ください。事務所には駐車場があります。' },
+        { question: '支払い方法を教えてください。', answer: '現金、GCash、銀行振込に対応しています。' },
       ],
     },
     form: {
@@ -1089,6 +1125,10 @@ export const t: Record<Language, Translations> = {
           question: 'バギオ市外のクライアントとも取引できますか？',
           answer: 'もちろんです。フィリピン全国および海外（フィリピンに住宅を建てる OFW を含む）のクライアントにサービスを提供しています。ビデオ相談・デジタルファイル交換・段階的な設計レビューによるリモートコラボレーションが可能です。場所は問いません。',
         },
+        {
+          question: 'バギオ市の事務所を訪問できますか？',
+          answer: 'はい、完全予約制です。事務所はバギオ市にあり、駐車場があります。営業時間は毎日7:00〜19:00で、お支払いは現金、GCash、銀行振込に対応しています。事前にメッセージまたはお電話で日時をご相談ください。',
+        },
       ],
     },
   },
@@ -1128,7 +1168,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: '공간을 디자인하다.',
       heading2: '미래를 짓다.',
-      sub: 'FPA Design Consultancy는 건축 설계, 인테리어 디자인, 시공 관리 분야에서 전 세계 고객에게 프리미엄 서비스를 제공합니다.',
+      sub: '바기오시의 공인 건축사 사무소입니다. 북부 루손 전역에서 주택, 상업 건물, 인테리어를 설계하고 건축 허가 도면 작성과 시공 감리를 하며, 해외 필리핀 근로자(OFW) 고객과는 원격으로 함께합니다.',
       cta1: '포트폴리오 보기',
       cta2: '상담 예약하기',
       labels: ['상업용 건축', '주거용 설계', '현대적 생활'],
@@ -1276,6 +1316,10 @@ export const t: Record<Language, Translations> = {
       formHeading: '프로젝트에 대해 알려주세요',
       hoursLabel: '운영 시간',
       hoursValue: '매일 오전 7시 – 오후 7시 · 메시지는 언제든 환영합니다',
+      visitLabel: '사무실 방문',
+      visitValue: '예약제로만 운영합니다. 주차 가능.',
+      paymentLabel: '결제',
+      paymentValue: '현금, GCash 또는 계좌이체',
       stepsTag: '진행 절차',
       stepsHeading: '문의 후 진행 과정',
       steps: [
@@ -1289,6 +1333,8 @@ export const t: Record<Language, Translations> = {
         { question: '첫 상담은 무료인가요?', answer: '네. 첫 상담은 무료입니다. 이후 프로젝트에 맞춘 항목별 견적을 보내 드리며, 진행할 의무는 없습니다.' },
         { question: '첫 메시지에는 무엇을 적어야 하나요?', answer: '프로젝트 유형, 위치, 대략적인 연면적 또는 대지 면적, 예산 범위, 일정을 알려 주세요. 부지나 기존 건물 사진이 있으면 더 좋습니다.' },
         { question: '바기오시 외 지역이나 해외 고객도 가능한가요?', answer: '네. 바기오시, 라우니온, 이푸가오, 누에바비스카야, 일로코스수르에서는 현장 서비스를, 필리핀 전역과 해외 고객에게는 원격 서비스를 제공합니다.' },
+        { question: '사무실을 방문할 수 있나요?', answer: '네, 예약제로만 가능합니다. 먼저 메시지나 전화로 날짜와 시간을 정해 주세요. 사무실에 주차 공간이 있습니다.' },
+        { question: '결제는 어떻게 하나요?', answer: '현금, GCash, 계좌이체를 받습니다.' },
       ],
     },
     form: {
@@ -1347,6 +1393,10 @@ export const t: Record<Language, Translations> = {
           question: '바기오 시 외부에 있어도 FPA Design Consultancy와 함께 작업할 수 있나요?',
           answer: '물론입니다. 저희는 필리핀 전역 및 해외 고객과 함께 일하며, 해외에서 필리핀에 주택을 짓는 OFW도 포함됩니다. 화상 상담, 디지털 파일 교환, 단계별 설계 검토를 통한 원격 협업이 가능합니다. 위치는 문제가 되지 않습니다.',
         },
+        {
+          question: '바기오시 사무실을 방문할 수 있나요?',
+          answer: '네, 예약제로만 가능합니다. 사무실은 바기오시에 있으며 주차 공간이 있습니다. 매일 오전 7시부터 오후 7시까지 운영하며, 현금, GCash, 계좌이체를 받습니다. 먼저 메시지나 전화로 시간을 정해 주세요.',
+        },
       ],
     },
   },
@@ -1386,7 +1436,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: 'نصمم الفضاء.',
       heading2: 'نبني المستقبل.',
-      sub: 'تقدم FPA Design Consultancy خدمات التصميم المعماري وتصميم الديكور الداخلي وإدارة البناء بمستوى احترافي رفيع على الصعيد العالمي.',
+      sub: 'مكتب هندسة معمارية مرخّص في مدينة باجيو. نصمم المنازل والمباني التجارية والتصاميم الداخلية، ونُعدّ مخططات رخص البناء ونشرف على التنفيذ في أنحاء شمال لوزون، ونعمل عن بُعد مع العمال الفلبينيين في الخارج.',
       cta1: 'استعرض أعمالنا',
       cta2: 'احصل على استشارة',
       labels: ['العمارة التجارية', 'التصميم السكني', 'المعيشة العصرية'],
@@ -1534,6 +1584,10 @@ export const t: Record<Language, Translations> = {
       formHeading: 'أخبرنا عن مشروعك',
       hoursLabel: 'ساعات العمل',
       hoursValue: 'يومياً من 7:00 صباحاً حتى 7:00 مساءً · نستقبل الرسائل في أي وقت',
+      visitLabel: 'زيارة المكتب',
+      visitValue: 'بموعد مسبق فقط. يتوفر موقف للسيارات.',
+      paymentLabel: 'الدفع',
+      paymentValue: 'نقداً أو عبر GCash أو بتحويل بنكي',
       stepsTag: 'الخطوات التالية',
       stepsHeading: 'بعد أن تتواصل معنا',
       steps: [
@@ -1547,6 +1601,8 @@ export const t: Record<Language, Translations> = {
         { question: 'هل الاستشارة الأولى مجانية؟', answer: 'نعم. الاستشارة الأولى مجانية، وبعدها تتلقى عرض سعر مفصلاً خاصاً بمشروعك دون أي التزام بالمتابعة.' },
         { question: 'ماذا أكتب في رسالتي الأولى؟', answer: 'نوع المشروع والموقع والمساحة التقريبية للبناء أو الأرض والميزانية والجدول الزمني. تساعد أيضاً صور الأرض أو المبنى القائم.' },
         { question: 'هل تعملون مع عملاء خارج مدينة باغيو أو خارج الفلبين؟', answer: 'نعم. نقدم خدماتنا في الموقع في مدينة باغيو ولا يونيون وإيفوغاو ونويفا فيزكايا وإيلوكوس سور، وعن بُعد للعملاء في أي مكان في الفلبين وخارجها.' },
+        { question: 'هل يمكنني زيارة مكتبكم؟', answer: 'نعم، بموعد مسبق فقط. راسلونا أو اتصلوا بنا أولاً لتحديد اليوم والوقت. يتوفر موقف للسيارات في المكتب.' },
+        { question: 'كيف يمكنني الدفع؟', answer: 'نقبل الدفع نقداً أو عبر GCash أو بتحويل بنكي.' },
       ],
     },
     form: {
@@ -1605,6 +1661,10 @@ export const t: Record<Language, Translations> = {
           question: 'هل يمكنني العمل مع FPA Design Consultancy إذا كنت خارج مدينة باغيو؟',
           answer: 'بالتأكيد. نعمل مع عملاء من جميع أنحاء الفلبين والعالم، بما فيهم العمال الفلبينيين في الخارج (OFW) الراغبين في بناء منازل في الفلبين. تستوعب عمليتنا التعاون عن بُعد من خلال المشاورات عبر الفيديو وتبادل الملفات الرقمية ومراجعات التصميم المرحلية.',
         },
+        {
+          question: 'هل يمكنني زيارة مكتبكم في مدينة باجيو؟',
+          answer: 'نعم، بموعد مسبق فقط. يقع مكتبنا في مدينة باجيو ويتوفر فيه موقف للسيارات. نعمل يومياً من 7:00 صباحاً حتى 7:00 مساءً، ونقبل الدفع نقداً أو عبر GCash أو بتحويل بنكي. راسلونا أو اتصلوا بنا أولاً لتحديد موعد.',
+        },
       ],
     },
   },
@@ -1644,7 +1704,7 @@ export const t: Record<Language, Translations> = {
     hero: {
       heading1: 'Diseñando Espacios.',
       heading2: 'Construyendo Futuros.',
-      sub: 'FPA Design Consultancy ofrece servicios premium de diseño arquitectónico, diseño de interiores y gestión de construcción a nivel mundial.',
+      sub: 'Estudio de arquitectura con licencia en Baguio City. Diseñamos casas, edificios comerciales e interiores, preparamos los planos para el permiso de construcción y supervisamos obras en todo el norte de Luzón, y trabajamos en remoto con filipinos que viven en el extranjero.',
       cta1: 'Ver Nuestro Trabajo',
       cta2: 'Obtener una Consulta',
       labels: ['Arquitectura Comercial', 'Diseño Residencial', 'Vida Moderna'],
@@ -1792,6 +1852,10 @@ export const t: Record<Language, Translations> = {
       formHeading: 'Cuéntenos Sobre Su Proyecto',
       hoursLabel: 'Horario',
       hoursValue: 'Todos los días, 7:00 a. m. – 7:00 p. m. · mensajes en cualquier momento',
+      visitLabel: 'Visitas a la Oficina',
+      visitValue: 'Solo con cita previa. Hay estacionamiento.',
+      paymentLabel: 'Pago',
+      paymentValue: 'Efectivo, GCash o transferencia bancaria',
       stepsTag: 'Próximos Pasos',
       stepsHeading: 'Después de Contactarnos',
       steps: [
@@ -1805,6 +1869,8 @@ export const t: Record<Language, Translations> = {
         { question: '¿La primera consulta es gratuita?', answer: 'Sí. La consulta inicial es gratuita. Después recibe una cotización detallada y específica para su proyecto, sin compromiso de continuar.' },
         { question: '¿Qué debo incluir en mi primer mensaje?', answer: 'El tipo de proyecto, la ubicación, el área aproximada de construcción o del terreno, su rango de presupuesto y los plazos. Las fotos del terreno o del edificio existente también ayudan.' },
         { question: '¿Trabajan con clientes fuera de Baguio City o en el extranjero?', answer: 'Sí. Trabajamos en sitio en Baguio City, La Union, Ifugao, Nueva Vizcaya e Ilocos Sur, y a distancia con clientes en cualquier lugar de Filipinas y del extranjero.' },
+        { question: '¿Puedo visitar su oficina?', answer: 'Sí, solo con cita previa. Escríbanos o llámenos antes para acordar el día y la hora. La oficina tiene estacionamiento.' },
+        { question: '¿Cómo puedo pagar?', answer: 'Aceptamos efectivo, GCash y transferencia bancaria.' },
       ],
     },
     form: {
@@ -1862,6 +1928,10 @@ export const t: Record<Language, Translations> = {
         {
           question: '¿Puedo trabajar con FPA Design Consultancy si estoy fuera de Baguio City?',
           answer: 'Por supuesto. Trabajamos con clientes de todo Filipinas e internacionalmente, incluidos los trabajadores filipinos en el extranjero (OFW) que construyen casas en Filipinas desde el exterior. Nuestro proceso está diseñado para la colaboración remota mediante consultas por video, intercambio de archivos digitales y revisiones de diseño por fases — la ubicación no es un obstáculo.',
+        },
+        {
+          question: '¿Puedo visitar su oficina en Baguio City?',
+          answer: 'Sí, solo con cita previa. Nuestra oficina está en Baguio City y tiene estacionamiento. Abrimos todos los días de 7:00 a. m. a 7:00 p. m. y aceptamos efectivo, GCash y transferencia bancaria. Escríbanos o llámenos antes para acordar una hora.',
         },
       ],
     },

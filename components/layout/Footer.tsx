@@ -3,7 +3,7 @@
 import Link from "next/link";
 import FPALogo from "@/components/ui/FPALogo";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { OFFICE_STREET } from "@/lib/business";
+import { FACEBOOK_URL, INSTAGRAM_URL, OFFICE_STREET } from "@/lib/business";
 import { t } from "@/lib/translations";
 import { localizeHref } from "@/lib/localeRoutes";
 import { GOOGLE_REVIEW_URL } from "@/lib/business";
@@ -54,7 +54,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.facebook.com/share/1E4rr19U8p/?mibextid=wwXIfr"
+                href={FACEBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -66,7 +66,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/fpadesignconsultancy?igsh=MWcxZDBibXh0aDRoMA=="
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

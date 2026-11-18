@@ -1,4 +1,12 @@
-import { GOOGLE_MAPS_URL, OFFICE_GEO, OFFICE_STREET } from "@/lib/business";
+import {
+  FACEBOOK_URL,
+  GOOGLE_MAPS_LISTING_URL,
+  GOOGLE_MAPS_URL,
+  INSTAGRAM_URL,
+  OFFICE_GEO,
+  OFFICE_STREET,
+  YOUTUBE_URL,
+} from "@/lib/business";
 
 export default function StructuredData() {
   const baseUrl = "https://www.fp-architect.com";
@@ -13,7 +21,7 @@ export default function StructuredData() {
         legalName: "FPA Design Consultancy",
         alternateName: "FPA Design",
         description:
-          "Licensed architectural firm in Baguio City, Philippines specializing in residential design, commercial architecture, interior design, renovation, and building permit assistance. Serving clients in the Philippines and worldwide.",
+          "Licensed architectural firm in Baguio City, Benguet, led by Arch. Friendzel B. Pengi, UAP. Architectural design for houses and commercial buildings, interior design, renovation, building permit documentation and construction supervision across Northern Luzon, with remote design for OFWs and clients abroad. Office visits by appointment.",
         url: baseUrl,
         logo: {
           "@type": "ImageObject",
@@ -46,13 +54,14 @@ export default function StructuredData() {
           },
         ],
         sameAs: [
-          "https://www.facebook.com/share/1E4rr19U8p/?mibextid=wwXIfr",
-          "https://www.instagram.com/fpadesignconsultancy",
-          "https://www.youtube.com/@fpadesignconsultancy",
+          FACEBOOK_URL,
+          INSTAGRAM_URL,
+          YOUTUBE_URL,
+          GOOGLE_MAPS_LISTING_URL,
         ],
         priceRange: "₱₱",
         currenciesAccepted: "PHP",
-        paymentAccepted: "Cash, Bank Transfer, GCash",
+        paymentAccepted: "Cash, GCash, Bank Transfer",
         areaServed: [
           {
             "@type": "City",
